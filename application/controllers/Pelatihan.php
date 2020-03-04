@@ -15,7 +15,9 @@
         public function index(){
 
 
+            $this->load->view('front/header');
             $this->load->view('front/pelatihan');
+            $this->load->view('front/footer');
 
 
         }
@@ -23,7 +25,9 @@
         public function level(){
 
 
+            $this->load->view('front/header');
             $this->load->view('front/level');
+            $this->load->view('front/footer');
 
         }
 
