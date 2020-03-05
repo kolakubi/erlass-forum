@@ -1,0 +1,9 @@
+.pesan-error-form{
+    background-color: #f44242; 
+    text-align: center; 
+    border-radius: 10px;
+}
+
+.pesan-error-form span{
+    color: white;
+}

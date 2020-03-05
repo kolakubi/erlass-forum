@@ -10,11 +10,113 @@
 
         public function index(){
 
-
-            $this->load->view('front/daftar');
+            $data['gagal'] = false;
+            $data['password'] = false;
+            $data['email'] = false;
+            $this->load->view('front/daftar', $data);
 
 
         }
 
+
+        public function validasi(){
+
+            // set form validation
+			$this->form_validation->set_rules(array(
+				array(
+					'field' => 'email',
+					'label' => 'Email',
+					'rules' => 'required'
+				),
+				array(
+					'field' => 'password',
+					'label' => 'Password',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'repeatpassword',
+					'label' => 'Repeat Password',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'nama',
+					'label' => 'Nama',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'nomorinduk',
+					'label' => 'Nomor Induk',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'alamat',
+					'label' => 'Alamat',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'sekolah',
+					'label' => 'Sekolah',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'hp',
+					'label' => 'HP',
+					'rules' => 'required'
+                )
+                
+            ));
+            
+            $this->form_validation->set_message('required', 'wajib diisi');
+
+            if(!$this->form_validation->run()){
+                $data['gagal'] = false;
+                $data['password'] = false;
+                $data['email'] = false;
+				$this->load->view('front/daftar', $data);
+			}
+			else{
+				// ambil value dr field
+				$email = $this->input->post('email');
+                $password = $this->input->post('password');
+                $repeatpassword = $this->input->post('repeatpassword');
+                $nama = $this->input->post('nama');
+                $nomorinduk = $this->input->post('nomorinduk');
+                $alamat = $this->input->post('password');
+                $sekolah = $this->input->post('sekolah');
+                $hp = $this->input->post('hp');
+
+                // jika password yg dimasukkan berbeda
+                if($password !== $repeatpassword){
+                    $data['gagal'] = false;
+                    $data['password'] = true;
+                    $data['email'] = false;
+				    $this->load->view('front/daftar', $data);
+                }
+
+                // jika password yang dimasukkan sama
+                else{
+
+                    //cek ketesediaan email
+                    $emailvalid = $this->daftar_model->cekEmail($email);
+
+                    // jika email sudah dipakai
+                    if($emailvalid){
+                        $data['gagal'] = false;
+                        $data['password'] = false;
+                        $data['email'] = true;
+                        $this->load->view('front/daftar', $data);
+                    }
+
+                    // jika email belum dipakai
+                    else{
+
+                        
+
+                    }
+                } // end of cek password sama
+
+			}
+
+        } // end of validasi
 
     }
