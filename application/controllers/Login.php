@@ -11,7 +11,8 @@
 
         public function index(){
 
-            $data['gagal'] = false;
+			$data['gagal'] = false;
+			$data['daftar'] = false;
             $this->load->view('front/login', $data);
 
         }
@@ -36,6 +37,7 @@
 
 			if(!$this->form_validation->run()){
 				$data['gagal'] = false;
+				$data['daftar'] = false;
 				$this->load->view('front/login', $data);
 			}
 			else{
@@ -59,14 +61,13 @@
 					$level = $result; // cek level
 					$this->session->set_userdata($result);
 
-					if($level === '1'){ // jika level 1 ke admin
-                        //redirect('karyawan');
+					if($level === '2'){ // jika level 2 ke member
                         
-                        redirect('/'); // jika level 1 ke agen
+                        redirect('/'); // jika level 2 ke member
 					}
-					else if($level === '2'){
-						$_SESSION['level'] = '2';
-						redirect('admin'); // jika level 2 ke agen
+					else if($level === '1'){
+						$_SESSION['level'] = '1';
+						redirect('admin'); // jika level 1 ke admin
 					}
 					else{
 						return false;
@@ -75,6 +76,7 @@
 				// jika tdk ada result
 				else{
 					$data['gagal'] = true;
+					$data['daftar'] = false;
 					$this->load->view('front/login', $data); // kembali ke login
 				}
 			}

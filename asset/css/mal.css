@@ -4,6 +4,13 @@
     border-radius: 10px;
 }
 
-.pesan-error-form span{
+.pesan-error-form span,
+.pesan-sukses-form span{
     color: white;
+}
+
+.pesan-sukses-form{
+    background-color: #2dd121; 
+    text-align: center; 
+    border-radius: 10px;
 }

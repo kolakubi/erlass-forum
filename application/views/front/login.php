@@ -7,8 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	    
         
+        <!-- Custom styles for this template-->
         <link rel="stylesheet" href="<?php echo base_url() ?>asset/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>asset/bootstrap/bootstrap-modif-min.css">
+
+        <!-- CSS Mal -->
+        <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/mal.css">
+
     </head>
 
     <body class="bg-gradient-primary">
@@ -31,6 +36,15 @@
                     <h1 class="h4 text-gray-900 mb-4">Selamat Datang</h1>
                   </div>
 
+
+                  <!-- notif daftar berhasil -->
+                  <?php if($daftar) : ?>
+                  <div class="pesan-sukses-form user">
+                    <span>Pendafratan berhasil, silakan login</span>
+                  </div>
+                  <br>
+                  <?php endif ?>
+
                   <!-- notif gagal login -->
                   <?php if($gagal) : ?>
                     <p class="text-center" style="color: white; background-color: #f44242"><?php echo 'email atau Password salah' ?></p>
@@ -40,17 +54,21 @@
                   <!-- input email -->
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email" name="email">
-                      <div style="background-color: #f44242; text-align: center;" class="user">
+
+                      <div class="pesan-error-form user">
                         <span style="color: white;"><?php echo form_error('email') ?></span>
                       </div>
+
                     </div>
 
                   <!-- input password -->
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password">
-                      <div style="background-color: #f44242; text-align: center;" class="user">
+
+                      <div class="pesan-error-form user">
                         <span style="color: white;"><?php echo form_error('password') ?></span>
                       </div>
+
                     </div>
                     
                     <div class="form-group">
