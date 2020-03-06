@@ -9,15 +9,26 @@
   <section id="about">
     <div class="container">
       <div class="row">
+
+          <!-- level 1 -->
           <div class="col-md-4 text-center">
             <p>Menulis Pemula</p>
-            <p><a href="<?php echo base_url() ?>pelatihan/level">pilih</a></p>
+            <p><a href="<?php echo base_url() ?>pelatihan/level/1">level 1</a></p>
+            <p><a href="<?php echo base_url() ?>pelatihan/level/2">level 2</a></p>
+            <p><a href="<?php echo base_url() ?>pelatihan/level/3">level 3</a></p>
+            <p><a href="<?php echo base_url() ?>pelatihan/level/4">level 4</a></p>
           </div>
+
+          <!-- level 2 -->
           <div class="col-md-4 text-center">
             <p>Menulis Buku</p>
+            <p><a href="<?php echo base_url() ?>pelatihan/level/2">pilih</a></p>
           </div>
+
+          <!-- level 3 -->
           <div class="col-md-4 text-center">
             <p>Editing</p>
+            <p><a href="<?php echo base_url() ?>pelatihan/level/3">pilih</a></p>
           </div>
       </div>
     </div>
