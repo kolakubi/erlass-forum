@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2020 at 07:51 AM
+-- Generation Time: Mar 07, 2020 at 02:04 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -48,6 +48,28 @@ INSERT INTO `kategori` (`idkategori`, `namakategori`) VALUES
 ('mp2', 'Menulis pemula lv 2'),
 ('mp3', 'Menulis pemula lv 3'),
 ('mp4', 'Menulis pemula lv 4');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `komentar`
+--
+
+CREATE TABLE `komentar` (
+  `idkomentar` int(11) NOT NULL,
+  `idpost` int(11) NOT NULL,
+  `idkomentator` int(11) NOT NULL,
+  `waktukomentar` datetime NOT NULL DEFAULT current_timestamp(),
+  `isikomentar` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `komentar`
+--
+
+INSERT INTO `komentar` (`idkomentar`, `idpost`, `idkomentator`, `waktukomentar`, `isikomentar`) VALUES
+(2, 1, 2, '2020-03-07 19:24:00', 'artikelnya bagus banget kak'),
+(3, 2, 6, '2020-03-07 20:02:30', 'keren abiezz');
 
 -- --------------------------------------------------------
 
@@ -136,18 +158,21 @@ CREATE TABLE `postrating` (
   `idrating` int(11) NOT NULL,
   `idpost` int(11) NOT NULL,
   `idpenilai` int(11) NOT NULL,
-  `nilairating` int(11) NOT NULL
+  `nilairating` int(11) NOT NULL,
+  `wakturating` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `postrating`
 --
 
-INSERT INTO `postrating` (`idrating`, `idpost`, `idpenilai`, `nilairating`) VALUES
-(1, 1, 2, 5),
-(2, 1, 4, 4),
-(3, 1, 5, 4),
-(4, 1, 6, 5);
+INSERT INTO `postrating` (`idrating`, `idpost`, `idpenilai`, `nilairating`, `wakturating`) VALUES
+(1, 1, 2, 5, '2020-03-07 19:21:05'),
+(2, 1, 4, 4, '2020-03-07 19:21:05'),
+(3, 1, 5, 4, '2020-03-07 19:21:05'),
+(4, 1, 6, 5, '2020-03-07 19:21:05'),
+(7, 1, 2, 4, '2020-03-07 19:24:00'),
+(8, 2, 6, 5, '2020-03-07 20:02:30');
 
 --
 -- Indexes for dumped tables
@@ -158,6 +183,14 @@ INSERT INTO `postrating` (`idrating`, `idpost`, `idpenilai`, `nilairating`) VALU
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`idkategori`);
+
+--
+-- Indexes for table `komentar`
+--
+ALTER TABLE `komentar`
+  ADD PRIMARY KEY (`idkomentar`),
+  ADD KEY `idpost` (`idpost`),
+  ADD KEY `idkomentator` (`idkomentator`);
 
 --
 -- Indexes for table `login`
@@ -193,6 +226,12 @@ ALTER TABLE `postrating`
 --
 
 --
+-- AUTO_INCREMENT for table `komentar`
+--
+ALTER TABLE `komentar`
+  MODIFY `idkomentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
@@ -208,11 +247,18 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT for table `postrating`
 --
 ALTER TABLE `postrating`
-  MODIFY `idrating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idrating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `komentar`
+--
+ALTER TABLE `komentar`
+  ADD CONSTRAINT `komentar_ibfk_1` FOREIGN KEY (`idpost`) REFERENCES `post` (`idpost`),
+  ADD CONSTRAINT `komentar_ibfk_2` FOREIGN KEY (`idkomentator`) REFERENCES `member` (`id_member`);
 
 --
 -- Constraints for table `member`
