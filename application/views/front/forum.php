@@ -11,25 +11,44 @@
     </h1>
 
     <!-- Blog Post -->
+    <?php foreach($posts as $post) : ?>
     <div class="card mb-4">
-      <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+      <!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
+     
       <div class="card-body">
-        <h2 class="card-title">Post Title</h2>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-        <a href="<?php echo base_url() ?>postdetail" class="btn btn-primary">Read More &rarr;</a>
+
+        <!-- judul -->
+        <h2 class="card-title"><?php echo $post['judul'] ?></h2>
+        
+        <!-- isi post -->
+        <p class="card-text"><?php echo $post['isipost'] ?></p>
+        
+        <!-- baca -->
+        <a href="<?php echo base_url() ?>postdetail" class="btn btn-primary">Baca &rarr;</a>
       </div>
+
+
       <div class="card-footer text-muted">
-        Posted on January 1, 2017 by
-        <a href="#">Start Bootstrap</a>
+
+        <!-- penulis -->
+        <?php echo $post['waktupublish'] ?> | Oleh
+        <a href="#"><?php echo $post['nama'] ?></a>
       </div>
+
       <div class="card-footer text-muted">
-        Categories
-        <a href="#">Menulis Pemula</a>
+        <!-- kategori -->
+        Kategori: 
+        <a href="#"><?php echo $post['namakategori'] ?></a>
       </div>
+
       <div class="card-footer text-muted">
-        Rating 4.5 / 5 | Dari 100 vote
+        <!-- point & vote -->
+        Point <?php echo $post['totalpoint'] ?> | Dari <?php echo $post['totalvote'] ?> vote
       </div>
-    </div>
+
+    </div> <!-- end of card -->
+
+    <?php endforeach ?>
 
     <!-- Pagination -->
     <ul class="pagination justify-content-center mb-4">

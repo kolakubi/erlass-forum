@@ -15,9 +15,10 @@
             // cek jika login
             if($this->session->userdata('id_member')){
 
+                $data['point'] = false;
                 // jika sdh login, beri akses
                 $this->load->view('front/header');
-                $this->load->view('front/pelatihan');
+                $this->load->view('front/pelatihan', $data);
                 $this->load->view('front/footer');
 
             }
@@ -31,7 +32,13 @@
         } // end of function index
 
 
-        public function level($level){
+        public function menulisPemula($level){
+
+            // set point untuk bisa akses
+            $pointLv1 = 0;
+            $pointLv2 = 10;
+            $pointLv3 = 20;
+            $pointLv4 = 40;
 
             // ambil point dari data session
             $idmember = $this->session->userdata('id_member');
@@ -41,39 +48,52 @@
             // jumlahkan point
             // loop buat jumlahin total nilai
             $totalPoint = 0;
-            for($i=0; $i<count($arrayPoint); $i++){
-                $totalPoint += $arrayPoint[$i]['nilairating'];
+
+            if($arrayPoint){
+                for($i=0; $i<count($arrayPoint); $i++){
+                    $totalPoint += $arrayPoint[$i]['nilairating'];
+                }
             }
 
             // jika point tidak sesuai, tampilkan notif
 
             $akses = false;
-            if($level == 1 && $totalPoint >= 10){
+            $pelatihan = '';
+
+            if($level == 1 && $totalPoint >= $pointLv1){
                 $akses = true;
+                $pelatihan = 'mp1';
             }
-            if($level == 2 && $totalPoint >= 10){
+            if($level == 2 && $totalPoint >= $pointLv2){
                 $akses = true;
+                $pelatihan = 'mp2';
             }
-            if($level == 3 && $totalPoint >= 20){
+            if($level == 3 && $totalPoint >= $pointLv3){
                 $akses = true;
+                $pelatihan = 'mp3';
             }
-            if($level == 4 && $totalPoint >= 50){
+            if($level == 4 && $totalPoint >= $pointLv4){
                 $akses = true;
+                $pelatihan = 'mp4';
             }
 
             if($akses){
 
-                echo "point cukup";
-                die();
+                // simpan category di session
+
+                $this->session->set_userdata(['pelatihan' => $pelatihan]);
+
+                redirect('/forum');
 
             }else{
 
-                echo "point belum cukup";
-                die();
 
+                $data['point'] = true;
+                // level poitn belum cukup tampilkan notif
                 $this->load->view('front/header');
-                $this->load->view('front/pelatihan');
+                $this->load->view('front/pelatihan', $data);
                 $this->load->view('front/footer');
+                
             }
 
             

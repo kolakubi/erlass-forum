@@ -8,15 +8,27 @@
 
   <section id="about">
     <div class="container">
+
+
+      <!-- error point belum cukup -->
+      <?php if($point) : ?>
+      <div class="pesan-error-form user">
+        <span>Maaf point kamu belum cukup untuk level tersebut</span>
+        <br>
+        <span>Tingkatkan terus point mu</span>
+      </div>
+      <br>
+      <?php endif ?>
+
       <div class="row">
 
           <!-- level 1 -->
           <div class="col-md-4 text-center">
             <p>Menulis Pemula</p>
-            <p><a href="<?php echo base_url() ?>pelatihan/level/1">level 1</a></p>
-            <p><a href="<?php echo base_url() ?>pelatihan/level/2">level 2</a></p>
-            <p><a href="<?php echo base_url() ?>pelatihan/level/3">level 3</a></p>
-            <p><a href="<?php echo base_url() ?>pelatihan/level/4">level 4</a></p>
+            <p><a href="<?php echo base_url() ?>pelatihan/menulispemula/1">level 1</a></p>
+            <p><a href="<?php echo base_url() ?>pelatihan/menulispemula/2">level 2</a></p>
+            <p><a href="<?php echo base_url() ?>pelatihan/menulispemula/3">level 3</a></p>
+            <p><a href="<?php echo base_url() ?>pelatihan/menulispemula/4">level 4</a></p>
           </div>
 
           <!-- level 2 -->
