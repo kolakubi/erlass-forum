@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <!-- error jika emai sudah dipakai -->
+                <!-- error jika email sudah dipakai -->
                 <?php if($email) : ?>
                 <div class="pesan-error-form user">
                   <span>Email sudah terdaftar</span>

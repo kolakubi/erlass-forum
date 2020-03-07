@@ -6,9 +6,13 @@
   <!-- Blog Entries Column -->
   <div class="col-md-8">
 
-    <h1 class="my-4">Page Heading
-      <small>Secondary Text</small>
+    <h1 class="my-4"><?php echo $posts[0]['namakategori'] ?>
+      <small>Kategori pemula</small>
     </h1>
+
+    <p>
+      <a class="btn btn-primary" href="#">Mulai menulis &#9998;</a>
+    </p>
 
     <!-- Blog Post -->
     <?php foreach($posts as $post) : ?>
@@ -23,8 +27,8 @@
         <!-- isi post -->
         <p class="card-text"><?php echo $post['isipost'] ?></p>
         
-        <!-- baca -->
-        <a href="<?php echo base_url() ?>postdetail" class="btn btn-primary">Baca &rarr;</a>
+        <!-- tombol baca -->
+        <a href="<?php echo base_url() ?>postdetail/post/<?php echo $post['idpost'] ?>" class="btn btn-primary">Baca &rarr;</a>
       </div>
 
 
