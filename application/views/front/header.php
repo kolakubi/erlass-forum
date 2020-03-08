@@ -11,11 +11,11 @@
   <title>Scrolling Nav - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link rel="stylesheet" href="<?php echo base_url() ?>asset/bootstrap/bootstrap.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>asset/bootstrap/bootstrap-scrolling-nav.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/bootstrap/css/bootstrap-scrolling-nav.css">
 
   <!-- CSS Mal -->
   <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/mal.css">
@@ -50,10 +50,16 @@
           <!-- jika sdh login login -->
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger">Halo, <?php echo $this->session->userdata('nama') ?></a>
+            <ul>
+              <li class="nav-item">
+                <a class="dropdown-item">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="dropdown-item" href="<?php echo base_url() ?>logout">Logout</a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url() ?>logout">Logout</a>
-          </li>
+          
           <?php endif ?>
         </ul>
       </div>

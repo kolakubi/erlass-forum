@@ -55,11 +55,13 @@
 
                 );
 
-                echo "<pre>";
-                print_r($dataposting);
-                echo "</pre>";
+                $result = $this->posting_model->simpanpost($dataposting);
 
-                die();
+                if($result){
+
+                    redirect('forum');
+
+                }
 
             }
 

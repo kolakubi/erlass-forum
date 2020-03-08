@@ -31,6 +31,7 @@
             // $this->db->join('postrating', 'post.idpost = postrating.idpost');
             $this->db->join('member', 'post.idauthor = member.id_member');
             $this->db->where('post.idkategori', $kategori);
+            $this->db->order_by('waktupublish', 'DESC');
             $result = $this->db->get()->result_array();
 
             return $result;
