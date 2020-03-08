@@ -7,14 +7,20 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php base_url() ?>asset/jquery/jquery.min.js"></script>
+  <script src="<?php base_url() ?>asset/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="<?php base_url() ?>asset/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
+
+  <!-- ckeditor -->
+  <script src="<?php base_url() ?>asset/ckeditor/ckeditor.js"></script>
+
+  <!-- mal script -->
+  <script src="<?php base_url() ?>asset/js/mal.js"></script>
 
 </body>
 

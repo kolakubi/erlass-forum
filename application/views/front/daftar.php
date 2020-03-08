@@ -142,7 +142,7 @@
                 <?php echo form_close() ?>
                 <hr>
                 
-              </form>
+              <!-- </form> -->
               <hr>
               
               <div class="text-center">

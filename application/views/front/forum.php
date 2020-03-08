@@ -11,7 +11,7 @@
     </h1>
 
     <p>
-      <a class="btn btn-primary" href="#">Mulai menulis &#9998;</a>
+      <a class="btn btn-primary" href="<?php echo base_url() ?>posting">Mulai menulis &#9998;</a>
     </p>
 
     <!-- Blog Post -->
