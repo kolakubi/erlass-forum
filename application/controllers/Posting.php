@@ -48,7 +48,7 @@
 
                 $dataposting = array(
 
-                    'judul' => $this->input->post('judul'),
+                    'judul' => html_escape($this->input->post('judul')),
                     'isipost' => $this->input->post('isipost'),
                     'idauthor' => $this->session->userdata('id_member'),
                     'idkategori' => $this->session->userdata('pelatihan'),

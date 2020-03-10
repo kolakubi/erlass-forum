@@ -6,6 +6,23 @@
 
             parent::__construct();
 
+            // cek jika login
+            if($this->session->userdata('id_member')){
+
+                if($this->session->userdata('id_member') == 1){
+                    
+                    // jika admin yg login, redirect ke admin
+                    redirect('/admin');
+                }
+
+            }
+            else{
+
+                // jika belum login, redirect ke login
+                redirect('/login');
+
+            }
+
         }
 
 

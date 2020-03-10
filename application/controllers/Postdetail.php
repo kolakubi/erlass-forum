@@ -17,12 +17,6 @@
         }
 
 
-        public function index($idpost){
-
-            
-
-        }
-
         public function post($idpost){
 
             //ambil post data
@@ -104,7 +98,7 @@
 
                 // ambil value dr field
                 $datakomentar = array(
-                    'komentar' => $this->input->post('komentar'),
+                    'komentar' => html_escape($this->input->post('komentar')),
                     'rating' => $this->input->post('rating'),
                     'idkomentator' => $this->session->userdata('id_member'),
                     'idpost' => $idpost
