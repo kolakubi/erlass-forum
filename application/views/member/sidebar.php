@@ -44,7 +44,7 @@
 
 <!-- Nav Item - Artikel -->
 <li class="nav-item">
-  <a class="nav-link" href="#">
+  <a class="nav-link" href="<?php echo base_url() ?>member/post">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>Artikel</span></a>
 </li>

@@ -38,8 +38,6 @@
         }
 
 
-
-
         public function profil(){
 
             $this->load->view('member/header');
@@ -48,7 +46,19 @@
             $this->load->view('member/profil');
             $this->load->view('member/footer');
 
-        }
+        } // end of function profil
+
+
+
+        public function post(){
+
+            $this->load->view('member/header');
+            $this->load->view('member/sidebar');
+            $this->load->view('member/topbar');
+            $this->load->view('member/post');
+            $this->load->view('member/footer');
+
+        } // end of function post
 
 
     }

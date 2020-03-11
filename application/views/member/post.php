@@ -11,13 +11,20 @@
 
     <div class="col-md-6 offset-md-3">
         <div class="card shadow mb-4">
-            
-            <!-- Nama -->
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Malmahsyar</h6>
-            </div> <!-- card header -->
-
             <div class="card-body">
+
+                <!-- nama -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="text-md font-weight-bold text-primary mb-1">
+                            Nama:
+                        </div>
+                    </div>
+                    <div class="col">
+                        Malmahsyar
+                    </div>
+                </div>
+                <!-- end of nama -->
 
                  <!-- No Induk -->
                  <div class="row">
