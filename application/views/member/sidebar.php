@@ -29,7 +29,7 @@
 
 <!-- Nav Item - Artikel -->
 <li class="nav-item">
-  <a class="nav-link" href="#">
+  <a class="nav-link" href="<?php echo base_url() ?>member/profil">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>Profil</span></a>
 </li>
