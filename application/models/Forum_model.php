@@ -38,5 +38,33 @@
 
         }
 
+        public function ambilDataPostDarikategoriLimit($kategori, $limit, $start){
+
+            $this->db->select('*');
+            $this->db->from('post');
+            $this->db->join('kategori', 'post.idkategori = kategori.idkategori');
+            // $this->db->join('postrating', 'post.idpost = postrating.idpost');
+            $this->db->join('member', 'post.idauthor = member.id_member');
+            $this->db->where('post.idkategori', $kategori);
+            $this->db->order_by('waktupublish', 'DESC');
+            $this->db->limit($limit, $start);
+            $result = $this->db->get()->result_array();
+
+            return $result;
+
+        }
+
+        //ambil data mahasiswa dari database
+        function ambilDataPost($limit, $start){
+            $query = $this->db->get('post', $limit, $start);
+            return $query;
+        }
+
+        public function ambilTotalPost(){
+
+            return $this->db->count_all('post');
+
+        }
+
 
     }
