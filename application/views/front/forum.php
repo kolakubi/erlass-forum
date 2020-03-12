@@ -1,10 +1,10 @@
 <!-- Page Content -->
-<div class="container">
+<div class="container" style="padding-bottom: 60px">
 
 <div class="row">
 
   <!-- Blog Entries Column -->
-  <div class="col-md-8">
+  <div class="col-md-12">
 
     <h1 class="my-4"><?php echo $posts[0]['namakategori'] ?>
       <small>Kategori pemula</small>
@@ -36,18 +36,14 @@
 
         <!-- penulis -->
         <?php echo $post['waktupublish'] ?> | Oleh
-        <a href="#"><?php echo $post['nama'] ?></a>
-      </div>
+        <a href="#"><?php echo $post['nama'] ?></a> |
 
-      <div class="card-footer text-muted">
         <!-- kategori -->
         Kategori: 
-        <a href="#"><?php echo $post['namakategori'] ?></a>
-      </div>
+        <a href="#"><?php echo $post['namakategori'] ?></a> |
 
-      <div class="card-footer text-muted">
-        <!-- point & vote -->
-        <span class="text-warning font-weight-bold">
+         <!-- point & vote -->
+         <span class="text-warning font-weight-bold">
           <?php echo $post['totalpoint'] ?>
         </span> <i class="fas fa-star" style="color: orange"></i> | Dari <?php echo $post['totalvote'] ?> vote
       </div>

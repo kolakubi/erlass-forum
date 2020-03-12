@@ -8,8 +8,8 @@
 	    
         
         <!-- Custom styles for this template-->
-        <link rel="stylesheet" href="<?php echo base_url() ?>asset/bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="<?php echo base_url() ?>asset/bootstrap/css/bootstrap-modif-min.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>asset/vendor/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="<?php echo base_url() ?>asset/vendor/bootstrap/css/bootstrap-modif-min.css">
 
         <!-- CSS Mal -->
         <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/mal.css">
@@ -19,42 +19,6 @@
     <body class="bg-gradient-primary">
 
   <div class="container">
-
-  <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="<?php echo base_url() ?>">Erlass Forum</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url() ?>forum">Forum</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url() ?>pelatihan">Pelatihan</a>
-          </li>
-
-          <!-- jika belum login -->
-          <?php if(!$this->session->userdata('level')) : ?>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url() ?>login">Login</a>
-          </li>
-          <?php else : ?>
-
-          <!-- jika sdh login login -->
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger">Halo, <?php echo $this->session->userdata('nama') ?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url() ?>logout">Logout</a>
-          </li>
-          <?php endif ?>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
     <!-- Outer Row -->
     <div class="row justify-content-center">

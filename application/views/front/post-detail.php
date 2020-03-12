@@ -1,7 +1,7 @@
 
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container" style="padding-bottom: 60px">
 
     <div class="row">
 

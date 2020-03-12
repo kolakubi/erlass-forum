@@ -17,8 +17,7 @@
 
         }
 
-
-        public function index(){
+        public function configPagination(){
 
             //konfigurasi pagination
             $config['base_url'] = site_url('forum/index'); //site url
@@ -48,6 +47,16 @@
             $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
             $config['last_tagl_close']  = '</span></li>';
 
+            return $config;
+            
+        } // end of function configpagination
+
+
+        public function index(){
+
+            $config = $this->configPagination();
+
+
             $this->pagination->initialize($config);
 
             $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
@@ -60,7 +69,7 @@
             $semuaPost = $this->forum_model->ambilDataPostDarikategoriLimit($kategori, $config["per_page"], $data['page']);
 
             // set panjang char excerpt
-            $postExcerpt = 250;
+            $postExcerpt = 150;
 
             // ambil point dari post
             foreach ($semuaPost as $key => $post) {

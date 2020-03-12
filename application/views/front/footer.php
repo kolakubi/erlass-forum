@@ -94,7 +94,7 @@
   <script src="<?php echo base_url() ?>asset/js/main.js"></script>
 
   <!-- ckeditor -->
-  <script src="<?php echo base_url() ?>asset/ckeditor/ckeditor.js"></script>
+  <script src="<?php echo base_url() ?>asset/vendor/ckeditor/ckeditor.js"></script>
 
   <!-- mal script -->
   <script src="<?php echo base_url() ?>asset/js/mal.js"></script>

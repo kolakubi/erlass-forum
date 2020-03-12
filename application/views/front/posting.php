@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="padding-bottom: 60px">
 
     <div class="well text-center">
     
@@ -40,7 +40,7 @@
 
         <!-- button -->
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a type="submit" class="btn btn-primary" href="<?php base_url() ?>forum">Batal</a>
+        <a type="submit" class="btn btn-danger" href="<?php base_url() ?>forum">Batal</a>
 
     <?php echo form_close() ?>
 
