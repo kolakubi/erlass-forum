@@ -1,20 +1,97 @@
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Mal Corp <?php echo date('Y') ?></p>
+
+</div>
+  
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info" data-aos="fade-up" data-aos-delay="50">
+              <h3>Squadfree</h3>
+              <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
+              <p>
+                A108 Adam Street <br>
+                NY 535022, USA<br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="150">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="250">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter" data-aos="fade-up" data-aos-delay="350">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
     </div>
-    <!-- /.container -->
-  </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="<?php echo base_url() ?>asset/jquery/jquery.min.js"></script>
-  <script src="<?php echo base_url() ?>asset/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Squadfree</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 
-  <!-- Plugin JavaScript -->
-  <script src="<?php echo base_url() ?>asset/jquery-easing/jquery.easing.min.js"></script>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-  <!-- Custom JavaScript for this theme -->
-  <script src="<?php echo base_url() ?>js/scrolling-nav.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="<?php echo base_url() ?>asset/vendor/jquery/jquery.min.js"></script>
+  <script src="<?php echo base_url() ?>asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo base_url() ?>asset/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="<?php echo base_url() ?>asset/vendor/php-email-form/validate.js"></script>
+  <script src="<?php echo base_url() ?>asset/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="<?php echo base_url() ?>asset/vendor/counterup/counterup.min.js"></script>
+  <script src="<?php echo base_url() ?>asset/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="<?php echo base_url() ?>asset/vendor/venobox/venobox.min.js"></script>
+  <script src="<?php echo base_url() ?>asset/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="<?php echo base_url() ?>asset/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="<?php echo base_url() ?>asset/js/main.js"></script>
 
   <!-- ckeditor -->
   <script src="<?php echo base_url() ?>asset/ckeditor/ckeditor.js"></script>

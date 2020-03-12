@@ -2,66 +2,86 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Scrolling Nav - Start Bootstrap Template</title>
+  <title>Squadfree Bootstrap Template - Index</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
 
-  <!-- Bootstrap core CSS -->
-  <link href="<?php echo base_url() ?>asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="<?php echo base_url() ?>asset/img/favicon.png" rel="icon">
+  <link href="<?php echo base_url() ?>asset/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Custom styles for this template-->
-  <link rel="stylesheet" href="<?php echo base_url() ?>asset/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="<?php echo base_url() ?>asset/bootstrap/css/bootstrap-scrolling-nav.css">
+  <!-- font awesome -->
+  <link href="<?php echo base_url() ?>asset/sbadmin2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-  <!-- CSS Mal -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/mal.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
+  <link href="<?php echo base_url() ?>asset/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>asset/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>asset/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>asset/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>asset/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>asset/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="<?php echo base_url() ?>asset/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Squadfree - v2.0.0
+  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
-<body id="page-top">
+<body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="<?php echo base_url() ?>">Erlass Forum</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url() ?>forum">Forum</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url() ?>pelatihan">Pelatihan</a>
-          </li>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex">
+
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="index.html"><span style="color: black">Erlass</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="<?php echo base_url() ?>">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="<?php echo base_url() ?>pelatihan">Pelatihan</a></li>
+
 
           <!-- jika belum login -->
           <?php if(!$this->session->userdata('level')) : ?>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?php echo base_url() ?>login">Login</a>
+          <li>
+            <a href="<?php echo base_url() ?>login">Login</a>
           </li>
           <?php else : ?>
 
           <!-- jika sdh login login -->
-          <li class="nav-item">
+          <li class="drop-down">
             <a class="nav-link js-scroll-trigger">Halo, <?php echo $this->session->userdata('nama') ?></a>
             <ul>
-              <li class="nav-item">
-                <a class="dropdown-item" href="<?php echo base_url() ?>member">Dashboard</a>
+              <li>
+                <a href="<?php echo base_url() ?>member">Dashboard</a>
               </li>
-              <li class="nav-item">
-                <a class="dropdown-item" href="<?php echo base_url() ?>logout">Logout</a>
+              <li>
+                <a href="<?php echo base_url() ?>logout">Logout</a>
               </li>
             </ul>
           </li>
-          
           <?php endif ?>
+
         </ul>
-      </div>
+      </nav><!-- .nav-menu -->
+
     </div>
-  </nav>
+  </header><!-- End Header -->
+
+  <div style="padding-top: 100px">

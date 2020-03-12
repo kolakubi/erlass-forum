@@ -11,7 +11,7 @@
     </h1>
 
     <p>
-      <a class="btn btn-primary" href="<?php echo base_url() ?>posting">Mulai menulis &#9998;</a>
+      <a class="btn btn-danger" href="<?php echo base_url() ?>posting">Mulai menulis &#9998;</a>
     </p>
 
     <!-- Blog Post -->
@@ -47,7 +47,9 @@
 
       <div class="card-footer text-muted">
         <!-- point & vote -->
-        Point <?php echo $post['totalpoint'] ?> | Dari <?php echo $post['totalvote'] ?> vote
+        <span class="text-warning font-weight-bold">
+          <?php echo $post['totalpoint'] ?>
+        </span> <i class="fas fa-star" style="color: orange"></i> | Dari <?php echo $post['totalvote'] ?> vote
       </div>
 
     </div> <!-- end of card -->

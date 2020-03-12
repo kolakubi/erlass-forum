@@ -6,7 +6,7 @@
     <div class="row">
 
       <!-- Post Content Column -->
-      <div class="col-lg-8">
+      <div class="col-md-8">
 
         <!-- Title -->
         <h1 class="mt-4"><?php echo $posts['judul'] ?></h1>
@@ -35,7 +35,9 @@
         <hr>
 
         <!-- point dan vote -->
-        <p>Point <?php echo $posts['totalpoint'] ?> | Dari <?php echo $posts['totalvote'] ?> Vote </p>
+        <span class="text-warning font-weight-bold">
+          <?php echo $posts['totalpoint'] ?>
+        </span> <i class="fas fa-star" style="color: orange"></i> | Dari <?php echo $posts['totalvote'] ?> Vote </p>
 
         <hr>
 
@@ -84,36 +86,48 @@
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="rating" id="rating1" value="1" checked>
                     <label class="form-check-label" for="rating1">
-                        *
+                      <i class="fas fa-star" style="color: orange"></i>
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="rating" id="rating2" value="2">
                     <label class="form-check-label" for="rating2">
-                        **
+                      <i class="fas fa-star" style="color: orange"></i>
+                      <i class="fas fa-star" style="color: orange"></i>
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="rating" id="rating3" value="3">
                     <label class="form-check-label" for="rating3">
-                        ***
+                      <i class="fas fa-star" style="color: orange"></i>
+                      <i class="fas fa-star" style="color: orange"></i>
+                      <i class="fas fa-star" style="color: orange"></i>
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="rating" id="rating4" value="4">
                     <label class="form-check-label" for="rating4">
-                        ****
+                      <i class="fas fa-star" style="color: orange"></i>
+                      <i class="fas fa-star" style="color: orange"></i>
+                      <i class="fas fa-star" style="color: orange"></i>
+                      <i class="fas fa-star" style="color: orange"></i>
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="rating" id="rating5" value="5">
                     <label class="form-check-label" for="rating5">
-                        *****
+                      <i class="fas fa-star" style="color: orange"></i>
+                      <i class="fas fa-star" style="color: orange"></i>
+                      <i class="fas fa-star" style="color: orange"></i>
+                      <i class="fas fa-star" style="color: orange"></i>
+                      <i class="fas fa-star" style="color: orange"></i>
                     </label>
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Beri Komentar dan Point</button>
+
+              <a class="btn btn-danger" href="<?php echo base_url() ?>forum">Kembali</a>
 
               
               <?php echo form_close() ?>
