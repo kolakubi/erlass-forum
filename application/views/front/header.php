@@ -52,7 +52,7 @@
             <a class="nav-link js-scroll-trigger">Halo, <?php echo $this->session->userdata('nama') ?></a>
             <ul>
               <li class="nav-item">
-                <a class="dropdown-item">Dashboard</a>
+                <a class="dropdown-item" href="<?php echo base_url() ?>member">Dashboard</a>
               </li>
               <li class="nav-item">
                 <a class="dropdown-item" href="<?php echo base_url() ?>logout">Logout</a>

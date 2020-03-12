@@ -34,8 +34,7 @@
             $this->load->view('member/dashboard');
             $this->load->view('member/footer');
 
-
-        }
+        } // end of function index
 
 
         public function profil(){
@@ -59,6 +58,18 @@
             $this->load->view('member/footer');
 
         } // end of function post
+
+
+
+        public function level(){
+
+            $this->load->view('member/header');
+            $this->load->view('member/sidebar');
+            $this->load->view('member/topbar');
+            $this->load->view('member/level');
+            $this->load->view('member/footer');
+
+        } // end of function level
 
 
     }

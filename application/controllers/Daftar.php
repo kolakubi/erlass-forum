@@ -85,6 +85,11 @@
                 $sekolah = $this->input->post('sekolah');
                 $hp = $this->input->post('hp');
 
+                // $dataMember = array(
+                //     'email' => $this->input->post('email');,
+                //     ''
+                // );
+
                 // jika password yg dimasukkan berbeda
                 if($password !== $repeatpassword){
                     $data['gagal'] = false;
@@ -110,27 +115,7 @@
                     // jika email belum dipakai
                     else{
 
-                        $datamember = array(
-                            'email' => $this->input->post('email'),
-                            'password' => $this->input->post('password'),
-                            'nama' => $this->input->post('nama'),
-                            'nomorinduk' => $this->input->post('email'),
-                            'alamat' => $this->input->post('alamat'),
-                            'sekolah' => $this->input->post('sekolah'),
-                            'hp' => $this->input->post('hp')
-                        );
-
-                        $simpanmember = $this->daftar_model->simpanmember($datamember);
-
-                        if($simpanmember){
-
-                            $status['daftar'] = true;
-                            $status['gagal'] = false;
-                            $this->load->view('front/login', $status);
-                        }else{
-                            echo 'ada kesalahan';
-                            die();
-                        }
+                        
 
                     }
                 } // end of cek password sama

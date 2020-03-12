@@ -49,11 +49,18 @@
   <script src="<?php echo base_url() ?>asset/sbadmin2/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/chart.js/Chart.min.js"></script>
+  <!-- <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/chart.js/Chart.min.js"></script> -->
 
   <!-- Page level custom scripts -->
-  <script src="<?php echo base_url() ?>asset/sbadmin2/js/demo/chart-area-demo.js"></script>
-  <script src="<?php echo base_url() ?>asset/sbadmin2/js/demo/chart-pie-demo.js"></script>
+  <!-- <script src="<?php echo base_url() ?>asset/sbadmin2/js/demo/chart-area-demo.js"></script>
+  <script src="<?php echo base_url() ?>asset/sbadmin2/js/demo/chart-pie-demo.js"></script> -->
+
+  <!-- datatable -->
+  <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- datatable setting -->
+  <script src="<?php echo base_url() ?>asset/sbadmin2/js/demo/datatables-demo.js"></script>
 
 
 </body>

@@ -1,99 +1,80 @@
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Artikel</h1>
+          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
-<!-- Begin Page Content -->
-<div class="container-fluid">
-
-
-    <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Profil</h1>
-    </div>
-
-
-    <div class="col-md-6 offset-md-3">
-        <div class="card shadow mb-4">
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Postingan</h6>
+            </div>
             <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Judul</th>
+                      <th>Kategori</th>
+                      <th>Dilihat</th>
+                      <th>Point</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>No</th>
+                      <th>Judul</th>
+                      <th>Kategori</th>
+                      <th>Dilihat</th>
+                      <th>Point</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mencegah Bakteri Jahat</td>
+                        <td>Menulis Pemula lv 1</td>
+                        <td>100 view</td>
+                        <td>50</td>
+                        <td>
+                            <a href="" class="btn btn-danger">
+                                <i class="fas fa-fw fa-trash"></i>
+                            </a>
+                            <a href="" class="btn btn-success">
+                                <i class="fas fa-fw fa-eye"></i>
+                            </a>
+                            <a href="" class="btn btn-primary">
+                                <i class="fas fa-fw fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Mencegah Bakteri Jahat</td>
+                        <td>Menulis Pemula lv 1</td>
+                        <td>100 view</td>
+                        <td>50</td>
+                        <td>
+                            <a href="" class="btn btn-danger">
+                                <i class="fas fa-fw fa-trash"></i>
+                            </a>
+                            <a href="" class="btn btn-success">
+                                <i class="fas fa-fw fa-eye"></i>
+                            </a>
+                            <a href="" class="btn btn-primary">
+                                <i class="fas fa-fw fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                  </tbody>
 
-                <!-- nama -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="text-md font-weight-bold text-primary mb-1">
-                            Nama:
-                        </div>
-                    </div>
-                    <div class="col">
-                        Malmahsyar
-                    </div>
-                </div>
-                <!-- end of nama -->
+                </table> <!-- end of table -->
+            </div>  <!-- end of table-responsive -->
+            </div> <!-- end of Card-body -->
+        </div> <!-- end of card-shadow -->
 
-                 <!-- No Induk -->
-                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="text-md font-weight-bold text-primary mb-1">
-                            No Induk:
-                        </div>
-                    </div>
-                    <div class="col">
-                        12479464648764613
-                    </div>
-                </div>
-                <!-- end of No Induk -->
-
-                <!-- alamat -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="text-md font-weight-bold text-primary mb-1">
-                            Alamat:
-                        </div>
-                    </div>
-                    <div class="col">
-                        Jalan Kelapa Dua Wetan III no 29
-                    </div>
-                </div>
-                <!-- end of alamat -->
-
-                <!-- HP -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="text-md font-weight-bold text-primary mb-1">
-                            Telp/HP:
-                        </div>
-                    </div>
-                    <div class="col">
-                        0856873112233
-                    </div>
-                </div>
-                <!-- end of HP -->
-
-                <!-- Email -->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="text-md font-weight-bold text-primary mb-1">
-                            Email:
-                        </div>
-                    </div>
-                    <div class="col">
-                        mal.mahsyar@gmail.com
-                    </div>
-                </div>
-                <!-- end of Email -->
-
-                <hr>
-                
-                <!-- button edit -->
-                <div class="my-2"></div>
-                  <a href="#" class="btn btn-primary btn-icon-split">
-                    <span class="icon text-white-50">
-                      <i class="fa fa-edit"></i>
-                    </span>
-                    <span class="text">Edit</span>
-                  </a>
-
-
-
-            </div> <!-- end of card body -->
-        </div> <!-- end of card shadow -->
-    </div> <!-- col-md-6 -->
-
-
-</div> <!-- end container-fluid -->
+    </div> <!-- end of container-fluid -->

@@ -22,28 +22,141 @@
 
       <div class="row">
 
-          <!-- level 1 -->
+          <!-- Menulis Pemula -->
           <div class="col-md-4 text-center">
-            <p>Menulis Pemula</p>
-            <p><a href="<?php echo base_url() ?>pelatihan/menulispemula/1">level 1</a></p>
-            <p><a href="<?php echo base_url() ?>pelatihan/menulispemula/2">level 2</a></p>
-            <p><a href="<?php echo base_url() ?>pelatihan/menulispemula/3">level 3</a></p>
-            <p><a href="<?php echo base_url() ?>pelatihan/menulispemula/4">level 4</a></p>
-          </div>
+            <h2>Menulis Pemula</h2>
 
-          <!-- level 2 -->
-          <div class="col-md-4 text-center">
-            <p>Menulis Buku</p>
-            <p><a href="<?php echo base_url() ?>pelatihan/level/2">pilih</a></p>
-          </div>
+            <!-- level 1 -->
+            <div class="card border-secondary mb-3">
+              <div class="card-header">Level 1</div>
+                <div class="card-body text-secondary">
+                <p class="card-text">Tingkat kesulitan rendah</p>
+                <a href="<?php echo base_url() ?>pelatihan/menulispemula/1" class="btn btn-secondary">Ikut Pelatihan</a>
+              </div>
+            </div>
 
-          <!-- level 3 -->
+            <!-- level 2 -->
+            <div class="card border-success mb-3">
+              <div class="card-header">Level 2</div>
+                <div class="card-body text-success">
+                <p class="card-text">Tingkat kesulitan Menengah</p>
+                <a href="<?php echo base_url() ?>pelatihan/menulispemula/2" class="btn btn-success">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+            <!-- level 3 -->
+            <div class="card border-primary mb-3">
+              <div class="card-header">Level 3</div>
+                <div class="card-body text-primary">
+                <p class="card-text">Tingkat kesulitan Lumayan</p>
+                <a href="<?php echo base_url() ?>pelatihan/menulispemula/3" class="btn btn-primary">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+            <!-- level 4 -->
+            <div class="card border-danger mb-4">
+              <div class="card-header">Level 4</div>
+                <div class="card-body text-danger">
+                <p class="card-text">Tingkat kesulitan Tinggi</p>
+                <a href="<?php echo base_url() ?>pelatihan/menulispemula/4" class="btn btn-danger">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+          </div> <!-- end of menulis pemula -->
+
+
+
+          <!-- Menulis buku -->
           <div class="col-md-4 text-center">
-            <p>Editing</p>
-            <p><a href="<?php echo base_url() ?>pelatihan/level/3">pilih</a></p>
-          </div>
-      </div>
-    </div>
+            <h2>Menulis buku</h2>
+
+            <!-- level 1 -->
+            <div class="card border-secondary mb-3">
+              <div class="card-header">Level 1</div>
+                <div class="card-body text-secondary">
+                <p class="card-text">Tingkat kesulitan rendah</p>
+                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/1" class="btn btn-secondary">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+            <!-- level 2 -->
+            <div class="card border-success mb-3">
+              <div class="card-header">Level 2</div>
+                <div class="card-body text-success">
+                <p class="card-text">Tingkat kesulitan Menengah</p>
+                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/2" class="btn btn-success">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+            <!-- level 3 -->
+            <div class="card border-primary mb-3">
+              <div class="card-header">Level 3</div>
+                <div class="card-body text-primary">
+                <p class="card-text">Tingkat kesulitan Lumayan</p>
+                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/3" class="btn btn-primary">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+            <!-- level 4 -->
+            <div class="card border-danger mb-4">
+              <div class="card-header">Level 4</div>
+                <div class="card-body text-danger">
+                <p class="card-text">Tingkat kesulitan Tinggi</p>
+                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/4" class="btn btn-danger">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+          </div> <!-- end of menulis buku -->
+
+
+
+          <!-- excel -->
+          <div class="col-md-4 text-center">
+            <h2>excel</h2>
+
+            <!-- level 1 -->
+            <div class="card border-secondary mb-3">
+              <div class="card-header">Level 1</div>
+                <div class="card-body text-secondary">
+                <p class="card-text">Tingkat kesulitan rendah</p>
+                <a href="<?php echo base_url() ?>pelatihanexcel/1" class="btn btn-secondary">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+            <!-- level 2 -->
+            <div class="card border-success mb-3">
+              <div class="card-header">Level 2</div>
+                <div class="card-body text-success">
+                <p class="card-text">Tingkat kesulitan Menengah</p>
+                <a href="<?php echo base_url() ?>pelatihanexcel/2" class="btn btn-success">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+            <!-- level 3 -->
+            <div class="card border-primary mb-3">
+              <div class="card-header">Level 3</div>
+                <div class="card-body text-primary">
+                <p class="card-text">Tingkat kesulitan Lumayan</p>
+                <a href="<?php echo base_url() ?>pelatihanexcel/3" class="btn btn-primary">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+            <!-- level 4 -->
+            <div class="card border-danger mb-4">
+              <div class="card-header">Level 4</div>
+                <div class="card-body text-danger">
+                <p class="card-text">Tingkat kesulitan Tinggi</p>
+                <a href="<?php echo base_url() ?>pelatihanexcel/4" class="btn btn-danger">Ikut Pelatihan</a>
+              </div>
+            </div>
+
+          </div> <!-- end of excel -->
+
+          
+
+  
+      </div> <!-- end of row -->
+    </div> <!-- end of container -->?
   </section>
 
   <section id="services" class="bg-light">
