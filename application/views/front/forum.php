@@ -4,7 +4,7 @@
 <div class="row">
 
   <!-- Blog Entries Column -->
-  <div class="col-md-12">
+  <div class="col-md-8">
 
     <h1 class="my-4"><?php echo $posts[0]['namakategori'] ?>
       <small>Kategori pemula</small>
@@ -16,7 +16,7 @@
 
     <!-- Blog Post -->
     <?php foreach($posts as $post) : ?>
-    <div class="card mb-4">
+    <div class="card mb-4 shadow">
       <!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
      
       <div class="card-body">

@@ -12,10 +12,12 @@
 
       <!-- error point belum cukup -->
       <?php if($point) : ?>
-      <div class="pesan-error-form user">
-        <span>Maaf point kamu belum cukup untuk level tersebut</span>
-        <br>
-        <span>Tingkatkan terus point mu</span>
+      <div class="card text-white bg-danger mb-3 text-center">
+        <div class="card-header">Perhatian</div>
+        <div class="card-body">
+        <h5 class="card-title">Maaf point kamu belum cukup untuk level tersebut</h5>
+        <p class="card-text">Tingkatkan terus point mu</p>
+        </div>
       </div>
       <br>
       <?php endif ?>
@@ -25,6 +27,7 @@
           <!-- Menulis Pemula -->
           <div class="col-md-4 text-center">
             <h2>Menulis Pemula</h2>
+            <p class="text-primary">Kursus diikuti</p>
 
             <!-- level 1 -->
             <div class="card border-secondary mb-3">
@@ -40,7 +43,7 @@
               <div class="card-header">Level 2</div>
                 <div class="card-body text-success">
                 <p class="card-text">Tingkat kesulitan Menengah</p>
-                <a href="<?php echo base_url() ?>pelatihan/menulispemula/2" class="btn btn-success">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihan/menulispemula/2" class="btn btn-success">Point Belum Cukup <i class="fas fa-lock"></i></a>
               </div>
             </div>
 
@@ -49,7 +52,7 @@
               <div class="card-header">Level 3</div>
                 <div class="card-body text-primary">
                 <p class="card-text">Tingkat kesulitan Lumayan</p>
-                <a href="<?php echo base_url() ?>pelatihan/menulispemula/3" class="btn btn-primary">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihan/menulispemula/3" class="btn btn-primary">Point Belum Cukup <i class="fas fa-lock"></i></a>
               </div>
             </div>
 
@@ -58,7 +61,7 @@
               <div class="card-header">Level 4</div>
                 <div class="card-body text-danger">
                 <p class="card-text">Tingkat kesulitan Tinggi</p>
-                <a href="<?php echo base_url() ?>pelatihan/menulispemula/4" class="btn btn-danger">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihan/menulispemula/4" class="btn btn-danger">Point Belum Cukup <i class="fas fa-lock"></i></a>
               </div>
             </div>
 
@@ -69,13 +72,14 @@
           <!-- Menulis buku -->
           <div class="col-md-4 text-center">
             <h2>Menulis buku</h2>
+            <p class="text-danger">Kamu belum mengikuti kursus ini</p>
 
             <!-- level 1 -->
             <div class="card border-secondary mb-3">
               <div class="card-header">Level 1</div>
                 <div class="card-body text-secondary">
                 <p class="card-text">Tingkat kesulitan rendah</p>
-                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/1" class="btn btn-secondary">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/1" class="btn btn-secondary">Buka Pelatihan</a>
               </div>
             </div>
 
@@ -84,7 +88,7 @@
               <div class="card-header">Level 2</div>
                 <div class="card-body text-success">
                 <p class="card-text">Tingkat kesulitan Menengah</p>
-                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/2" class="btn btn-success">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/2" class="btn btn-success">Point Belum Cukup <i class="fas fa-lock"></i></a>
               </div>
             </div>
 
@@ -93,7 +97,7 @@
               <div class="card-header">Level 3</div>
                 <div class="card-body text-primary">
                 <p class="card-text">Tingkat kesulitan Lumayan</p>
-                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/3" class="btn btn-primary">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/3" class="btn btn-primary">Point Belum Cukup <i class="fas fa-lock"></i></a>
               </div>
             </div>
 
@@ -102,7 +106,7 @@
               <div class="card-header">Level 4</div>
                 <div class="card-body text-danger">
                 <p class="card-text">Tingkat kesulitan Tinggi</p>
-                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/4" class="btn btn-danger">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihan/menulisbuku/4" class="btn btn-danger">Point Belum Cukup <i class="fas fa-lock"></i></a>
               </div>
             </div>
 
@@ -112,14 +116,15 @@
 
           <!-- excel -->
           <div class="col-md-4 text-center">
-            <h2>excel</h2>
+            <h2>Excel</h2>
+            <p class="text-danger">Kamu belum mengikuti kursus ini</p>
 
             <!-- level 1 -->
             <div class="card border-secondary mb-3">
               <div class="card-header">Level 1</div>
                 <div class="card-body text-secondary">
                 <p class="card-text">Tingkat kesulitan rendah</p>
-                <a href="<?php echo base_url() ?>pelatihanexcel/1" class="btn btn-secondary">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihanexcel/1" class="btn btn-secondary">Buka Pelatihan</a>
               </div>
             </div>
 
@@ -128,7 +133,7 @@
               <div class="card-header">Level 2</div>
                 <div class="card-body text-success">
                 <p class="card-text">Tingkat kesulitan Menengah</p>
-                <a href="<?php echo base_url() ?>pelatihanexcel/2" class="btn btn-success">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihanexcel/2" class="btn btn-success">Point Belum Cukup <i class="fas fa-lock"></i></a>
               </div>
             </div>
 
@@ -137,7 +142,7 @@
               <div class="card-header">Level 3</div>
                 <div class="card-body text-primary">
                 <p class="card-text">Tingkat kesulitan Lumayan</p>
-                <a href="<?php echo base_url() ?>pelatihanexcel/3" class="btn btn-primary">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihanexcel/3" class="btn btn-primary">Point Belum Cukup <i class="fas fa-lock"></i></a>
               </div>
             </div>
 
@@ -146,7 +151,7 @@
               <div class="card-header">Level 4</div>
                 <div class="card-body text-danger">
                 <p class="card-text">Tingkat kesulitan Tinggi</p>
-                <a href="<?php echo base_url() ?>pelatihanexcel/4" class="btn btn-danger">Ikut Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihanexcel/4" class="btn btn-danger">Point Belum Cukup <i class="fas fa-lock"></i></a>
               </div>
             </div>
 
