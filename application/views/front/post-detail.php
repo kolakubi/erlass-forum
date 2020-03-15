@@ -37,7 +37,7 @@
         <!-- point dan vote -->
         <span class="text-warning font-weight-bold">
           <?php echo $posts['totalpoint'] ?>
-        </span> <i class="fas fa-star" style="color: orange"></i> | Dari <?php echo $posts['totalvote'] ?> Vote </p>
+        </span> <i class="fas fa-star" style="color: orange"></i> | <i class="fas fa-eye"></i> <?php echo $posts['view'] ?>
 
         <hr>
 

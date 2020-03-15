@@ -35,7 +35,7 @@
       <div class="card-footer text-muted">
 
         <!-- penulis -->
-        <?php echo $post['waktupublish'] ?> | Oleh
+        <?php echo $post['waktupublish'] ?> | <i class="fas fa-user"></i>
         <a href="#"><?php echo $post['nama'] ?></a> |
 
         <!-- kategori -->
@@ -45,7 +45,7 @@
          <!-- point & vote -->
          <span class="text-warning font-weight-bold">
           <?php echo $post['totalpoint'] ?>
-        </span> <i class="fas fa-star" style="color: orange"></i> | Dari <?php echo $post['totalvote'] ?> vote
+        </span> <i class="fas fa-star" style="color: orange"></i> | <i class="fas fa-eye"></i> <?php echo $post['view'] ?>
       </div>
 
     </div> <!-- end of card -->

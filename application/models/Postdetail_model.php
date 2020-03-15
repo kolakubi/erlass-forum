@@ -8,6 +8,9 @@
             $this->load->database();
 
         } // end of function construct
+        // ========================================
+
+
 
 
         // ambil data point
@@ -23,6 +26,9 @@
             // result nya array nilai rating
 
         } // end of ambil point
+        // ========================================
+
+
 
         // ambil data post
         public function ambilPostDetail($idpost){
@@ -37,6 +43,9 @@
             return $result;
 
         } // end of ambil detail post
+        // ========================================
+
+
 
         public function simpankomentar($datakomentar){
 
@@ -57,6 +66,9 @@
             return true;
 
         } // end of function simpan komentar
+        // ========================================
+
+
 
         public function ambilkomentar($idpost){
 
@@ -70,5 +82,35 @@
             return $result;
 
         } // end of function ambilkomentar
+        // ========================================
+
+
+
+
+        public function ambiljumlahview($idpost){
+
+            $this->db->select('view');
+            $this->db->from('post');
+            $this->db->where('idpost', $idpost);
+            $result = $this->db->get()->row_array();
+
+            return $result;
+
+        } // end of function ambiljumlahview
+        // ========================================
+
+
+
+        public function updatepostview($idpost, $view){
+
+            $this->db->set('view', $view);
+            $this->db->where('idpost', $idpost);
+            $this->db->update('post');
+
+            return true;
+
+        } // end of function updateview
+        // ========================================
+
 
     } // end of class

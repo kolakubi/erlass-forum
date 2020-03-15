@@ -57,10 +57,19 @@
 
             if($pendaftaran){
 
-                // redirect ke halaman ujian
-                $this->load->view('front/header');
-                $this->load->view('ujian/ujianmenulispemula');
-                $this->load->view('front/footer');
+                if($idpelatihan == 'mp'){
+
+                    // redirect ke halaman ujian
+                    $this->load->view('front/header');
+                    $this->load->view('ujian/menulispemula/lv1');
+                    $this->load->view('front/footer');
+                }else{
+
+                    echo 'sedang dikembangkan';
+
+                }
+
+                
             }
 
         } // end of function ikutipelatihan
@@ -136,7 +145,7 @@
                     if($sudahujian){
 
                         // cek apakah level sdh terbuka
-                        $lvterbuka = $ujian['openlv'.$level];
+                        $lvterbuka = $datastatuspelatihan['openlv'.$level];
 
                         // jika lv terbuka
                         if($lvterbuka){
@@ -157,9 +166,11 @@
                     // jika belum ujian
                     else{
 
+                        echo 'dari belum ujian';
+
                         // redirect ke halaman ujian
                         $this->load->view('front/header');
-                        $this->load->view('ujian/ujianmenulispemula');
+                        $this->load->view('ujian/menulispemula/lv1');
                         $this->load->view('front/footer');
 
                     }
@@ -169,6 +180,12 @@
                 // jika data status belum ada brati belum daftar
                 // redirect ke halaman daftar
                 else{
+
+                    echo 'dari daftar';
+
+                    echo '<pre>';
+                    print_r($this->session->userdata());
+                    echo '</pre>';
 
                     // redirect ke halaman ujian
                     $this->load->view('front/header');

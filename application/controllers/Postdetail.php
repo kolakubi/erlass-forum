@@ -19,6 +19,14 @@
 
         public function post($idpost){
 
+            // update view count
+            $ambilviewcount = $this->postdetail_model->ambiljumlahview($idpost);
+
+            // tambah view +1
+            // simpan viwe
+            $updateview = $ambilviewcount['view']+1;
+            $this->postdetail_model->updatepostview($idpost, $updateview);
+
             //ambil post data
             $postdetail = $this->postdetail_model->ambilPostDetail($idpost);
 
