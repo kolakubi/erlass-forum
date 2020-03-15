@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2020 at 02:06 PM
+-- Generation Time: Mar 15, 2020 at 10:00 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -30,24 +30,25 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `kategori` (
   `idkategori` varchar(10) NOT NULL,
-  `namakategori` varchar(255) NOT NULL
+  `namakategori` varchar(255) NOT NULL,
+  `jenispelatihan` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kategori`
 --
 
-INSERT INTO `kategori` (`idkategori`, `namakategori`) VALUES
-('cd1', 'coding lv 1'),
-('cd2', 'coding lv 2'),
-('mb1', 'Menulis buku lv 1'),
-('mb2', 'Menulis buku lv 1'),
-('mb3', 'Menulis buku lv 3'),
-('mb4', 'Menulis buku lv 4'),
-('mp1', 'Menulis pemula lv 1'),
-('mp2', 'Menulis pemula lv 2'),
-('mp3', 'Menulis pemula lv 3'),
-('mp4', 'Menulis pemula lv 4');
+INSERT INTO `kategori` (`idkategori`, `namakategori`, `jenispelatihan`) VALUES
+('cd1', 'coding lv 1', 'forum'),
+('cd2', 'coding lv 2', 'forum'),
+('mb1', 'Menulis buku lv 1', 'forum'),
+('mb2', 'Menulis buku lv 1', 'forum'),
+('mb3', 'Menulis buku lv 3', 'forum'),
+('mb4', 'Menulis buku lv 4', 'forum'),
+('mp1', 'Menulis pemula lv 1', 'forum'),
+('mp2', 'Menulis pemula lv 2', 'forum'),
+('mp3', 'Menulis pemula lv 3', 'forum'),
+('mp4', 'Menulis pemula lv 4', 'forum');
 
 -- --------------------------------------------------------
 
@@ -97,6 +98,7 @@ INSERT INTO `login` (`email`, `password`, `level`) VALUES
 ('tes4@tes4.com', '123', 2),
 ('tes5@tes5.com', '123', 2),
 ('tes6@tes6.com', '123', 2),
+('tes7@tes7.com', '123', 2),
 ('tes@tes.com', '12345', 1);
 
 -- --------------------------------------------------------
@@ -126,7 +128,27 @@ INSERT INTO `member` (`id_member`, `nama`, `no_induk`, `alamat`, `sekolah`, `hp`
 (3, 'member 3', 'tes3@tes3.com', 'qwe', 'SMPN 115 Jakarta', '08123445566', 'tes3@tes3.com', ''),
 (4, 'member 4', 'tes4@tes4.com', 'qwe', 'SMPN 115 Jakarta', '08123445566', 'tes4@tes4.com', ''),
 (5, 'member 5', 'tes5@tes5.com', '123', 'SMPN 115 Jakarta', '08123445566', 'tes5@tes5.com', ''),
-(6, 'member 6', 'tes6@tes6.com', 'qwe', 'SMPN 115 Jakarta', '08123445566', 'tes6@tes6.com', '');
+(6, 'member 6', 'tes6@tes6.com', 'qwe', 'SMPN 115 Jakarta', '08123445566', 'tes6@tes6.com', ''),
+(7, 'member 7', 'tes7@tes7.com', 'jalan sesama', 'SMAN 40 Jakarta', '08112233445566', 'tes7@tes7.com', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pelatihandiikuti`
+--
+
+CREATE TABLE `pelatihandiikuti` (
+  `idpelatihandiikuti` int(11) NOT NULL,
+  `idmember` int(11) NOT NULL,
+  `idpelatihan` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pelatihandiikuti`
+--
+
+INSERT INTO `pelatihandiikuti` (`idpelatihandiikuti`, `idmember`, `idpelatihan`) VALUES
+(3, 7, 'mp');
 
 -- --------------------------------------------------------
 
@@ -187,6 +209,33 @@ INSERT INTO `postrating` (`idrating`, `idpost`, `idpenilai`, `nilairating`, `wak
 (11, 1, 5, 5, '2020-03-09 20:58:03'),
 (12, 3, 2, 5, '2020-03-10 20:47:37');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statuspelatihandiikuti`
+--
+
+CREATE TABLE `statuspelatihandiikuti` (
+  `idstatuspelatihandiikuti` int(11) NOT NULL,
+  `idpelatihandiikuti` int(11) NOT NULL,
+  `ujianlv1` tinyint(1) DEFAULT 0,
+  `statusujianlv1` varchar(255) NOT NULL,
+  `openlv1` tinyint(1) NOT NULL DEFAULT 0,
+  `ujianlv2` tinyint(1) NOT NULL DEFAULT 0,
+  `statusujianlv2` varchar(255) NOT NULL,
+  `openlv2` tinyint(1) NOT NULL DEFAULT 0,
+  `ujianlv3` tinyint(1) NOT NULL DEFAULT 0,
+  `statusujianlv3` varchar(255) NOT NULL,
+  `openlv3` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `statuspelatihandiikuti`
+--
+
+INSERT INTO `statuspelatihandiikuti` (`idstatuspelatihandiikuti`, `idpelatihandiikuti`, `ujianlv1`, `statusujianlv1`, `openlv1`, `ujianlv2`, `statusujianlv2`, `openlv2`, `ujianlv3`, `statusujianlv3`, `openlv3`) VALUES
+(2, 3, 0, '', 0, 0, '', 0, 0, '', 0);
+
 --
 -- Indexes for dumped tables
 --
@@ -219,6 +268,13 @@ ALTER TABLE `member`
   ADD KEY `email` (`email`);
 
 --
+-- Indexes for table `pelatihandiikuti`
+--
+ALTER TABLE `pelatihandiikuti`
+  ADD PRIMARY KEY (`idpelatihandiikuti`),
+  ADD KEY `idmember` (`idmember`);
+
+--
 -- Indexes for table `post`
 --
 ALTER TABLE `post`
@@ -235,6 +291,13 @@ ALTER TABLE `postrating`
   ADD KEY `idpost` (`idpost`);
 
 --
+-- Indexes for table `statuspelatihandiikuti`
+--
+ALTER TABLE `statuspelatihandiikuti`
+  ADD PRIMARY KEY (`idstatuspelatihandiikuti`),
+  ADD KEY `idpelatihandiikuti` (`idpelatihandiikuti`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -248,7 +311,13 @@ ALTER TABLE `komentar`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `pelatihandiikuti`
+--
+ALTER TABLE `pelatihandiikuti`
+  MODIFY `idpelatihandiikuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `post`
@@ -261,6 +330,12 @@ ALTER TABLE `post`
 --
 ALTER TABLE `postrating`
   MODIFY `idrating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `statuspelatihandiikuti`
+--
+ALTER TABLE `statuspelatihandiikuti`
+  MODIFY `idstatuspelatihandiikuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -280,6 +355,12 @@ ALTER TABLE `member`
   ADD CONSTRAINT `member_ibfk_1` FOREIGN KEY (`email`) REFERENCES `login` (`email`);
 
 --
+-- Constraints for table `pelatihandiikuti`
+--
+ALTER TABLE `pelatihandiikuti`
+  ADD CONSTRAINT `pelatihandiikuti_ibfk_1` FOREIGN KEY (`idmember`) REFERENCES `member` (`id_member`);
+
+--
 -- Constraints for table `post`
 --
 ALTER TABLE `post`
@@ -292,6 +373,12 @@ ALTER TABLE `post`
 ALTER TABLE `postrating`
   ADD CONSTRAINT `postrating_ibfk_1` FOREIGN KEY (`idpenilai`) REFERENCES `member` (`id_member`),
   ADD CONSTRAINT `postrating_ibfk_2` FOREIGN KEY (`idpost`) REFERENCES `post` (`idpost`);
+
+--
+-- Constraints for table `statuspelatihandiikuti`
+--
+ALTER TABLE `statuspelatihandiikuti`
+  ADD CONSTRAINT `statuspelatihandiikuti_ibfk_1` FOREIGN KEY (`idpelatihandiikuti`) REFERENCES `pelatihandiikuti` (`idpelatihandiikuti`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

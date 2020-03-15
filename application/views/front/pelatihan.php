@@ -34,7 +34,16 @@
               <div class="card-header">Level 1</div>
                 <div class="card-body text-primary">
                 <p class="card-text">Tingkat kesulitan rendah</p>
+
+                <!-- jika sudah mengikuti -->
+                <?php if(isset($menulispemula)) : ?>
                 <a href="<?php echo base_url() ?>pelatihan/menulispemula/1" class="btn btn-primary">Ikut Pelatihan</a>
+
+                <?php else : ?>
+                <!-- jika belum mengikuti -->
+                <a href="<?php echo base_url() ?>pelatihan/ikut/mp" class="btn btn-secondary">Buka Pelatihan <i class="fa fa-lock"></i></a>
+
+                <?php endif ?>
               </div>
             </div>
 

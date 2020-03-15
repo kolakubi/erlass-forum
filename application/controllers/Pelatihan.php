@@ -2,10 +2,19 @@
 
     class Pelatihan extends CI_Controller{
 
+        // ambil id member dari session
+        //private $idmember;
+
 
         public function __construct(){
 
             parent::__construct();
+
+            // if($this->session->userdata('id_member'){
+
+            //     $this->idmember = $this->session->userdata('id_member');
+
+            // }
 
         }
 
@@ -14,6 +23,20 @@
 
             // cek jika login
             if($this->session->userdata('id_member')){
+
+                $idmember = $this->session->userdata('id_member');
+
+                // ambil data pelatihan yang diikuti
+                $datapelatihandiikuti = $this->pelatihan_model->ambildatapelatihan($idmember);
+
+                $listPelatihan = array();
+
+                if(in_array(['idmember' => $idmember, 'idpelatihan' => 'mp'], $datapelatihandiikuti)){
+
+                    // buat variable pelatihan terikait
+                    $data['menulispemula'] = 1; 
+                }
+
 
                 $data['point'] = false;
                 // jika sdh login, beri akses
@@ -30,6 +53,19 @@
             }
 
         } // end of function index
+
+
+        public function ikut($idpelatihan){
+
+            $datapendaftaran = array(
+                'idmember' => $this->session->userdata('id_member'),
+                'idpelatihan' => $idpelatihan 
+            );
+
+            // insert pendaftaran ke DB
+            $pendaftaran = $this->pelatihan_model->daftar($datapendaftaran);
+
+        } // end of function ikutipelatihan
 
 
         public function menulisPemula($level){

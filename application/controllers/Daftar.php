@@ -76,22 +76,19 @@
 			}
 			else{
 				// ambil value dr field
-				$email = $this->input->post('email');
-                $password = $this->input->post('password');
-                $repeatpassword = $this->input->post('repeatpassword');
-                $nama = $this->input->post('nama');
-                $nomorinduk = $this->input->post('nomorinduk');
-                $alamat = $this->input->post('password');
-                $sekolah = $this->input->post('sekolah');
-                $hp = $this->input->post('hp');
-
-                // $dataMember = array(
-                //     'email' => $this->input->post('email');,
-                //     ''
-                // );
+				$datamember = array(
+                    'email' => $this->input->post('email'),
+                    'password' => $this->input->post('password'),
+                    'repeatpassword' => $this->input->post('repeatpassword'),
+                    'nama' => $this->input->post('nama'),
+                    'nomorinduk' => $this->input->post('email'),
+                    'alamat' => $this->input->post('alamat'),
+                    'sekolah' => $this->input->post('sekolah'),
+                    'hp' => $this->input->post('hp')
+                );
 
                 // jika password yg dimasukkan berbeda
-                if($password !== $repeatpassword){
+                if($datamember['password'] !== $datamember['repeatpassword']){
                     $data['gagal'] = false;
                     $data['password'] = true;
                     $data['email'] = false;
@@ -102,7 +99,7 @@
                 else{
 
                     //cek ketesediaan email
-                    $emailvalid = $this->daftar_model->cekEmail($email);
+                    $emailvalid = $this->daftar_model->cekEmail($datamember['email']);
 
                     // jika email sudah dipakai
                     if($emailvalid){
@@ -115,7 +112,18 @@
                     // jika email belum dipakai
                     else{
 
-                        
+                        // simpan data
+                        $simpanmember = $this->daftar_model->simpanmember($datamember);
+
+                        if($simpanmember){
+
+                            $status['daftar'] = true;
+                            $status['gagal'] = false;
+                            $this->load->view('front/login', $status);
+                        }else{
+                            echo 'ada kesalahan';
+                            die();
+                        }
 
                     }
                 } // end of cek password sama
