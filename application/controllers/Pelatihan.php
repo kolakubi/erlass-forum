@@ -2,19 +2,9 @@
 
     class Pelatihan extends CI_Controller{
 
-        // ambil id member dari session
-        //private $idmember;
-
-
         public function __construct(){
 
             parent::__construct();
-
-            // if($this->session->userdata('id_member'){
-
-            //     $this->idmember = $this->session->userdata('id_member');
-
-            // }
 
         }
 
@@ -64,6 +54,14 @@
 
             // insert pendaftaran ke DB
             $pendaftaran = $this->pelatihan_model->daftar($datapendaftaran);
+
+            if($pendaftaran){
+
+                // redirect ke halaman ujian
+                $this->load->view('front/header');
+                $this->load->view('ujian/ujianmenulispemula');
+                $this->load->view('front/footer');
+            }
 
         } // end of function ikutipelatihan
 
@@ -115,11 +113,85 @@
 
             if($akses){
 
-                // simpan category di session
+                // cek apakah sudah mengikuti ujian?
+                $kategori = substr($this->session->userdata('pelatihan'), 0, 2);
+                $datastatuspelatihan = $this->pelatihan_model->ambilstatuspelatihan($idmember, $kategori, $level);
 
+                // set session pelatihan
                 $this->session->set_userdata(['pelatihan' => $pelatihan]);
 
-                redirect('/forum');
+                // echo '<pre>';
+                // print_r($datastatuspelatihan);
+                // print_r($this->session->userdata());
+                // echo '</pre>';
+
+                // die();
+
+                // jika data status ada brati udah daftar
+                if($datastatuspelatihan){
+
+                    $sudahujian = $datastatuspelatihan['ujianlv'.$level];
+
+                    // jika sdh ujian
+                    if($sudahujian){
+
+                        // cek apakah level sdh terbuka
+                        $lvterbuka = $ujian['openlv'.$level];
+
+                        // jika lv terbuka
+                        if($lvterbuka){
+
+                            redirect('/forum');
+
+                        }
+
+                        // jika lv belum terbuka
+                        else{
+
+                            // cek status ujian
+                            echo 'menunggu konfirmasi test dari admimn';
+
+                        }
+
+                    }
+                    // jika belum ujian
+                    else{
+
+                        // redirect ke halaman ujian
+                        $this->load->view('front/header');
+                        $this->load->view('ujian/ujianmenulispemula');
+                        $this->load->view('front/footer');
+
+                    }
+
+                }
+
+                // jika data status belum ada brati belum daftar
+                // redirect ke halaman daftar
+                else{
+
+                    // redirect ke halaman ujian
+                    $this->load->view('front/header');
+                    $this->load->view('front/pelatihan');
+                    $this->load->view('front/footer');
+
+                }
+
+                // [idpelatihandiikuti] => 3
+                // [idmember] => 7
+                // [idpelatihan] => mp
+                // [idstatuspelatihandiikuti] => 2
+                // [ujianlv1] => 0
+                // [statusujianlv1] => 
+                // [openlv1] => 0
+                // [ujianlv2] => 0
+                // [statusujianlv2] => 
+                // [openlv2] => 0
+                // [ujianlv3] => 0
+                // [statusujianlv3] => 
+                // [openlv3] => 0
+
+                // simpan category di session
 
             }else{
 

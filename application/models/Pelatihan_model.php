@@ -71,19 +71,28 @@
                // insert data ke status pelatihan
                $result = $this->simpanstatuspelatihan($idpelatihandiikuti);
                
-                // jika insert berhasil
-                if($result){
-
-                    // redirect ke halaman ujian
-                    $this->load->view('front/header');
-                    $this->load->view('ujian/ujianmenulispemula');
-                    $this->load->view('front/footer');
-
-                }
+                return true;
 
             }
 
         } // end of function daftar
+
+
+        public function ambilstatuspelatihan($idmember, $kategori, $level){
+
+            $this->db->select('*');
+            $this->db->from('pelatihandiikuti');
+            $this->db->join('statuspelatihandiikuti', 'pelatihandiikuti.idpelatihandiikuti = statuspelatihandiikuti.idpelatihandiikuti');
+            $this->db->where('pelatihandiikuti.idmember', $idmember);
+            $this->db->where('pelatihandiikuti.idpelatihan', $kategori);
+            $result = $this->db->get()->row_array();
+
+            return $result;
+
+        } // end of function cekujian
+
+
+
 
 
     } // end of class
