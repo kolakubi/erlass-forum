@@ -68,8 +68,7 @@
                     echo 'sedang dikembangkan';
 
                 }
-
-                
+   
             }
 
         } // end of function ikutipelatihan
@@ -123,6 +122,7 @@
             if($akses){
 
                 // cek apakah sudah mengikuti ujian?
+
                 $kategori = substr($pelatihan, 0, 2);
                 $datastatuspelatihan = $this->pelatihan_model->ambilstatuspelatihan($idmember, $kategori, $level);
 

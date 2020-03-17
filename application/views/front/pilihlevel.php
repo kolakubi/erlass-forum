@@ -31,13 +31,23 @@
                     <div class="card-body text-<?php echo $warna ?>">
                     <p class="card-text">Tingkat kesulitan rendah</p>
 
-                    <!-- jika sudah terbuka -->
-                    <?php if($statuspelatihan['openlv1']) : ?>
-                    <a href="<?php echo base_url() ?>forum" class="btn btn-<?php echo $warna ?>">Ikut Pelatihan</a>
+                    <!-- jika point cukup -->
+                    <?php if($pointcukup['level1']) : ?>
 
+                        <!-- jika sudah terbuka -->
+                        <?php if($statuspelatihan['openlv1']) : ?>
+                        <a href="<?php echo base_url() ?>pilihlevel/level/1" class="btn btn-<?php echo $warna ?>">Ikut Pelatihan</a>
+
+                        <?php else : ?>
+                        <!-- jika belum terbuka -->
+                        <a href="<?php echo base_url() ?>pelatihan/ikut/mp" class="btn btn-<?php echo $warna ?>">Buka Pelatihan <i class="fa fa-lock"></i></a>
+
+                        <?php endif ?>
+                    
+                    <!-- jika point belum cukup -->
                     <?php else : ?>
-                    <!-- jika belum terbuka -->
-                    <a href="<?php echo base_url() ?>pelatihan/ikut/mp" class="btn btn-<?php echo $warna ?>">Buka Pelatihan <i class="fa fa-lock"></i></a>
+
+                        <a class="btn btn-<?php echo $warna ?>">Point Belum Cukup <i class="fa fa-lock"></i></a>
 
                     <?php endif ?>
 
@@ -70,13 +80,23 @@
                     <div class="card-body text-<?php echo $warna ?>">
                     <p class="card-text">Tingkat kesulitan rendah</p>
 
-                    <!-- jika sudah terbuka -->
-                    <?php if($statuspelatihan['openlv2']) : ?>
-                    <a href="<?php echo base_url() ?>pelatihan/menulispemula/2" class="btn btn-<?php echo $warna ?>">Ikut Pelatihan</a>
+                    <!-- jika point cukup -->
+                    <?php if($pointcukup['level2']) : ?>
 
+                        <!-- jika sudah terbuka -->
+                        <?php if($statuspelatihan['openlv2']) : ?>
+                        <a href="<?php echo base_url() ?>pilihlevel/level/2" class="btn btn-<?php echo $warna ?>">Ikut Pelatihan</a>
+
+                        <?php else : ?>
+                        <!-- jika belum terbuka -->
+                        <a href="<?php echo base_url() ?>pelatihan/ikut/mp" class="btn btn-<?php echo $warna ?>">Buka Level <i class="fa fa-lock"></i></a>
+
+                        <?php endif ?>
+
+                    <!-- jika point belum cukup -->
                     <?php else : ?>
-                    <!-- jika belum terbuka -->
-                    <a href="<?php echo base_url() ?>pelatihan/ikut/mp" class="btn btn-<?php echo $warna ?>">Buka Pelatihan <i class="fa fa-lock"></i></a>
+
+                        <a class="btn btn-<?php echo $warna ?>" style="color: white;">Point Belum Cukup <i class="fa fa-lock"></i></a>
 
                     <?php endif ?>
 
@@ -109,13 +129,23 @@
                     <div class="card-body text-<?php echo $warna ?>">
                     <p class="card-text">Tingkat kesulitan rendah</p>
 
-                    <!-- jika sudah terbuka -->
-                    <?php if($statuspelatihan['openlv3']) : ?>
-                    <a href="<?php echo base_url() ?>pelatihan/menulispemula/3" class="btn btn-<?php echo $warna ?>">Ikut Pelatihan</a>
+                    <!-- jika point cukup -->
+                    <?php if($pointcukup['level2']) : ?>
 
+                        <!-- jika sudah terbuka -->
+                        <?php if($statuspelatihan['openlv3']) : ?>
+                        <a href="<?php echo base_url() ?>pilihlevel/level/3" class="btn btn-<?php echo $warna ?>">Ikut Pelatihan</a>
+
+                        <?php else : ?>
+                        <!-- jika belum terbuka -->
+                        <a href="<?php echo base_url() ?>pelatihan/ikut/mp" class="btn btn-<?php echo $warna ?>">Buka Level <i class="fa fa-lock"></i></a>
+
+                        <?php endif ?>
+                        
+                    <!-- jika point belum cukup -->
                     <?php else : ?>
-                    <!-- jika belum terbuka -->
-                    <a href="<?php echo base_url() ?>pelatihan/ikut/mp" class="btn btn-<?php echo $warna ?>">Buka Pelatihan <i class="fa fa-lock"></i></a>
+
+                        <a class="btn btn-<?php echo $warna ?>" style="color: white;">Point Belum Cukup <i class="fa fa-lock"></i></a>
 
                     <?php endif ?>
 
