@@ -24,7 +24,7 @@
                 if(in_array(['idmember' => $idmember, 'idpelatihan' => 'mp'], $datapelatihandiikuti)){
 
                     // buat variable pelatihan terikait
-                    $data['menulispemula'] = 1; 
+                    $data['menulispemula'] = true; 
                 }
 
 
@@ -123,21 +123,29 @@
             if($akses){
 
                 // cek apakah sudah mengikuti ujian?
-                $kategori = substr($this->session->userdata('pelatihan'), 0, 2);
+                $kategori = substr($pelatihan, 0, 2);
                 $datastatuspelatihan = $this->pelatihan_model->ambilstatuspelatihan($idmember, $kategori, $level);
 
+                // echo "id member = $idmember<br>";
+                // echo "kategori = $kategori<br>";
+                // echo "level = $level<br>";
+
                 // set session pelatihan
+                // buat di Controller Forum
+                // di halaman forum akan di cek ketersediaan session pelatihan
                 $this->session->set_userdata(['pelatihan' => $pelatihan]);
 
                 // echo '<pre>';
+                // echo 'data status pelatihan <br>';
                 // print_r($datastatuspelatihan);
+                // echo 'data session <br>';
                 // print_r($this->session->userdata());
                 // echo '</pre>';
 
                 // die();
 
                 // jika data status ada brati udah daftar
-                if($datastatuspelatihan){
+                if($datastatuspelatihan){ 
 
                     $sudahujian = $datastatuspelatihan['ujianlv'.$level];
 
@@ -150,7 +158,7 @@
                         // jika lv terbuka
                         if($lvterbuka){
 
-                            redirect('/forum');
+                            redirect('/pilihlevel');
 
                         }
 
@@ -158,7 +166,9 @@
                         else{
 
                             // cek status ujian
-                            echo 'menunggu konfirmasi test dari admimn';
+                            $this->load->view('front/header');
+                            $this->load->view('ujian/menunggukonfirmasi');
+                            $this->load->view('front/footer');
 
                         }
 
@@ -166,7 +176,7 @@
                     // jika belum ujian
                     else{
 
-                        echo 'dari belum ujian';
+                        // echo 'dari belum ujian';
 
                         // redirect ke halaman ujian
                         $this->load->view('front/header');
@@ -181,11 +191,11 @@
                 // redirect ke halaman daftar
                 else{
 
-                    echo 'dari daftar';
+                    // echo 'dari daftar';
 
-                    echo '<pre>';
-                    print_r($this->session->userdata());
-                    echo '</pre>';
+                    // echo '<pre>';
+                    // print_r($this->session->userdata());
+                    // echo '</pre>';
 
                     // redirect ke halaman ujian
                     $this->load->view('front/header');

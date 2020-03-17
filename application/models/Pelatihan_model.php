@@ -11,6 +11,9 @@
         } // end of function construct
 
 
+
+
+
         // ambil point dari post rating
         public function ambilPoint($idmember){
 
@@ -26,6 +29,9 @@
         } // end of ambilPoint function
 
 
+
+
+
         public function ambildatapelatihan($idmember){
 
             $this->db->select(['idmember', 'idpelatihan']);
@@ -36,6 +42,9 @@
             return $result;
 
         } // end of function ambildatapelatihan
+
+
+
 
 
         public function simpanpelatihan($datapendaftaran){
@@ -50,6 +59,9 @@
         } // end of function simpanpelatihan
 
 
+
+
+
         public function simpanstatuspelatihan($idpelatihandiikuti){
 
             $this->db->insert('statuspelatihandiikuti', ['idpelatihandiikuti'=>$idpelatihandiikuti]);
@@ -57,6 +69,9 @@
             return true;
 
         } // end of simpanstatuspelatihan
+
+
+
 
 
         public function daftar($datapendaftaran){
@@ -78,7 +93,10 @@
         } // end of function daftar
 
 
-        public function ambilstatuspelatihan($idmember, $kategori, $level){
+
+
+
+        public function ambilstatuspelatihan($idmember, $kategori, $level=null){
 
             $this->db->select('*');
             $this->db->from('pelatihandiikuti');
