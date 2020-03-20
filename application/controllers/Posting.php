@@ -55,6 +55,39 @@
 
                 );
 
+                // ambil data idmember ddari session
+
+                
+                // ambil data pelatihan dari session
+                // extrak kategori pelatihan
+                $pelatihan = $this->session->userdata('pelatihan');
+                $ujian = substr($pelatihan, 0, 5); // ujian
+                $ujian = 'ujian' ? true : false;
+                
+
+                // jika kategori adalah ujian
+                if($ujian){
+
+                    $idpelatihan = substr($pelatihan, -3, 2); // mp
+                    $level = substr($pelatihan, -1, 1); // 1 || 2 || 3;
+
+                    $dataupdatestatusujian = array(
+                        'idmember' => $this->session->userdata('id_member'),
+                        'idpelatihan' => $idpelatihan,
+                        'level' => $level
+    
+                    );
+
+                    // update status pelatihan
+                    $this->posting_model->updatestatuspelatihan($dataupdatestatusujian);
+
+                }
+                
+
+                // extrak level ujian
+                // jika elatihan ada kata 'ujian'
+                // update data ujian
+
                 $result = $this->posting_model->simpanpost($dataposting);
 
                 if($result){

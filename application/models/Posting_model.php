@@ -9,6 +9,9 @@
 
         } // end of function construct
 
+
+
+
         
         // simpan data post
         public function simpanpost($dataposting){
@@ -17,7 +20,18 @@
 
             return true;
 
-        }
+        } // end of funtion simpan post
+
+
+
+
+
+
+        public function dataupdateujian(){
+
+            
+
+        } // end of function dataupdateujian
 
 
     }

@@ -27,7 +27,14 @@
           <!-- Menulis Pemula -->
           <div class="col-md-4 text-center">
             <h2>Menulis Pemula</h2>
+
+            <?php if(isset($menulispemula)) : ?>
             <p class="text-primary">Kursus diikuti</p>
+
+            <?php else : ?>
+              <p class="text-danger">Kamu belum mengikuti kursus ini</p>
+
+            <?php endif ?>
 
             <!-- level 1 -->
             <div class="card border-primary mb-3">

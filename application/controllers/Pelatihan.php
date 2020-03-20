@@ -165,7 +165,7 @@
                         // jika lv belum terbuka
                         else{
 
-                            // cek status ujian
+                            // tampilkan halaman konfirmasi
                             $this->load->view('front/header');
                             $this->load->view('ujian/menunggukonfirmasi');
                             $this->load->view('front/footer');
@@ -177,6 +177,8 @@
                     else{
 
                         // echo 'dari belum ujian';
+                        // set session ujian + kode pelatihan
+                        $this->session->set_userdata(['pelatihan' => 'ujian'.$pelatihan]);
 
                         // redirect ke halaman ujian
                         $this->load->view('front/header');
