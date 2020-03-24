@@ -54,17 +54,27 @@
 
         }
 
+
+
+
+
         //ambil data mahasiswa dari database
         function ambilDataPost($limit, $start){
             $query = $this->db->get('post', $limit, $start);
             return $query;
         }
 
-        public function ambilTotalPost(){
 
-            return $this->db->count_all('post');
 
-        }
+        
+
+
+        public function ambilTotalPost($kategori){
+
+            return $this->db->get_where('post', array('idkategori' => $kategori))->num_rows();
+            
+
+        } // end of function ambilTotalPost
 
 
     }

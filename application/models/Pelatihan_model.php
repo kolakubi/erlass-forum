@@ -74,21 +74,47 @@
 
 
 
+
+
+        public function cekdatapelatihandiikuti($datapendaftaran){
+
+            $this->db->select('*');
+            $this->db->from('pelatihandiikuti');
+            $this->db->where('idmember', $datapendaftaran['idmember']);
+            $this->db->where('idpelatihan', $datapendaftaran['idpelatihan']);
+            $result = $this->db->get()->num_rows();
+
+            return $result;
+
+        } // end of function cekdatapelatihan
+
+
+
+
+
+
+
         public function daftar($datapendaftaran){
 
-            // insert data ke pelatihandiikuti
-            // lalu ambil idpelatihandiikuti terakhir
-            $idpelatihandiikuti = $this->simpanpelatihan($datapendaftaran);
+            // jika sdh terdaftar
+            $statusdaftar = $this->cekdatapelatihandiikuti($datapendaftaran);
+            if($statusdaftar !== 1){
+                // insert data ke pelatihandiikuti
+                // lalu ambil idpelatihandiikuti terakhir
+                $idpelatihandiikuti = $this->simpanpelatihan($datapendaftaran);
 
-            // jika sukses
-            if($idpelatihandiikuti){ 
+                // jika sukses
+                if($idpelatihandiikuti){ 
 
-               // insert data ke status pelatihan
-               $result = $this->simpanstatuspelatihan($idpelatihandiikuti);
-               
-                return true;
+                // insert data ke status pelatihan
+                $result = $this->simpanstatuspelatihan($idpelatihandiikuti);
+                
+                    return true;
 
+                }
             }
+
+            return true;
 
         } // end of function daftar
 

@@ -180,6 +180,12 @@
                         // set session ujian + kode pelatihan
                         $this->session->set_userdata(['pelatihan' => 'ujian'.$pelatihan]);
 
+                        // echo '<pre>';
+                        // print_r($this->session->userdata());
+                        // echo '</pre>';
+
+                        // die();
+
                         // redirect ke halaman ujian
                         $this->load->view('front/header');
                         $this->load->view('ujian/menulispemula/lv1');

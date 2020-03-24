@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2020 at 10:00 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Mar 24, 2020 at 04:49 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -48,7 +48,8 @@ INSERT INTO `kategori` (`idkategori`, `namakategori`, `jenispelatihan`) VALUES
 ('mp1', 'Menulis pemula lv 1', 'forum'),
 ('mp2', 'Menulis pemula lv 2', 'forum'),
 ('mp3', 'Menulis pemula lv 3', 'forum'),
-('mp4', 'Menulis pemula lv 4', 'forum');
+('mp4', 'Menulis pemula lv 4', 'forum'),
+('ujianmp1', 'ujian menulis pemula lv 1', 'forum');
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,7 @@ CREATE TABLE `komentar` (
   `idkomentar` int(11) NOT NULL,
   `idpost` int(11) NOT NULL,
   `idkomentator` int(11) NOT NULL,
-  `waktukomentar` datetime NOT NULL DEFAULT current_timestamp(),
+  `waktukomentar` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `isikomentar` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -74,7 +75,9 @@ INSERT INTO `komentar` (`idkomentar`, `idpost`, `idkomentator`, `waktukomentar`,
 (4, 1, 4, '2020-03-08 13:44:20', 'kosa kata nya keren'),
 (5, 1, 6, '2020-03-08 19:12:24', 'kurang oke'),
 (6, 1, 5, '2020-03-09 20:58:03', 'mantap bosss\r\n'),
-(7, 3, 2, '2020-03-10 20:47:37', '&lt;script&gt;alert(&#039;hacked&#039;)&lt;/script&gt;\r\n\r\ntes bos');
+(7, 3, 2, '2020-03-10 20:47:37', '&lt;script&gt;alert(&#039;hacked&#039;)&lt;/script&gt;\r\n\r\ntes bos'),
+(8, 8, 8, '2020-03-24 21:07:52', 'keren'),
+(9, 8, 3, '2020-03-24 22:09:48', 'asd');
 
 -- --------------------------------------------------------
 
@@ -99,6 +102,7 @@ INSERT INTO `login` (`email`, `password`, `level`) VALUES
 ('tes5@tes5.com', '123', 2),
 ('tes6@tes6.com', '123', 2),
 ('tes7@tes7.com', '123', 2),
+('tes9@tes9.com', '123', 2),
 ('tes@tes.com', '12345', 1);
 
 -- --------------------------------------------------------
@@ -129,7 +133,8 @@ INSERT INTO `member` (`id_member`, `nama`, `no_induk`, `alamat`, `sekolah`, `hp`
 (4, 'member 4', 'tes4@tes4.com', 'qwe', 'SMPN 115 Jakarta', '08123445566', 'tes4@tes4.com', ''),
 (5, 'member 5', 'tes5@tes5.com', '123', 'SMPN 115 Jakarta', '08123445566', 'tes5@tes5.com', ''),
 (6, 'member 6', 'tes6@tes6.com', 'qwe', 'SMPN 115 Jakarta', '08123445566', 'tes6@tes6.com', ''),
-(7, 'member 7', 'tes7@tes7.com', 'jalan sesama', 'SMAN 40 Jakarta', '08112233445566', 'tes7@tes7.com', '');
+(7, 'member 7', 'tes7@tes7.com', 'jalan sesama', 'SMAN 40 Jakarta', '08112233445566', 'tes7@tes7.com', ''),
+(8, 'member 9', 'tes9@tes9.com', 'jalan erlass', 'SMAN 71 Palu', '081211223344', 'tes9@tes9.com', '');
 
 -- --------------------------------------------------------
 
@@ -148,7 +153,11 @@ CREATE TABLE `pelatihandiikuti` (
 --
 
 INSERT INTO `pelatihandiikuti` (`idpelatihandiikuti`, `idmember`, `idpelatihan`) VALUES
-(3, 7, 'mp');
+(3, 7, 'mp'),
+(4, 8, 'mp'),
+(9, 2, 'mp'),
+(10, 3, 'mp'),
+(11, 3, 'forum');
 
 -- --------------------------------------------------------
 
@@ -161,7 +170,7 @@ CREATE TABLE `post` (
   `idauthor` int(11) NOT NULL,
   `idkategori` varchar(10) NOT NULL,
   `judul` varchar(255) NOT NULL,
-  `waktupublish` datetime NOT NULL DEFAULT current_timestamp(),
+  `waktupublish` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `view` int(11) NOT NULL,
   `isipost` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -175,9 +184,14 @@ INSERT INTO `post` (`idpost`, `idauthor`, `idkategori`, `judul`, `waktupublish`,
 (2, 2, 'mp1', 'Menulis Pemula 1 By Member 2', '2020-03-07 12:31:49', 0, 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'),
 (3, 4, 'mp1', 'Menghidari Covid-19 dengan obat herbal', '2020-03-08 18:54:58', 0, '<h2>lorem ipsum</h2>\r\n\r\n<p><em>dolor set amet</em></p>\r\n\r\n<p><strong><em>consequere dos minos</em></strong></p>\r\n'),
 (5, 2, 'mp1', '&lt;script&gt;XSS Attack&lt;/script&gt;', '2020-03-10 20:49:29', 0, '<p>&lt;script&gt;XSS Attack&lt;/script&gt;</p>\r\n\r\n<p>be carefull brow</p>\r\n'),
-(6, 2, 'mp1', 'Cara Mengajar Anak Paling Jitu', '2020-03-11 18:08:15', 0, '<p>pak buruk yang ia miliki. Dampak buruk itu disebabkan oleh kandungan zat-zat berbahaya di dalam makanan instan seperti lilin yang ada pada mie instan. Tak berhenti disitu, nyatanya di dalam makanan cepat saji terkandung bahan pengawet dan penyedap yang kini disebut micin.</p>\r\n\r\n<p>Fenomena kata micin kini mendadak kerap digunakan para remaja hingga dewasa bila seseorang mengalami hal-hal yang kurang normal. Maksud dari hal kurang normal itu seperti seseorang yang telat berpikir, lama menjawab bila diajak bicara dan lain sebagainya. Tak dielakkan, makanan cepat saji memang mengandung zat berbahaya seperti yang telah diungkapkan di atas.</p>\r\n\r\n<p>Sejumlah penelitian telah membuktikan bahwa keseringan mengkonsumsi makanan cepat saja memang tidak berdampak secara langsung ke tubuh. Namun, makanan-makanan cepat saji yang dikonsumsi akan tertimbun di dalam tubuh yang kemudian hari menjadi penyebab penyakit mematikan seperti kanker. Tak hanya kanker, penyakit berbahaya juga mengintai misalnya stroke, usus buntu dan penyakit ginjal.<br />\r\nMaka bila Anda termasuk ke dalam orang yang hobi mengkonsumsi makanan cepat saja, kurangilah hal itu dan</p>\r\n\r\n<p>mulai sayangi tubuh serta diri Anda sendiri. Perlu diketahui bahwa salah satu kandungan di dalam makanan instan yaitu lilin sulit dicerna tubuh. Lilin itu menghancurkan prinsip kerja sistem pencernaan tubuh sehingga makanan yang mengandung lilin akan dicerna dengan waktu minimal dua hari.</p>\r\n'),
+(6, 2, 'mp1', 'Cara Mengajar Anak Paling Jitu', '2020-03-11 18:08:15', 1, '<p>pak buruk yang ia miliki. Dampak buruk itu disebabkan oleh kandungan zat-zat berbahaya di dalam makanan instan seperti lilin yang ada pada mie instan. Tak berhenti disitu, nyatanya di dalam makanan cepat saji terkandung bahan pengawet dan penyedap yang kini disebut micin.</p>\r\n\r\n<p>Fenomena kata micin kini mendadak kerap digunakan para remaja hingga dewasa bila seseorang mengalami hal-hal yang kurang normal. Maksud dari hal kurang normal itu seperti seseorang yang telat berpikir, lama menjawab bila diajak bicara dan lain sebagainya. Tak dielakkan, makanan cepat saji memang mengandung zat berbahaya seperti yang telah diungkapkan di atas.</p>\r\n\r\n<p>Sejumlah penelitian telah membuktikan bahwa keseringan mengkonsumsi makanan cepat saja memang tidak berdampak secara langsung ke tubuh. Namun, makanan-makanan cepat saji yang dikonsumsi akan tertimbun di dalam tubuh yang kemudian hari menjadi penyebab penyakit mematikan seperti kanker. Tak hanya kanker, penyakit berbahaya juga mengintai misalnya stroke, usus buntu dan penyakit ginjal.<br />\r\nMaka bila Anda termasuk ke dalam orang yang hobi mengkonsumsi makanan cepat saja, kurangilah hal itu dan</p>\r\n\r\n<p>mulai sayangi tubuh serta diri Anda sendiri. Perlu diketahui bahwa salah satu kandungan di dalam makanan instan yaitu lilin sulit dicerna tubuh. Lilin itu menghancurkan prinsip kerja sistem pencernaan tubuh sehingga makanan yang mengandung lilin akan dicerna dengan waktu minimal dua hari.</p>\r\n'),
 (7, 2, 'mp1', 'Menulis Indah', '2020-03-11 18:08:37', 0, '<p>Bukan rahasia lagi bila anak-anak yang tinggal di daerah pedalaman sangat sulit mendapatkan kehidupan yang layak seperti anak-anak pada umumnya. Mereka kesulitan mendapat air bersih, mengenyam pendidikan sesuai batas kelayakan pendidikan Indonesia dan sulit mengikuti perkembangan zaman. Tak hanya itu saja , mereka bahkan tidak mengenal alat komunikasi seperti telepon genggam.</p>\r\n\r\n<p>Hal pokok yang menjadi sorotan utama yaitu betapa sulitnya mereka mendapat pendidikan yang layak dan mengenyam pendidikan dua belas tahun. Pada faktanya tak semua salah mereka, kesulitan mereka menjangkau lokasi sekolah menjadi masalah karena mereka harus mengarungi sungai. Mereka juga harus berjalan kaki hingga berpuluh-puluh kilo meter, bahkan ada pula yang tak memakai alas kaki.</p>\r\n\r\n<p>Kurangnya tenaga pengajar di pedalaman karena sulitnya mencari pengajar yang mau mengajar di daerah tersebut juga sangat disayangkan. Padahal kualitas seseorang diukur melalui seberapa jauh pendidikan yang dicapai karena kualitas seorang lulusan SD berbeda dengan kualitas seorang sarjana. Sehingga dapat disimpulkan bahwa pendidikan sangat memengaruhi kualitas seorang anak pedalaman.</p>\r\n'),
-(8, 2, 'mp1', 'I N D O N E S I A', '2020-03-11 18:09:03', 0, '<p>Indonesia adalah suatu negara dengan iklim tropis yang terdiri dari ribuan pulau. Walaupun daratan Indonesia tak seluas lautannya, hutan di Indonesia sangat banyak mulai dari ujung Aceh yaitu Sabang hingga Merauke (Papua). Beberapa tahun terakhir kebakaran di Indonesia kerap terjadi, hal itu disebabkan dua faktor yaitu faktor alam dan buatan (manusia).</p>\r\n\r\n<p>Mengenai faktor alam memang tak ada yang dapat disalahkan, namun mengenai faktor buatan yaitu manusia itulah hal yang perlu dievaluasi. Manusia kini telah kehilangan kesadarannya hingga mereka melakukan hal-hal yang merugikan banyak pihak diantaranya merugikan lingkungan hidup contohnya hutan. Hutan adalah habitat dari ribuan spesies makhluk hidup yang saling bergantungan.</p>\r\n\r\n<p>Maka dari itu, aksi manusia membakar hutan untuk memenuhi maksud dari dalam dirinya sendiri memang perlu diadili. Alasan mereka melakukan pembakaran hutan beragam mulai dari ingin membuka lahan tanam baru hingga berdirinya gedung-gedung bertingkat. Namun, hal yang disayangkan yaitu betapa mereka tak memikirkan aneka flora dan fauna yang tinggal di dalam hutan tersebut.</p>\r\n\r\n<p>Flora dan fauna di dalam hutan akan melarikan diri bahkan akan mati hangus terbakar api yang berkobar karena ulah manusia. Mereka akan kehilangan habitat aslinya dan akibat dari hal tersebut yaitu larinya para satwa ke pemukiman penduduk. Mereka merasa tak lagi memiliki rumah yang dapat mereka tempati sehingga jalan terakhir ialah lari ke pemukiman warga sekitar.</p>\r\n\r\n<p>Tak heran bila akhir-akhir ini kasus ditemukannya hewan liar seperti macan dan singa di pemukiman warga sering dikabarkan. Seperti kata pepatah bahwa apa yang kita lakukan akan berbalik ke diri sendiri, maka berbuatlah sesuatu yang baik. Sedangkan faktor alam dari kebakaran hutan yaitu musim kemarau dan adanya sambaran petir saat hujan.</p>\r\n\r\n<p>Musim memang tak dapat diprediksi manusia, sehingga bila musim kemarau tiba dengan jangka waktu yang sangat panjang itu wajar. Namun, hal itu memengaruhi keadaan hutan karena hutan yang setiap hari disinari matahari terik dapat menimbulkan percikan api. Hal ini juga serupa bila terjadi petir lalu petir tersebut menyambar suatu bagian hingga timbul percikan api.</p>\r\n');
+(8, 2, 'mp1', 'I N D O N E S I A', '2020-03-11 18:09:03', 9, '<p>Indonesia adalah suatu negara dengan iklim tropis yang terdiri dari ribuan pulau. Walaupun daratan Indonesia tak seluas lautannya, hutan di Indonesia sangat banyak mulai dari ujung Aceh yaitu Sabang hingga Merauke (Papua). Beberapa tahun terakhir kebakaran di Indonesia kerap terjadi, hal itu disebabkan dua faktor yaitu faktor alam dan buatan (manusia).</p>\r\n\r\n<p>Mengenai faktor alam memang tak ada yang dapat disalahkan, namun mengenai faktor buatan yaitu manusia itulah hal yang perlu dievaluasi. Manusia kini telah kehilangan kesadarannya hingga mereka melakukan hal-hal yang merugikan banyak pihak diantaranya merugikan lingkungan hidup contohnya hutan. Hutan adalah habitat dari ribuan spesies makhluk hidup yang saling bergantungan.</p>\r\n\r\n<p>Maka dari itu, aksi manusia membakar hutan untuk memenuhi maksud dari dalam dirinya sendiri memang perlu diadili. Alasan mereka melakukan pembakaran hutan beragam mulai dari ingin membuka lahan tanam baru hingga berdirinya gedung-gedung bertingkat. Namun, hal yang disayangkan yaitu betapa mereka tak memikirkan aneka flora dan fauna yang tinggal di dalam hutan tersebut.</p>\r\n\r\n<p>Flora dan fauna di dalam hutan akan melarikan diri bahkan akan mati hangus terbakar api yang berkobar karena ulah manusia. Mereka akan kehilangan habitat aslinya dan akibat dari hal tersebut yaitu larinya para satwa ke pemukiman penduduk. Mereka merasa tak lagi memiliki rumah yang dapat mereka tempati sehingga jalan terakhir ialah lari ke pemukiman warga sekitar.</p>\r\n\r\n<p>Tak heran bila akhir-akhir ini kasus ditemukannya hewan liar seperti macan dan singa di pemukiman warga sering dikabarkan. Seperti kata pepatah bahwa apa yang kita lakukan akan berbalik ke diri sendiri, maka berbuatlah sesuatu yang baik. Sedangkan faktor alam dari kebakaran hutan yaitu musim kemarau dan adanya sambaran petir saat hujan.</p>\r\n\r\n<p>Musim memang tak dapat diprediksi manusia, sehingga bila musim kemarau tiba dengan jangka waktu yang sangat panjang itu wajar. Namun, hal itu memengaruhi keadaan hutan karena hutan yang setiap hari disinari matahari terik dapat menimbulkan percikan api. Hal ini juga serupa bila terjadi petir lalu petir tersebut menyambar suatu bagian hingga timbul percikan api.</p>\r\n'),
+(11, 8, 'ujianmp1', 'test level 1', '2020-03-24 21:03:02', 0, '<p>coba ikut test level 1 ah</p>\r\n'),
+(14, 2, 'ujianmp1', 'qwe', '2020-03-24 21:28:04', 0, '<p>qweqweqwe</p>\r\n'),
+(15, 3, 'ujianmp1', 'test menulis member 3', '2020-03-24 22:07:10', 0, '<p>test menulis member 3 asdas asdasd asdas das&nbsp;</p>\r\n\r\n<p>qw</p>\r\n\r\n<p>eq</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>a&nbsp;</p>\r\n\r\n<p>d a dasdasd asd as as asd asd</p>\r\n'),
+(16, 3, 'mp1', 'zxczxc', '2020-03-24 22:08:44', 1, '<p>zxczxc</p>\r\n'),
+(17, 2, 'mp1', 'Menulis Pemula lv 1 member 2', '2020-03-24 22:20:51', 1, '<p>Menulis Pemula lv 1 member 2</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -190,7 +204,7 @@ CREATE TABLE `postrating` (
   `idpost` int(11) NOT NULL,
   `idpenilai` int(11) NOT NULL,
   `nilairating` int(11) NOT NULL,
-  `wakturating` datetime NOT NULL DEFAULT current_timestamp()
+  `wakturating` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -207,7 +221,9 @@ INSERT INTO `postrating` (`idrating`, `idpost`, `idpenilai`, `nilairating`, `wak
 (9, 1, 4, 5, '2020-03-08 13:44:19'),
 (10, 1, 6, 3, '2020-03-08 19:12:24'),
 (11, 1, 5, 5, '2020-03-09 20:58:03'),
-(12, 3, 2, 5, '2020-03-10 20:47:37');
+(12, 3, 2, 5, '2020-03-10 20:47:37'),
+(13, 8, 8, 5, '2020-03-24 21:07:52'),
+(14, 8, 3, 5, '2020-03-24 22:09:48');
 
 -- --------------------------------------------------------
 
@@ -218,15 +234,15 @@ INSERT INTO `postrating` (`idrating`, `idpost`, `idpenilai`, `nilairating`, `wak
 CREATE TABLE `statuspelatihandiikuti` (
   `idstatuspelatihandiikuti` int(11) NOT NULL,
   `idpelatihandiikuti` int(11) NOT NULL,
-  `ujianlv1` tinyint(1) DEFAULT 0,
+  `ujianlv1` tinyint(1) DEFAULT '0',
   `statusujianlv1` varchar(255) NOT NULL,
-  `openlv1` tinyint(1) NOT NULL DEFAULT 0,
-  `ujianlv2` tinyint(1) NOT NULL DEFAULT 0,
+  `openlv1` tinyint(1) NOT NULL DEFAULT '0',
+  `ujianlv2` tinyint(1) NOT NULL DEFAULT '0',
   `statusujianlv2` varchar(255) NOT NULL,
-  `openlv2` tinyint(1) NOT NULL DEFAULT 0,
-  `ujianlv3` tinyint(1) NOT NULL DEFAULT 0,
+  `openlv2` tinyint(1) NOT NULL DEFAULT '0',
+  `ujianlv3` tinyint(1) NOT NULL DEFAULT '0',
   `statusujianlv3` varchar(255) NOT NULL,
-  `openlv3` tinyint(1) NOT NULL DEFAULT 0
+  `openlv3` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -234,7 +250,11 @@ CREATE TABLE `statuspelatihandiikuti` (
 --
 
 INSERT INTO `statuspelatihandiikuti` (`idstatuspelatihandiikuti`, `idpelatihandiikuti`, `ujianlv1`, `statusujianlv1`, `openlv1`, `ujianlv2`, `statusujianlv2`, `openlv2`, `ujianlv3`, `statusujianlv3`, `openlv3`) VALUES
-(2, 3, 0, '', 0, 0, '', 0, 0, '', 0);
+(2, 3, 0, '', 0, 0, '', 0, 0, '', 0),
+(3, 4, 1, '', 1, 0, '', 0, 0, '', 0),
+(8, 9, 1, '', 1, 0, '', 0, 0, '', 0),
+(9, 10, 1, '', 1, 0, '', 0, 0, '', 0),
+(10, 11, 0, '', 0, 0, '', 0, 0, '', 0);
 
 --
 -- Indexes for dumped tables
@@ -305,37 +325,37 @@ ALTER TABLE `statuspelatihandiikuti`
 -- AUTO_INCREMENT for table `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `idkomentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idkomentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `pelatihandiikuti`
 --
 ALTER TABLE `pelatihandiikuti`
-  MODIFY `idpelatihandiikuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idpelatihandiikuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `idpost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idpost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `postrating`
 --
 ALTER TABLE `postrating`
-  MODIFY `idrating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idrating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `statuspelatihandiikuti`
 --
 ALTER TABLE `statuspelatihandiikuti`
-  MODIFY `idstatuspelatihandiikuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idstatuspelatihandiikuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

@@ -21,7 +21,8 @@
 
             //konfigurasi pagination
             $config['base_url'] = site_url('forum/index'); //site url
-            $config['total_rows'] = $this->forum_model->ambilTotalPost(); //total row
+            $kategori = $this->session->userdata('pelatihan');
+            $config['total_rows'] = $this->forum_model->ambilTotalPost($kategori); //total row
             $config['per_page'] = 5;  //show record per halaman
             $config["uri_segment"] = 3;  // uri parameter
             $choice = $config["total_rows"] / $config["per_page"];

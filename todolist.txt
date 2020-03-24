@@ -1,0 +1,2 @@
+- pagination forum masih rusak => done
+- tampilan forum liat di forum lain

@@ -63,6 +63,12 @@
                 $pelatihan = $this->session->userdata('pelatihan');
                 $ujian = substr($pelatihan, 0, 5); // ujian
                 $ujian = 'ujian' ? true : false;
+
+                // echo '<pre>';
+                // print_r($pelatihan);
+                // echo '</pre>';
+
+                // die();
                 
 
                 // jika kategori adalah ujian
@@ -70,6 +76,9 @@
 
                     $idpelatihan = substr($pelatihan, -3, 2); // mp
                     $level = substr($pelatihan, -1, 1); // 1 || 2 || 3;
+
+                    // echo "level =".$level;
+                    // die();
 
                     $dataupdatestatusujian = array(
                         'idmember' => $this->session->userdata('id_member'),
@@ -81,20 +90,34 @@
                     // update status pelatihan
                     $this->posting_model->updatestatuspelatihan($dataupdatestatusujian);
 
+                    // simpan data ujian
+                    $result = $this->posting_model->simpanpost($dataposting);
+
+                    if($result){
+
+                        redirect('pelatihan');
+
+                    }
+
+                }
+
+                // jika bukan ujian
+                // alias post biasa
+                else{
+
+                    // simpan data post
+                    $result = $this->posting_model->simpanpost($dataposting);
+
+                    // redirect ke forum
+                    if($result){
+
+                        redirect('forum');
+
+                    }
                 }
                 
 
-                // extrak level ujian
-                // jika elatihan ada kata 'ujian'
-                // update data ujian
-
-                $result = $this->posting_model->simpanpost($dataposting);
-
-                if($result){
-
-                    redirect('forum');
-
-                }
+                
 
             }
 

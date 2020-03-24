@@ -34,7 +34,7 @@
         <div class="row">
 
           <!-- gambar gede -->
-          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-5 d-none d-lg-block" style="background-image: url('<?php echo base_url() ?>asset/img/daftar-image.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
 
 
           <div class="col-lg-7">
