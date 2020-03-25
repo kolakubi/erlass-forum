@@ -88,7 +88,7 @@
                 
                 <!-- button edit -->
                 <div class="my-2"></div>
-                  <a href="#" class="btn btn-primary btn-icon-split">
+                  <a href="<?php echo base_url() ?>admin/editmember/<?php echo $member['id_member'] ?>" class="btn btn-primary btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fa fa-edit"></i>
                     </span>

@@ -67,6 +67,7 @@
 
         public function lihatmember($idmember){
 
+            // ambil data spesifik member
             $result = $this->admin_model->ambildatamember($idmember);
 
             $data['member'] = $result;
@@ -82,27 +83,106 @@
 
         public function editmember($idmember){
 
-            $this->load->view('admin/header');
-            $this->load->view('admin/sidebar');
-            $this->load->view('admin/topbar');
-            $this->load->view('admin/memberlihat', $data);
-            $this->load->view('admin/footer');
+            // ambil data spesifik member
+            $result = $this->admin_model->ambildatamember($idmember);
 
-        }
+            $data['member'] = $result;
 
-
-
-
-
-        public function post(){
 
             $this->load->view('admin/header');
             $this->load->view('admin/sidebar');
             $this->load->view('admin/topbar');
-            $this->load->view('admin/post');
+            $this->load->view('admin/memberedit', $data);
+            $this->load->view('admin/footer');
+ 
+        } // end of function editmember
+
+
+
+        public function simpaneditmember(){
+
+            // set form validation
+			$this->form_validation->set_rules(array(
+				array(
+					'field' => 'email',
+					'label' => 'Email',
+					'rules' => 'required'
+				),
+                array(
+					'field' => 'nama',
+					'label' => 'Nama',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'nomorinduk',
+					'label' => 'Nomor Induk',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'alamat',
+					'label' => 'Alamat',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'sekolah',
+					'label' => 'Sekolah',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'hp',
+					'label' => 'HP',
+					'rules' => 'required'
+                ),
+                array(
+					'field' => 'memberid',
+					'label' => 'memberid',
+					'rules' => 'required'
+                )
+                
+            ));
+
+            
+
+            $this->form_validation->set_message('required', 'wajib diisi');
+
+            // ambil semua variable
+            $idmember = $this->input->post('memberid');
+
+            $datamember = array(
+                'email' => $this->input->post('email'),
+                'no_induk' => $this->input->post('nomorinduk'),
+                'nama' => $this->input->post('nama'),
+                'alamat' => $this->input->post('alamat'),
+                'sekolah' => $this->input->post('sekolah'),
+                'hp' => $this->input->post('hp'),
+            );
+
+            // simpan data
+            $result = $this->admin_model->simpandataeditmember($idmember, $datamember);
+
+            if($result){
+                redirect('admin/member');
+            }
+            else{
+                echo 'error';
+            }
+
+
+        } // end of function simpaneditmember
+
+
+
+
+
+        public function ujian(){
+
+            $this->load->view('admin/header');
+            $this->load->view('admin/sidebar');
+            $this->load->view('admin/topbar');
+            $this->load->view('admin/ujian');
             $this->load->view('admin/footer');
 
-        } // end of function post
+        } // end of function ujian
 
 
 

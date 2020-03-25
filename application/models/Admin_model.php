@@ -10,8 +10,6 @@
 
 
 
-
-
         public function ambildatamember($idmember = null){
 
             if($idmember) {
@@ -30,6 +28,16 @@
             }
 
         } // end of function ambildatamember
+
+
+        public function simpandataeditmember($idmember, $datamember){
+
+            $this->db->where('id_member', $idmember);
+            $this->db->update('member', $datamember);
+
+            return true;
+
+        } // end of function simpandataeditmember
 
 
 

@@ -39,14 +39,14 @@
 
 <!-- Judul menu sidebar -->
 <div class="sidebar-heading">
-  Navigasi
+  Post
 </div>
 
 <!-- Nav Item - Artikel -->
 <li class="nav-item">
-  <a class="nav-link" href="<?php echo base_url() ?>admin/post">
+  <a class="nav-link" href="<?php echo base_url() ?>admin/ujian">
     <i class="fas fa-fw fa-edit"></i>
-    <span>Artikel</span></a>
+    <span>Ujian</span></a>
 </li>
 <!-- Nav Item - Level -->
 <li class="nav-item">
