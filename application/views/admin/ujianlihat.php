@@ -23,9 +23,12 @@
 
             <div class="card-footer text-muted">
 
-                <a href="#" class="btn btn-primary">Lulus</a>
+                <a href="<?php echo base_url() ?>admin/lulustes/<?php echo $post['idpelatihandiikuti'] ?>/<?php echo $post['levelujian'] ?>" 
+                    class="btn btn-primary">Lulus</a>
 
-                <a href="<?php echo base_url() ?>admin/ujian" class="btn btn-danger">Batal</a>
+                <a href="#" class="btn btn-danger">Belum Lulus</a>
+
+                <a href="<?php echo base_url() ?>admin/ujian" class="btn btn-success">Batal</a>
            
            
             </div> <!-- end of card footer -->

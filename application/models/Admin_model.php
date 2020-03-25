@@ -74,6 +74,7 @@
 
 
 
+
         public function ambildatapelatihandiikuti($idmember, $kategori){
 
             $this->db->select('*');
@@ -85,7 +86,20 @@
 
             return $result;
 
-        }
+        } // end of function ambildatapelatihandiikuti
+
+
+
+
+
+        public function updatestatuspelatihandiikuti($id, $level, $status){
+
+            $this->db->where('idpelatihandiikuti', $id);
+            $this->db->update('statuspelatihandiikuti', array('statusujianlv'.$level => $status, 'openlv'.$level => 1));
+
+            return true;
+
+        } // end of function updatestatuspelatihandiikuti
 
 
 

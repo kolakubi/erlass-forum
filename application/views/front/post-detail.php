@@ -141,13 +141,30 @@
 
         <?php foreach($posts['komentar'] as $komen) : ?>
         <!-- Single Comment -->
-        <div class="media mb-4">
-          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-          <div class="media-body">
+        <div class="card shadow mb-4">
+          
+          
+          <div class="card-header">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
             <h5 class="mt-0"><?php echo $komen['nama'] ?></h5>
-            <p><?php echo $komen['isikomentar'] ?></p>
+          </div> <!-- end of card-header -->
+          
+          
+          <div class="card-body">
+              <p><?php echo $komen['isikomentar'] ?></p>
+          </div> <!-- end of card-body -->
+
+          <div class="card-footer">
+            <span>Nilai: </span>
+            <i class="fas fa-star" style="color: orange"></i>
+            <i class="fas fa-star" style="color: orange"></i>
+            <i class="fas fa-star" style="color: orange"></i>
+            <i class="fas fa-star" style="color: orange"></i>
+            <i class="fas fa-star" style="color: orange"></i>
           </div>
-        </div>
+
+        </div> <!-- end of card -->
+        
         <!-- end of single Comment -->
         <?php endforeach ?>
 

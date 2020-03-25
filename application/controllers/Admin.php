@@ -208,13 +208,17 @@
             $kategori = substr($datapost['idkategori'], -3, 2);
             $datapost['kategoriujian'] = $kategori;
 
+            // potong level ujian
+            $levelujian = substr($datapost['idkategori'], -1, 1);
+            $datapost['levelujian'] = $levelujian;
+
             // ambil data pelatihandiikuti
             $datapelatihandiikuti = $this->admin_model->ambildatapelatihandiikuti($datapost['idauthor'], $kategori);
             $datapost['idpelatihandiikuti'] = $datapelatihandiikuti['idpelatihandiikuti'];
 
-            // echo '<pre>';
-            // print_r($datapost);
-            // echo '</pre>';
+            echo '<pre>';
+            print_r($datapost);
+            echo '</pre>';
 
 
             $data['post'] = $datapost;
@@ -226,6 +230,20 @@
             $this->load->view('admin/footer');
 
         } // end of function liahujian
+
+
+
+        public function lulustes($idstatuspelatihan = null, $level = null){
+
+            // update data statuspelatihandiikuti
+            $keterangan = 'lulus';
+            $result = $this->admin_model->updatestatuspelatihandiikuti($idstatuspelatihan, $level, $keterangan);
+
+            if($result){
+                redirect('admin/ujian');
+            }
+
+        } // end of function lulustes
 
 
 
