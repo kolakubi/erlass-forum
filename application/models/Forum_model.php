@@ -62,11 +62,11 @@
         function ambilDataPost($limit, $start){
             $query = $this->db->get('post', $limit, $start);
             return $query;
-        }
+        } // end of function ambilDataPost
 
 
 
-        
+
 
 
         public function ambilTotalPost($kategori){

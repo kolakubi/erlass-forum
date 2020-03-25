@@ -81,7 +81,7 @@
                     'password' => $this->input->post('password'),
                     'repeatpassword' => $this->input->post('repeatpassword'),
                     'nama' => $this->input->post('nama'),
-                    'nomorinduk' => $this->input->post('email'),
+                    'nomorinduk' => $this->input->post('nomorinduk'),
                     'alamat' => $this->input->post('alamat'),
                     'sekolah' => $this->input->post('sekolah'),
                     'hp' => $this->input->post('hp')

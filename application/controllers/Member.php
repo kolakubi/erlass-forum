@@ -9,10 +9,16 @@
             // cek jika login
             if($this->session->userdata('id_member')){
 
-                if($this->session->userdata('id_member') == 1){
+                if($this->session->userdata('level') == 2){
                     
-                    // jika admin yg login, redirect ke admin
-                    redirect('/admin');
+                    // lanjutin program
+        
+                }
+                else{
+
+                    // jika belum login, redirect ke login
+                    redirect('/logout');
+
                 }
 
             }
