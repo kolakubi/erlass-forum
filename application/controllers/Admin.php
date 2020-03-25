@@ -176,13 +176,60 @@
 
         public function ujian(){
 
+            // ambil post ujian 
+            $dataujian = $this->admin_model->ambildataujian();
+
+            // echo '<pre>';
+            // print_r($dataujian);
+            // echo '</pre>';
+
+            // die();
+
+            $data['dataujian'] = $dataujian;
+
             $this->load->view('admin/header');
             $this->load->view('admin/sidebar');
             $this->load->view('admin/topbar');
-            $this->load->view('admin/ujian');
+            $this->load->view('admin/ujian', $data);
             $this->load->view('admin/footer');
 
         } // end of function ujian
+
+
+
+        public function lihatujian($idpost){
+
+            // ambil data ujian spesifik
+            $datapost = $this->admin_model->ambildataujian($idpost);
+
+            // potong kategori
+            // tadinya = ujianmp1
+            // jadi kategori = mp
+            $kategori = substr($datapost['idkategori'], -3, 2);
+            $datapost['kategoriujian'] = $kategori;
+
+            // ambil data pelatihandiikuti
+            $datapelatihandiikuti = $this->admin_model->ambildatapelatihandiikuti($datapost['idauthor'], $kategori);
+            $datapost['idpelatihandiikuti'] = $datapelatihandiikuti['idpelatihandiikuti'];
+
+            // echo '<pre>';
+            // print_r($datapost);
+            // echo '</pre>';
+
+
+            $data['post'] = $datapost;
+
+            $this->load->view('admin/header');
+            $this->load->view('admin/sidebar');
+            $this->load->view('admin/topbar');
+            $this->load->view('admin/ujianlihat', $data);
+            $this->load->view('admin/footer');
+
+        } // end of function liahujian
+
+
+
+
 
 
 

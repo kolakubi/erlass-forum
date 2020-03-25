@@ -19,7 +19,6 @@
                       <th>Judul</th>
                       <th>Kategori</th>
                       <th>Dilihat</th>
-                      <th>Point</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -29,22 +28,26 @@
                       <th>Judul</th>
                       <th>Kategori</th>
                       <th>Dilihat</th>
-                      <th>Point</th>
                       <th>Action</th>
                     </tr>
                   </tfoot>
                   <tbody>
+                    <?php $counter = 0; ?>
+                    <?php foreach($dataujian as $ujian) : ?>
+                    <?php $counter++; ?>
                     <tr>
-                        <td>1</td>
-                        <td>Mencegah Bakteri Jahat</td>
-                        <td>Menulis Pemula lv 1</td>
-                        <td>100 view</td>
-                        <td>50</td>
+                        <td><?php echo $counter ?></td>
+                        <td><?php echo $ujian['judul'] ?></td>
+                        <td><?php echo $ujian['namakategori'] ?></td>
                         <td>
-                            <a href="" class="btn btn-danger">
-                                <i class="fas fa-fw fa-trash"></i>
-                            </a>
-                            <a href="" class="btn btn-success">
+                            <?php if($ujian['view'] == 0) : ?>
+                                <a class="btn btn-danger" style="color: white">Belum</a>
+                            <?php else : ?>
+                                <a class="btn btn-success" style="color: white">Sudah</a>
+                            <?php endif ?>
+                        </td>
+                        <td>
+                            <a href="<?php echo base_url() ?>admin/lihatujian/<?php echo $ujian['idpost'] ?>" class="btn btn-success">
                                 <i class="fas fa-fw fa-eye"></i>
                             </a>
                             <a href="" class="btn btn-primary">
@@ -52,24 +55,9 @@
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Mencegah Bakteri Jahat</td>
-                        <td>Menulis Pemula lv 1</td>
-                        <td>100 view</td>
-                        <td>50</td>
-                        <td>
-                            <a href="" class="btn btn-danger">
-                                <i class="fas fa-fw fa-trash"></i>
-                            </a>
-                            <a href="" class="btn btn-success">
-                                <i class="fas fa-fw fa-eye"></i>
-                            </a>
-                            <a href="" class="btn btn-primary">
-                                <i class="fas fa-fw fa-edit"></i>
-                            </a>
-                        </td>
-                    </tr>
+
+                    <?php endforeach ?>
+
                   </tbody>
 
                 </table> <!-- end of table -->
