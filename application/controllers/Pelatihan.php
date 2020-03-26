@@ -7,10 +7,12 @@
             parent::__construct();
 
         }
+        // =====================================================
+
+
 
 
         public function index(){
-
             // cek jika login
             if($this->session->userdata('id_member')){
 
@@ -18,31 +20,28 @@
 
                 // ambil data pelatihan yang diikuti
                 $datapelatihandiikuti = $this->pelatihan_model->ambildatapelatihan($idmember);
-
                 $listPelatihan = array();
 
                 if(in_array(['idmember' => $idmember, 'idpelatihan' => 'mp'], $datapelatihandiikuti)){
-
                     // buat variable pelatihan terikait
                     $data['menulispemula'] = true; 
                 }
-
-
                 $data['point'] = false;
                 // jika sdh login, beri akses
                 $this->load->view('front/header');
                 $this->load->view('front/pelatihan', $data);
                 $this->load->view('front/footer');
-
             }
             else{
-
                 // jika belum login, redirect ke login
                 redirect('/login');
-
             }
-
         } // end of function index
+        // =====================================================
+
+
+
+
 
 
         public function ikut($idpelatihan){
@@ -51,13 +50,20 @@
                 'idmember' => $this->session->userdata('id_member'),
                 'idpelatihan' => $idpelatihan 
             );
-
             // insert pendaftaran ke DB
             $pendaftaran = $this->pelatihan_model->daftar($datapendaftaran);
+
+            // echo '<pre>';
+            // print_r($_SESSION);
+            // echo '</pre>';
+
+            // die();
 
             if($pendaftaran){
 
                 if($idpelatihan == 'mp'){
+
+                    $this->session->set_userdata(['pelatihan' => 'ujian'.$idpelatihan.'1']);
 
                     // redirect ke halaman ujian
                     $this->load->view('front/header');
@@ -66,12 +72,13 @@
                 }else{
 
                     echo 'sedang dikembangkan';
-
                 }
-   
             }
-
         } // end of function ikutipelatihan
+        // =====================================================
+
+
+
 
 
         public function menulisPemula($level){
@@ -84,13 +91,11 @@
 
             // ambil point dari data session
             $idmember = $this->session->userdata('id_member');
-
             $arrayPoint = $this->pelatihan_model->ambilpoint($idmember);
 
             // jumlahkan point
             // loop buat jumlahin total nilai
             $totalPoint = 0;
-
             if($arrayPoint){
                 for($i=0; $i<count($arrayPoint); $i++){
                     $totalPoint += $arrayPoint[$i]['nilairating'];
@@ -98,7 +103,6 @@
             }
 
             // jika point tidak sesuai, tampilkan notif
-
             $akses = false;
             $pelatihan = '';
 
@@ -122,7 +126,6 @@
             if($akses){
 
                 // cek apakah sudah mengikuti ujian?
-
                 $kategori = substr($pelatihan, 0, 2);
                 $datastatuspelatihan = $this->pelatihan_model->ambilstatuspelatihan($idmember, $kategori, $level);
 
@@ -148,7 +151,6 @@
                 if($datastatuspelatihan){ 
 
                     $sudahujian = $datastatuspelatihan['ujianlv'.$level];
-
                     // jika sdh ujian
                     if($sudahujian){
 
@@ -157,11 +159,8 @@
 
                         // jika lv terbuka
                         if($lvterbuka){
-
                             redirect('/pilihlevel');
-
                         }
-
                         // jika lv belum terbuka
                         else{
 
@@ -169,36 +168,29 @@
                             $this->load->view('front/header');
                             $this->load->view('ujian/menunggukonfirmasi');
                             $this->load->view('front/footer');
-
                         }
-
                     }
                     // jika belum ujian
                     else{
-
                         // echo 'dari belum ujian';
                         // set session ujian + kode pelatihan
                         $this->session->set_userdata(['pelatihan' => 'ujian'.$pelatihan]);
 
-                        // echo '<pre>';
-                        // print_r($this->session->userdata());
-                        // echo '</pre>';
+                        echo '<pre>';
+                        print_r($this->session->userdata());
+                        echo '</pre>';
 
                         // die();
 
                         // redirect ke halaman ujian
                         $this->load->view('front/header');
-                        $this->load->view('ujian/menulispemula/lv1');
+                        $this->load->view('ujian/menulispemula/lv'.$level);
                         $this->load->view('front/footer');
-
                     }
-
                 }
-
                 // jika data status belum ada brati belum daftar
                 // redirect ke halaman daftar
                 else{
-
                     // echo 'dari daftar';
 
                     // echo '<pre>';
@@ -209,7 +201,6 @@
                     $this->load->view('front/header');
                     $this->load->view('front/pelatihan');
                     $this->load->view('front/footer');
-
                 }
 
                 // [idpelatihandiikuti] => 3
@@ -229,19 +220,14 @@
                 // simpan category di session
 
             }else{
-
-
                 $data['point'] = true;
                 // level poitn belum cukup tampilkan notif
                 $this->load->view('front/header');
                 $this->load->view('front/pelatihan', $data);
                 $this->load->view('front/footer');
-                
             }
-
-            
-
         } // end of function level
+        // =====================================================
 
 
-    }
+    } // end of class

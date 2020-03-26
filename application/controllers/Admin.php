@@ -12,24 +12,19 @@
                 if($this->session->userdata('level') == 1){
                     
                     // lanjutin program
-
                 }
                 else{
-
                     // logout
                     redirect('/logout');
-
                 }
-
             }
             else{
-
                 // jika belum login, redirect ke login
                 redirect('/login');
-
             }
+        } // end of function __construct
+        // =======================================================
 
-        }
 
 
         public function index(){
@@ -41,6 +36,7 @@
             $this->load->view('admin/footer');
 
         } // end of function index
+        // =======================================================
 
 
 
@@ -62,6 +58,7 @@
             $this->load->view('admin/footer');
 
         } // end of function member
+        // =======================================================
 
 
 
@@ -79,15 +76,17 @@
             $this->load->view('admin/footer');
 
         } // end of function lihatmember
+        // =======================================================
+
+
+
 
 
         public function editmember($idmember){
 
             // ambil data spesifik member
             $result = $this->admin_model->ambildatamember($idmember);
-
             $data['member'] = $result;
-
 
             $this->load->view('admin/header');
             $this->load->view('admin/sidebar');
@@ -96,6 +95,9 @@
             $this->load->view('admin/footer');
  
         } // end of function editmember
+        // =======================================================
+
+
 
 
 
@@ -141,13 +143,10 @@
                 
             ));
 
-            
-
             $this->form_validation->set_message('required', 'wajib diisi');
 
             // ambil semua variable
             $idmember = $this->input->post('memberid');
-
             $datamember = array(
                 'email' => $this->input->post('email'),
                 'no_induk' => $this->input->post('nomorinduk'),
@@ -166,9 +165,8 @@
             else{
                 echo 'error';
             }
-
-
         } // end of function simpaneditmember
+        // =======================================================
 
 
 
@@ -194,6 +192,7 @@
             $this->load->view('admin/footer');
 
         } // end of function ujian
+        // =======================================================
 
 
 
@@ -220,7 +219,6 @@
             print_r($datapost);
             echo '</pre>';
 
-
             $data['post'] = $datapost;
 
             $this->load->view('admin/header');
@@ -230,6 +228,9 @@
             $this->load->view('admin/footer');
 
         } // end of function liahujian
+        // =======================================================
+
+
 
 
 
@@ -239,11 +240,26 @@
             $keterangan = 'lulus';
             $result = $this->admin_model->updatestatuspelatihandiikuti($idstatuspelatihan, $level, $keterangan);
 
+            // kirim surat ucapan selamat
+            // ke member
+
+
             if($result){
                 redirect('admin/ujian');
             }
 
         } // end of function lulustes
+        // =======================================================
+
+
+
+
+        public function kirimucapanselamatlulustes(){
+
+
+
+        } // end of function kirimucapanselamatlulustes
+        // =======================================================
 
 
 

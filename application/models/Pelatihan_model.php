@@ -9,6 +9,7 @@
             $this->load->database();
 
         } // end of function construct
+        // =====================================================
 
 
 
@@ -27,7 +28,7 @@
             // result nya array nilai rating
 
         } // end of ambilPoint function
-
+        // =====================================================
 
 
 
@@ -42,7 +43,7 @@
             return $result;
 
         } // end of function ambildatapelatihan
-
+        // =====================================================
 
 
 
@@ -57,7 +58,7 @@
             return  $simpanid;
 
         } // end of function simpanpelatihan
-
+        // =====================================================
 
 
 
@@ -69,7 +70,7 @@
             return true;
 
         } // end of simpanstatuspelatihan
-
+        // =====================================================
 
 
 
@@ -87,7 +88,7 @@
             return $result;
 
         } // end of function cekdatapelatihan
-
+        // =====================================================
 
 
 
@@ -117,7 +118,7 @@
             return true;
 
         } // end of function daftar
-
+        // =====================================================
 
 
 
@@ -134,7 +135,7 @@
             return $result;
 
         } // end of function cekujian
-
+        // =====================================================
 
 
 

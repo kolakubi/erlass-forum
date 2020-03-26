@@ -30,7 +30,7 @@
 
 <!-- Nav Item - Artikel -->
 <li class="nav-item">
-  <a class="nav-link" href="<?php echo base_url() ?>member/inbox/<?php echo $this->session->userdata('id_member') ?>">
+  <a class="nav-link" href="<?php echo base_url() ?>member/inbox">
     <i class="fas fa-fw fa-envelope"></i>
     <span>Inbox</span>
 

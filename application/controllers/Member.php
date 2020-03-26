@@ -57,9 +57,10 @@
 
 
 
-        public function inbox($idmember){
+        public function inbox(){
 
             //ambil data surat spesifik
+            $idmember = $this->session->userdata('id_member');
             $surat = $this->member_model->ambildatasurat($idmember);
 
             // echo '<pre>';
@@ -75,6 +76,27 @@
             $this->load->view('member/footer');
 
         } // end of function inbox
+        //==================================================
+
+
+
+
+        public function lihatsurat($idsurat){
+
+            // ambil data surat
+            $surat = $this->member_model->lihatsurat($idsurat);
+            // update data surat sdh dibaca
+            $this->member_model->suratdibaca($idsurat);
+
+            $data['surat'] = $surat;
+
+            $this->load->view('member/header');
+            $this->load->view('member/sidebar', $this->datasidebar());
+            $this->load->view('member/topbar');
+            $this->load->view('member/lihatsurat', $data);
+            $this->load->view('member/footer');
+
+        } // end of function lihatsurat
         //==================================================
 
 

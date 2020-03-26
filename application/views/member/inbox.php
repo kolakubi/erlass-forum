@@ -46,7 +46,7 @@
                         </td>
                         <td><?php echo $surat['waktukirimsurat'] ?></td>
                         <td>
-                            <a href="" class="btn btn-success">
+                            <a href="<?php echo base_url() ?>member/lihatsurat/<?php echo $surat['idsurat'] ?>" class="btn btn-success">
                                 <i class="fas fa-fw fa-eye"></i>
                             </a>
                             <a href="" class="btn btn-danger">
