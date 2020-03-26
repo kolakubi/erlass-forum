@@ -5,7 +5,10 @@
         public function __construct(){
             // koneksi ke database
             $this->load->database();
-        }
+        } // end of function __construct
+        // ==========================================================
+
+
 
         public function cekEmail($email){
 
@@ -15,6 +18,10 @@
             return $this->db->get()->row_array();
 
         }
+        // end of function cekEmail
+        // ==========================================================
+
+
 
         //insert data login
         public function insertLogin($data){
@@ -27,10 +34,11 @@
             ){
                 return true;
             }
-
             return false;
+        }// end of function insertLogin
+        // ==========================================================
 
-        }
+
 
         // insert data member
         public function insertMember($data){
@@ -46,28 +54,48 @@
             ){
                 return true;
             }
-
             return false;
-
         }
+        // end of function insertMember
+        // ==========================================================
+
+
 
         public function simpanMember($data){
 
             // insert data login
             if($this->insertLogin($data)){
-
                 // insert data member
                 if($this->insertMember($data)){
+                    // ambil last insert id
+                    $insert_id = $this->db->insert_id();
+                    // kirim pesan sambutan ke member baru
+                    $this->kirimsambutan($insert_id);
 
                     return true;
-
                 }
-
             }
-
             return false;
+        }// end of function simpanMember
+        // ==========================================================
 
-        }
 
 
-    }
+        public function kirimsambutan($idmember){
+
+            $datainsert = array(
+                'idpenerima' => $idmember,
+                'idpengirim' => 1,
+                'judulsurat' => 'Selamat datang di Erlass',
+                'isisurat' => 'terima kasih telah bergabung ke Pelatihan. Ayo kumpulkan poinmu dan dapatkan hadiah menarik'
+            );
+
+            $this->db->insert('surat', $datainsert);
+
+        } // end of function kirimsambutan
+        // ==========================================================
+
+
+
+
+    } // end of class

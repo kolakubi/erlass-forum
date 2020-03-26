@@ -6,7 +6,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+  <div class="sidebar-brand-text mx-3">Member <sup>2</sup></div>
 </a>
 
 <!-- Divider -->
@@ -18,6 +18,31 @@
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>Dashboard</span></a>
 </li>
+<!-- ============================================ -->
+
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+<!-- Judul menu sidebar -->
+<div class="sidebar-heading">
+  News
+</div>
+
+<!-- Nav Item - Artikel -->
+<li class="nav-item">
+  <a class="nav-link" href="<?php echo base_url() ?>member/inbox/<?php echo $this->session->userdata('id_member') ?>">
+    <i class="fas fa-fw fa-envelope"></i>
+    <span>Inbox</span>
+
+    <!-- jika ada surat belum dibaca -->
+    <?php if($inbox) : ?>
+      <span class="badge badge-danger badge-counter"><?php echo $inbox ?></span>
+    <?php endif ?>
+  </a>
+    
+</li>
+<!-- ============================================ -->
+
 
 <!-- Divider -->
 <hr class="sidebar-divider">
@@ -33,6 +58,9 @@
     <i class="fas fa-fw fa-user"></i>
     <span>Profil</span></a>
 </li>
+<!-- ============================================ -->
+
+
 
 <!-- Divider -->
 <hr class="sidebar-divider">
@@ -54,6 +82,10 @@
     <i class="fas fa-fw fa-trophy"></i>
     <span>Level</span></a>
 </li>
+<!-- ============================================ -->
+
+<!-- Divider -->
+<hr class="sidebar-divider">
 
 <!-- Judul menu sidebar -->
 <div class="sidebar-heading">
