@@ -70,7 +70,7 @@
                     // ambil last insert id
                     $insert_id = $this->db->insert_id();
                     // kirim pesan sambutan ke member baru
-                    $this->kirimsambutan($insert_id);
+                    $this->kirimsurat($insert_id);
 
                     return true;
                 }
@@ -81,7 +81,7 @@
 
 
 
-        public function kirimsambutan($idmember){
+        public function kirimsurat($idmember){
 
             $datainsert = array(
                 'idpenerima' => $idmember,

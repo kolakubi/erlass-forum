@@ -16,20 +16,33 @@
 
     <!-- Blog Post -->
     <?php foreach($posts as $post) : ?>
+
+    <a href="<?php echo base_url() ?>postdetail/post/<?php echo $post['idpost'] ?>">
     <div class="card mb-4 shadow">
-      <!-- <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap"> -->
      
       <div class="card-body">
 
-        <!-- judul -->
-        <h2 class="card-title"><?php echo $post['judul'] ?></h2>
-        
-        <!-- isi post -->
-        <p class="card-text"><?php echo $post['isipost'] ?></p>
-        
-        <!-- tombol baca -->
-        <a href="<?php echo base_url() ?>postdetail/post/<?php echo $post['idpost'] ?>" class="btn btn-primary">Baca &rarr;</a>
-      </div>
+        <div class="row">
+          <!-- image -->
+          <div class="col-md-2">
+            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/70x70" alt="">
+          </div>
+
+          <div class="col-md-10">
+            <!-- judul -->
+            <h4 class="card-title" style="color: black"><?php echo $post['judul'] ?></h4>
+            
+            <!-- isi post -->
+            <p class="card-text" style="color: gray"><?php echo $post['isipost'] ?></p>
+            
+            <!-- tombol baca -->
+            <!-- <a href="<?php echo base_url() ?>postdetail/post/<?php echo $post['idpost'] ?>" class="btn btn-primary">Baca &rarr;</a> -->
+          </div>
+
+
+        </div> <!-- end of row -->
+      </div> <!-- end of card-body -->
+      </a> <!-- end of anchor wrap -->
 
 
       <div class="card-footer text-muted">

@@ -26,7 +26,6 @@
 
           <!-- Menulis Pemula -->
           <div class="col-md-4 text-center">
-            <h2>Menulis Pemula</h2>
 
             <?php if(isset($menulispemula)) : ?>
             <p class="text-primary">Kursus diikuti</p>
@@ -36,9 +35,9 @@
 
             <?php endif ?>
 
-            <!-- level 1 -->
             <div class="card border-primary mb-3">
-              <div class="card-header">Level 1</div>
+              <img class="card-img-top" src="<?php echo base_url() ?>asset/img/pelatihan-menulis-pemula-thumb.jpg" alt="pelatihan guru">
+              <div class="card-header">Menulis Pemula</div>
                 <div class="card-body text-primary">
                 <p class="card-text">Tingkat kesulitan rendah</p>
 
@@ -60,12 +59,11 @@
 
           <!-- Menulis buku -->
           <div class="col-md-4 text-center">
-            <h2>Menulis buku</h2>
             <p class="text-danger">Kamu belum mengikuti kursus ini</p>
 
-            <!-- level 1 -->
             <div class="card border-secondary mb-3">
-              <div class="card-header">Level 1</div>
+              <img class="card-img-top" src="<?php echo base_url() ?>asset/img/pelatihan-menulis-buku-thumb.jpg" alt="pelatihan guru">
+              <div class="card-header">Menulis buku</div>
                 <div class="card-body text-secondary">
                 <p class="card-text">Tingkat kesulitan rendah</p>
                 <a href="<?php echo base_url() ?>pelatihan/menulisbuku/1" class="btn btn-secondary">Buka Pelatihan</a>
@@ -76,81 +74,24 @@
 
 
 
-          <!-- excel -->
+          <!-- Menulis Cerpen -->
           <div class="col-md-4 text-center">
-            <h2>Excel</h2>
             <p class="text-danger">Kamu belum mengikuti kursus ini</p>
 
-            <!-- level 1 -->
             <div class="card border-secondary mb-3">
-              <div class="card-header">Level 1</div>
+              <img class="card-img-top" src="<?php echo base_url() ?>asset/img/pelatihan-menulis-cerpen-thumb.jpg" alt="pelatihan guru">
+              <div class="card-header">Menulis Cerpen</div>
                 <div class="card-body text-secondary">
                 <p class="card-text">Tingkat kesulitan rendah</p>
-                <a href="<?php echo base_url() ?>pelatihanexcel/1" class="btn btn-secondary">Buka Pelatihan</a>
+                <a href="<?php echo base_url() ?>pelatihanmenuliscerpet/1" class="btn btn-secondary">Buka Pelatihan</a>
               </div>
             </div>
 
-          </div> <!-- end of excel -->
+          </div> <!-- end of Menulis Cerpen -->
 
       </div> <!-- end of row -->
 
       <hr>
-
-      <div class="row">
-
-        <!-- Menulis Pemula -->
-        <div class="col-md-4 text-center">
-          <h2>Menulis Pemula</h2>
-          <p class="text-danger">Kamu belum mengikuti kursus ini</p>
-
-          <!-- level 1 -->
-          <div class="card border-secondary mb-3">
-            <div class="card-header">Level 1</div>
-              <div class="card-body text-secondary">
-              <p class="card-text">Tingkat kesulitan rendah</p>
-              <a href="<?php echo base_url() ?>pelatihan/menulispemula/1" class="btn btn-secondary">Ikut Pelatihan</a>
-            </div>
-          </div>
-
-        </div> <!-- end of menulis pemula -->
-
-
-
-        <!-- Menulis buku -->
-        <div class="col-md-4 text-center">
-          <h2>Menulis buku</h2>
-          <p class="text-danger">Kamu belum mengikuti kursus ini</p>
-
-          <!-- level 1 -->
-          <div class="card border-secondary mb-3">
-            <div class="card-header">Level 1</div>
-              <div class="card-body text-secondary">
-              <p class="card-text">Tingkat kesulitan rendah</p>
-              <a href="<?php echo base_url() ?>pelatihan/menulisbuku/1" class="btn btn-secondary">Buka Pelatihan</a>
-            </div>
-          </div>
-
-        </div> <!-- end of menulis buku -->
-
-
-
-        <!-- excel -->
-        <div class="col-md-4 text-center">
-          <h2>Excel</h2>
-          <p class="text-danger">Kamu belum mengikuti kursus ini</p>
-
-          <!-- level 1 -->
-          <div class="card border-secondary mb-3">
-            <div class="card-header">Level 1</div>
-              <div class="card-body text-secondary">
-              <p class="card-text">Tingkat kesulitan rendah</p>
-              <a href="<?php echo base_url() ?>pelatihanexcel/1" class="btn btn-secondary">Buka Pelatihan</a>
-            </div>
-          </div>
-
-        </div> <!-- end of excel -->
-
-      </div> <!-- end of row -->
 
 
 

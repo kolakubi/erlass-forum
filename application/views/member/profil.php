@@ -14,7 +14,7 @@
             
             <!-- Nama -->
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Malmahsyar</h6>
+                <h6 class="m-0 font-weight-bold text-primary"><?php echo $member['nama'] ?></h6>
             </div> <!-- card header -->
 
             <div class="card-body">
@@ -23,11 +23,11 @@
                  <div class="row">
                     <div class="col-md-3">
                         <div class="text-md font-weight-bold text-primary mb-1">
-                            No Induk:
+                            No Induk
                         </div>
                     </div>
                     <div class="col">
-                        12479464648764613
+                        <?php echo $member['no_induk'] ?>
                     </div>
                 </div>
                 <!-- end of No Induk -->
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        Jalan Kelapa Dua Wetan III no 29
+                        <?php echo $member['alamat'] ?>
                     </div>
                 </div>
                 <!-- end of alamat -->
@@ -53,7 +53,20 @@
                         </div>
                     </div>
                     <div class="col">
-                        0856873112233
+                        <?php echo $member['hp'] ?>
+                    </div>
+                </div>
+                <!-- end of HP -->
+
+                <!-- Sekolah -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="text-md font-weight-bold text-primary mb-1">
+                            Sekolah:
+                        </div>
+                    </div>
+                    <div class="col">
+                        <?php echo $member['sekolah'] ?>
                     </div>
                 </div>
                 <!-- end of HP -->
@@ -66,7 +79,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        mal.mahsyar@gmail.com
+                        <?php echo $member['email'] ?>
                     </div>
                 </div>
                 <!-- end of Email -->
@@ -75,11 +88,11 @@
                 
                 <!-- button edit -->
                 <div class="my-2"></div>
-                  <a href="#" class="btn btn-primary btn-icon-split">
+                  <a href="<?php echo base_url() ?>member/editprofil/<?php echo $member['id_member'] ?>" class="btn btn-primary btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fa fa-edit"></i>
                     </span>
-                    <span class="text">Edit</span>
+                    <span class="text">Edit Profil</span>
                   </a>
 
 

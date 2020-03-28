@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2020 at 04:26 PM
+-- Generation Time: Mar 28, 2020 at 02:40 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -99,6 +99,7 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`email`, `password`, `level`) VALUES
 ('tes10@tes10.com', '123', 2),
 ('tes11@tes11.com', '123', 2),
+('tes12@tes12.com', '123', 2),
 ('tes2@tes2.com', '123', 2),
 ('tes3@tes3.com', '123', 2),
 ('tes4@tes4.com', '123', 2),
@@ -130,7 +131,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id_member`, `nama`, `no_induk`, `alamat`, `sekolah`, `hp`, `email`, `foto`) VALUES
-(1, 'Mal', '112233445566778899', 'Jalan kelapa dua wetan', 'SMPN 1 Cikini', '081277889944', 'tes@tes.com', ''),
+(1, 'admin', '112233445566778899', 'Jalan kelapa dua wetan', 'SMPN 1 Cikini', '081277889944', 'tes@tes.com', ''),
 (2, 'member 2', 'tes2@tes2.com', 'Jalan persahabatan VI no 3-4 ciracas, jakarta timur 13730', 'SMPN 115 Jakarta', '08122211344899', 'tes2@tes2.com', ''),
 (3, 'member 3', 'tes3@tes3.com', 'qwe', 'SMPN 115 Jakarta', '08123445566', 'tes3@tes3.com', ''),
 (4, 'member 4', 'tes4@tes4.com', 'qwe', 'SMPN 115 Jakarta', '08123445566', 'tes4@tes4.com', ''),
@@ -139,7 +140,8 @@ INSERT INTO `member` (`id_member`, `nama`, `no_induk`, `alamat`, `sekolah`, `hp`
 (7, 'member 7', 'tes7@tes7.com', 'jalan sesama', 'SMAN 40 Jakarta', '08112233445566', 'tes7@tes7.com', ''),
 (8, 'member 9', 'tes9@tes9.com', 'jalan erlass', 'SMAN 71 Palu', '081211223344', 'tes9@tes9.com', ''),
 (9, 'member 10', '220300100104050', 'Jalan naik kelas', 'SMAN 110 Jakarta', '08112211221122', 'tes10@tes10.com', ''),
-(10, 'member 11', '1125875465498321', 'alamat ku di mana aku lupa yach', 'SD 01 Pagi Ciracas', '0854778547581', 'tes11@tes11.com', '');
+(10, 'Aminah', '11258754654983', 'alamat ku di jalan raya', 'SD 02 Pagi Ciracas', '0854778547581', 'tes11@tes11.com', ''),
+(11, 'mal', '13234142415125123', 'jalan daan mogot', 'SMPN 120', '08100420402400', 'tes12@tes12.com', '');
 
 -- --------------------------------------------------------
 
@@ -163,7 +165,8 @@ INSERT INTO `pelatihandiikuti` (`idpelatihandiikuti`, `idmember`, `idpelatihan`)
 (9, 2, 'mp'),
 (10, 3, 'mp'),
 (11, 3, 'forum'),
-(12, 9, 'mp');
+(12, 9, 'mp'),
+(22, 10, 'mp');
 
 -- --------------------------------------------------------
 
@@ -186,20 +189,21 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`idpost`, `idauthor`, `idkategori`, `judul`, `waktupublish`, `view`, `isipost`) VALUES
-(1, 3, 'mp1', 'Menulis Pemula Level 1', '2020-03-06 20:16:54', 16, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>\r\n<p>\r\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n</p>\r\n<p>\r\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt\r\n</p>\r\n<p>\r\nNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\r\n</p>'),
+(1, 3, 'mp1', 'Menulis Pemula Level 1', '2020-03-06 20:16:54', 19, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>\r\n<p>\r\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n</p>\r\n<p>\r\nSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt\r\n</p>\r\n<p>\r\nNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\r\n</p>'),
 (2, 2, 'mp1', 'Menulis Pemula 1 By Member 2', '2020-03-07 12:31:49', 0, 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'),
 (3, 4, 'mp1', 'Menghidari Covid-19 dengan obat herbal', '2020-03-08 18:54:58', 0, '<h2>lorem ipsum</h2>\r\n\r\n<p><em>dolor set amet</em></p>\r\n\r\n<p><strong><em>consequere dos minos</em></strong></p>\r\n'),
-(5, 2, 'mp1', '&lt;script&gt;XSS Attack&lt;/script&gt;', '2020-03-10 20:49:29', 0, '<p>&lt;script&gt;XSS Attack&lt;/script&gt;</p>\r\n\r\n<p>be carefull brow</p>\r\n'),
-(6, 2, 'mp1', 'Cara Mengajar Anak Paling Jitu', '2020-03-11 18:08:15', 1, '<p>pak buruk yang ia miliki. Dampak buruk itu disebabkan oleh kandungan zat-zat berbahaya di dalam makanan instan seperti lilin yang ada pada mie instan. Tak berhenti disitu, nyatanya di dalam makanan cepat saji terkandung bahan pengawet dan penyedap yang kini disebut micin.</p>\r\n\r\n<p>Fenomena kata micin kini mendadak kerap digunakan para remaja hingga dewasa bila seseorang mengalami hal-hal yang kurang normal. Maksud dari hal kurang normal itu seperti seseorang yang telat berpikir, lama menjawab bila diajak bicara dan lain sebagainya. Tak dielakkan, makanan cepat saji memang mengandung zat berbahaya seperti yang telah diungkapkan di atas.</p>\r\n\r\n<p>Sejumlah penelitian telah membuktikan bahwa keseringan mengkonsumsi makanan cepat saja memang tidak berdampak secara langsung ke tubuh. Namun, makanan-makanan cepat saji yang dikonsumsi akan tertimbun di dalam tubuh yang kemudian hari menjadi penyebab penyakit mematikan seperti kanker. Tak hanya kanker, penyakit berbahaya juga mengintai misalnya stroke, usus buntu dan penyakit ginjal.<br />\r\nMaka bila Anda termasuk ke dalam orang yang hobi mengkonsumsi makanan cepat saja, kurangilah hal itu dan</p>\r\n\r\n<p>mulai sayangi tubuh serta diri Anda sendiri. Perlu diketahui bahwa salah satu kandungan di dalam makanan instan yaitu lilin sulit dicerna tubuh. Lilin itu menghancurkan prinsip kerja sistem pencernaan tubuh sehingga makanan yang mengandung lilin akan dicerna dengan waktu minimal dua hari.</p>\r\n'),
+(5, 2, 'mp1', '&lt;script&gt;XSS Attack&lt;/script&gt;', '2020-03-10 20:49:29', 1, '<p>&lt;script&gt;XSS Attack&lt;/script&gt;</p>\r\n\r\n<p>be carefull brow</p>\r\n'),
+(6, 2, 'mp1', 'Cara Mengajar Anak Paling Jitu', '2020-03-11 18:08:15', 2, '<p>pak buruk yang ia miliki. Dampak buruk itu disebabkan oleh kandungan zat-zat berbahaya di dalam makanan instan seperti lilin yang ada pada mie instan. Tak berhenti disitu, nyatanya di dalam makanan cepat saji terkandung bahan pengawet dan penyedap yang kini disebut micin.</p>\r\n\r\n<p>Fenomena kata micin kini mendadak kerap digunakan para remaja hingga dewasa bila seseorang mengalami hal-hal yang kurang normal. Maksud dari hal kurang normal itu seperti seseorang yang telat berpikir, lama menjawab bila diajak bicara dan lain sebagainya. Tak dielakkan, makanan cepat saji memang mengandung zat berbahaya seperti yang telah diungkapkan di atas.</p>\r\n\r\n<p>Sejumlah penelitian telah membuktikan bahwa keseringan mengkonsumsi makanan cepat saja memang tidak berdampak secara langsung ke tubuh. Namun, makanan-makanan cepat saji yang dikonsumsi akan tertimbun di dalam tubuh yang kemudian hari menjadi penyebab penyakit mematikan seperti kanker. Tak hanya kanker, penyakit berbahaya juga mengintai misalnya stroke, usus buntu dan penyakit ginjal.<br />\r\nMaka bila Anda termasuk ke dalam orang yang hobi mengkonsumsi makanan cepat saja, kurangilah hal itu dan</p>\r\n\r\n<p>mulai sayangi tubuh serta diri Anda sendiri. Perlu diketahui bahwa salah satu kandungan di dalam makanan instan yaitu lilin sulit dicerna tubuh. Lilin itu menghancurkan prinsip kerja sistem pencernaan tubuh sehingga makanan yang mengandung lilin akan dicerna dengan waktu minimal dua hari.</p>\r\n'),
 (7, 2, 'mp1', 'Menulis Indah', '2020-03-11 18:08:37', 0, '<p>Bukan rahasia lagi bila anak-anak yang tinggal di daerah pedalaman sangat sulit mendapatkan kehidupan yang layak seperti anak-anak pada umumnya. Mereka kesulitan mendapat air bersih, mengenyam pendidikan sesuai batas kelayakan pendidikan Indonesia dan sulit mengikuti perkembangan zaman. Tak hanya itu saja , mereka bahkan tidak mengenal alat komunikasi seperti telepon genggam.</p>\r\n\r\n<p>Hal pokok yang menjadi sorotan utama yaitu betapa sulitnya mereka mendapat pendidikan yang layak dan mengenyam pendidikan dua belas tahun. Pada faktanya tak semua salah mereka, kesulitan mereka menjangkau lokasi sekolah menjadi masalah karena mereka harus mengarungi sungai. Mereka juga harus berjalan kaki hingga berpuluh-puluh kilo meter, bahkan ada pula yang tak memakai alas kaki.</p>\r\n\r\n<p>Kurangnya tenaga pengajar di pedalaman karena sulitnya mencari pengajar yang mau mengajar di daerah tersebut juga sangat disayangkan. Padahal kualitas seseorang diukur melalui seberapa jauh pendidikan yang dicapai karena kualitas seorang lulusan SD berbeda dengan kualitas seorang sarjana. Sehingga dapat disimpulkan bahwa pendidikan sangat memengaruhi kualitas seorang anak pedalaman.</p>\r\n'),
-(8, 2, 'mp1', 'I N D O N E S I A', '2020-03-11 18:09:03', 9, '<p>Indonesia adalah suatu negara dengan iklim tropis yang terdiri dari ribuan pulau. Walaupun daratan Indonesia tak seluas lautannya, hutan di Indonesia sangat banyak mulai dari ujung Aceh yaitu Sabang hingga Merauke (Papua). Beberapa tahun terakhir kebakaran di Indonesia kerap terjadi, hal itu disebabkan dua faktor yaitu faktor alam dan buatan (manusia).</p>\r\n\r\n<p>Mengenai faktor alam memang tak ada yang dapat disalahkan, namun mengenai faktor buatan yaitu manusia itulah hal yang perlu dievaluasi. Manusia kini telah kehilangan kesadarannya hingga mereka melakukan hal-hal yang merugikan banyak pihak diantaranya merugikan lingkungan hidup contohnya hutan. Hutan adalah habitat dari ribuan spesies makhluk hidup yang saling bergantungan.</p>\r\n\r\n<p>Maka dari itu, aksi manusia membakar hutan untuk memenuhi maksud dari dalam dirinya sendiri memang perlu diadili. Alasan mereka melakukan pembakaran hutan beragam mulai dari ingin membuka lahan tanam baru hingga berdirinya gedung-gedung bertingkat. Namun, hal yang disayangkan yaitu betapa mereka tak memikirkan aneka flora dan fauna yang tinggal di dalam hutan tersebut.</p>\r\n\r\n<p>Flora dan fauna di dalam hutan akan melarikan diri bahkan akan mati hangus terbakar api yang berkobar karena ulah manusia. Mereka akan kehilangan habitat aslinya dan akibat dari hal tersebut yaitu larinya para satwa ke pemukiman penduduk. Mereka merasa tak lagi memiliki rumah yang dapat mereka tempati sehingga jalan terakhir ialah lari ke pemukiman warga sekitar.</p>\r\n\r\n<p>Tak heran bila akhir-akhir ini kasus ditemukannya hewan liar seperti macan dan singa di pemukiman warga sering dikabarkan. Seperti kata pepatah bahwa apa yang kita lakukan akan berbalik ke diri sendiri, maka berbuatlah sesuatu yang baik. Sedangkan faktor alam dari kebakaran hutan yaitu musim kemarau dan adanya sambaran petir saat hujan.</p>\r\n\r\n<p>Musim memang tak dapat diprediksi manusia, sehingga bila musim kemarau tiba dengan jangka waktu yang sangat panjang itu wajar. Namun, hal itu memengaruhi keadaan hutan karena hutan yang setiap hari disinari matahari terik dapat menimbulkan percikan api. Hal ini juga serupa bila terjadi petir lalu petir tersebut menyambar suatu bagian hingga timbul percikan api.</p>\r\n'),
+(8, 2, 'mp1', 'I N D O N E S I A', '2020-03-11 18:09:03', 10, '<p>Indonesia adalah suatu negara dengan iklim tropis yang terdiri dari ribuan pulau. Walaupun daratan Indonesia tak seluas lautannya, hutan di Indonesia sangat banyak mulai dari ujung Aceh yaitu Sabang hingga Merauke (Papua). Beberapa tahun terakhir kebakaran di Indonesia kerap terjadi, hal itu disebabkan dua faktor yaitu faktor alam dan buatan (manusia).</p>\r\n\r\n<p>Mengenai faktor alam memang tak ada yang dapat disalahkan, namun mengenai faktor buatan yaitu manusia itulah hal yang perlu dievaluasi. Manusia kini telah kehilangan kesadarannya hingga mereka melakukan hal-hal yang merugikan banyak pihak diantaranya merugikan lingkungan hidup contohnya hutan. Hutan adalah habitat dari ribuan spesies makhluk hidup yang saling bergantungan.</p>\r\n\r\n<p>Maka dari itu, aksi manusia membakar hutan untuk memenuhi maksud dari dalam dirinya sendiri memang perlu diadili. Alasan mereka melakukan pembakaran hutan beragam mulai dari ingin membuka lahan tanam baru hingga berdirinya gedung-gedung bertingkat. Namun, hal yang disayangkan yaitu betapa mereka tak memikirkan aneka flora dan fauna yang tinggal di dalam hutan tersebut.</p>\r\n\r\n<p>Flora dan fauna di dalam hutan akan melarikan diri bahkan akan mati hangus terbakar api yang berkobar karena ulah manusia. Mereka akan kehilangan habitat aslinya dan akibat dari hal tersebut yaitu larinya para satwa ke pemukiman penduduk. Mereka merasa tak lagi memiliki rumah yang dapat mereka tempati sehingga jalan terakhir ialah lari ke pemukiman warga sekitar.</p>\r\n\r\n<p>Tak heran bila akhir-akhir ini kasus ditemukannya hewan liar seperti macan dan singa di pemukiman warga sering dikabarkan. Seperti kata pepatah bahwa apa yang kita lakukan akan berbalik ke diri sendiri, maka berbuatlah sesuatu yang baik. Sedangkan faktor alam dari kebakaran hutan yaitu musim kemarau dan adanya sambaran petir saat hujan.</p>\r\n\r\n<p>Musim memang tak dapat diprediksi manusia, sehingga bila musim kemarau tiba dengan jangka waktu yang sangat panjang itu wajar. Namun, hal itu memengaruhi keadaan hutan karena hutan yang setiap hari disinari matahari terik dapat menimbulkan percikan api. Hal ini juga serupa bila terjadi petir lalu petir tersebut menyambar suatu bagian hingga timbul percikan api.</p>\r\n'),
 (11, 8, 'ujianmp1', 'test level 1', '2020-03-24 21:03:02', 0, '<p>coba ikut test level 1 ah</p>\r\n'),
 (14, 2, 'ujianmp1', 'qwe', '2020-03-24 21:28:04', 0, '<p>qweqweqwe</p>\r\n'),
 (15, 3, 'ujianmp1', 'test menulis member 3', '2020-03-24 22:07:10', 0, '<p>test menulis member 3 asdas asdasd asdas das&nbsp;</p>\r\n\r\n<p>qw</p>\r\n\r\n<p>eq</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>a&nbsp;</p>\r\n\r\n<p>d a dasdasd asd as as asd asd</p>\r\n'),
 (16, 3, 'mp1', 'zxczxc', '2020-03-24 22:08:44', 1, '<p>zxczxc</p>\r\n'),
-(17, 2, 'mp1', 'Menulis Pemula lv 1 member 2', '2020-03-24 22:20:51', 1, '<p>Menulis Pemula lv 1 member 2</p>\r\n'),
+(17, 2, 'mp1', 'Menulis Pemula lv 1 member 2', '2020-03-24 22:20:51', 2, '<p>Menulis Pemula lv 1 member 2</p>\r\n'),
 (18, 9, 'ujianmp1', 'Tes Pelatihan Pemula lv 1', '2020-03-25 21:59:17', 0, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>\r\n\r\n<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>\r\n\r\n<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>\r\n'),
-(19, 9, 'mp1', 'asik udah lulus pelatihan level 1', '2020-03-25 23:28:32', 1, '<p>sangat bahagia</p>\r\n');
+(19, 9, 'mp1', 'asik udah lulus pelatihan level 1', '2020-03-25 23:28:32', 4, '<p>sangat bahagia</p>\r\n'),
+(20, 10, 'ujianmp1', 'asdasdasdasdasda', '2020-03-27 00:13:56', 0, '<p>asdasdasdasdasda</p>\r\n\r\n<p>asdasdasdasdasda</p>\r\n\r\n<p>asdasdasdasdasda</p>\r\n\r\n<p>asdasdasdasdasda</p>\r\n\r\n<p>asdasdasdasdasda</p>\r\n\r\n<p>asdasdasdasdasda</p>\r\n\r\n<p>asdasdasdasdasda</p>\r\n\r\n<p>asdasdasdasdasda</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -264,7 +268,8 @@ INSERT INTO `statuspelatihandiikuti` (`idstatuspelatihandiikuti`, `idpelatihandi
 (8, 9, 1, '', 1, 0, '', 0, 0, '', 0),
 (9, 10, 1, '', 1, 0, '', 0, 0, '', 0),
 (10, 11, 0, '', 0, 0, '', 0, 0, '', 0),
-(11, 12, 1, 'lulus', 1, 0, '', 0, 0, '', 0);
+(11, 12, 1, 'lulus', 1, 0, '', 0, 0, '', 0),
+(21, 22, 1, 'lulus', 1, 0, '', 0, 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -287,7 +292,9 @@ CREATE TABLE `surat` (
 --
 
 INSERT INTO `surat` (`idsurat`, `idpengirim`, `idpenerima`, `judulsurat`, `isisurat`, `waktukirimsurat`, `dilihat`) VALUES
-(1, 1, 10, 'Selamat datang di Erlass', 'terima kasih telah bergabung ke Pelatihan. Ayo kumpulkan poinmu dan dapatkan hadiah menarik', '2020-03-26 21:08:15', 0);
+(1, 1, 10, 'Selamat datang di Erlass', 'terima kasih telah bergabung ke Pelatihan. Ayo kumpulkan poinmu dan dapatkan hadiah menarik', '2020-03-26 21:08:15', 1),
+(2, 1, 10, 'Selamat anda lulus Tes', 'Segera ikuti pelatihan dan jadilah guru terbaik', '2020-03-27 22:08:20', 1),
+(3, 1, 11, 'Selamat datang di Erlass', 'terima kasih telah bergabung ke Pelatihan. Ayo kumpulkan poinmu dan dapatkan hadiah menarik', '2020-03-28 19:54:15', 1);
 
 --
 -- Indexes for dumped tables
@@ -372,19 +379,19 @@ ALTER TABLE `komentar`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pelatihandiikuti`
 --
 ALTER TABLE `pelatihandiikuti`
-  MODIFY `idpelatihandiikuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idpelatihandiikuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `idpost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idpost` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `postrating`
@@ -396,13 +403,13 @@ ALTER TABLE `postrating`
 -- AUTO_INCREMENT for table `statuspelatihandiikuti`
 --
 ALTER TABLE `statuspelatihandiikuti`
-  MODIFY `idstatuspelatihandiikuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idstatuspelatihandiikuti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `surat`
 --
 ALTER TABLE `surat`
-  MODIFY `idsurat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idsurat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

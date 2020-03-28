@@ -234,7 +234,7 @@
 
 
 
-        public function lulustes($idstatuspelatihan = null, $level = null){
+        public function lulustes($idstatuspelatihan = null, $level = null, $idmember = null){
 
             // update data statuspelatihandiikuti
             $keterangan = 'lulus';
@@ -242,9 +242,10 @@
 
             // kirim surat ucapan selamat
             // ke member
+            $kirimsurat = $this->kirimsurat($idmember);
 
 
-            if($result){
+            if($result && $kirimsurat){
                 redirect('admin/ujian');
             }
 
@@ -254,12 +255,21 @@
 
 
 
-        public function kirimucapanselamatlulustes(){
+        public function kirimsurat($idmember){
 
+            $datainsert = array(
+                'idpenerima' => $idmember,
+                'idpengirim' => 1,
+                'judulsurat' => 'Selamat anda lulus Tes',
+                'isisurat' => 'Segera ikuti pelatihan dan jadilah guru terbaik'
+            );
 
+            $this->db->insert('surat', $datainsert);
 
-        } // end of function kirimucapanselamatlulustes
-        // =======================================================
+            return true;
+
+        } // end of function kirimsambutan
+        // ==========================================================
 
 
 

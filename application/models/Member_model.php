@@ -70,5 +70,35 @@
 
 
 
+        public function ambilpost($idmember, $idpost = null){
+
+            $result = null;
+
+            $this->db->select('*');
+            $this->db->from('post');
+            $this->db->join('member', 'post.idauthor = member.id_member');
+            $this->db->join('kategori', 'post.idkategori = kategori.idkategori');
+            $this->db->where('post.idauthor', $idmember);
+
+            // jika ada idpost
+            // buat member -> lihatpost
+            if($idpost){
+                $this->db->where('post.idpost', $idpost);
+                $result = $this->db->get()->row_array();
+            }
+            // jika tdk ada idpost
+            // buat member -> ambil list post
+            else{
+                $result = $this->db->get()->result_array();
+            }
+
+            return $result;
+
+        } // end of function ambilpost
+        // =======================================================
+
+
+
+
 
     } // end of class

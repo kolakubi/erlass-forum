@@ -4,6 +4,7 @@
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Artikel</h1>
           <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+          
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -11,9 +12,17 @@
               <h6 class="m-0 font-weight-bold text-primary">Postingan</h6>
             </div>
             <div class="card-body">
+
+              <!-- jika ada postingan -->
+              <?php if($posts) : ?>
+
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
+
+                    <?php $counter = 0; ?>
+                    <?php foreach($posts as $post) : ?>
+                    <?php $counter++ ?>
                     <tr>
                       <th>No</th>
                       <th>Judul</th>
@@ -35,41 +44,25 @@
                   </tfoot>
                   <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Mencegah Bakteri Jahat</td>
-                        <td>Menulis Pemula lv 1</td>
+                        <td><?php echo $counter ?></td>
+                        <td><?php echo $post['judul'] ?></td>
+                        <td><?php echo $post['namakategori'] ?></td>
                         <td>100 view</td>
                         <td>50</td>
                         <td>
-                            <a href="" class="btn btn-danger">
-                                <i class="fas fa-fw fa-trash"></i>
-                            </a>
-                            <a href="" class="btn btn-success">
+                            <a href="<?php echo base_url() ?>member/lihatpost/<?php echo $post['idpost'] ?>" class="btn btn-success">
                                 <i class="fas fa-fw fa-eye"></i>
                             </a>
-                            <a href="" class="btn btn-primary">
-                                <i class="fas fa-fw fa-edit"></i>
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Mencegah Bakteri Jahat</td>
-                        <td>Menulis Pemula lv 1</td>
-                        <td>100 view</td>
-                        <td>50</td>
-                        <td>
-                            <a href="" class="btn btn-danger">
-                                <i class="fas fa-fw fa-trash"></i>
-                            </a>
-                            <a href="" class="btn btn-success">
-                                <i class="fas fa-fw fa-eye"></i>
-                            </a>
-                            <a href="" class="btn btn-primary">
-                                <i class="fas fa-fw fa-edit"></i>
-                            </a>
-                        </td>
-                    </tr>
+                    <?php endforeach ?> <!-- end loop -->
+                      
+                    <!-- jika belum ada postingan -->
+                    <?php else : ?>
+                      <p class="text-center">belum ada data</p>
+                    <?php endif ?>
+
                   </tbody>
 
                 </table> <!-- end of table -->
