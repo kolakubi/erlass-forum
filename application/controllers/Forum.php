@@ -95,8 +95,7 @@
                 // insert total point ke array
                 $semuaPost[$key]['totalpoint'] = $totalPoint;
                 $semuaPost[$key]['totalvote'] = $totalVote;
-
-            }
+            } // end loop forech
 
             $data['posts'] = $semuaPost;
 

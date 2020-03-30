@@ -4,8 +4,9 @@
 
         public $id_member = null;
 
-        public function __construct(){
 
+
+        public function __construct(){
             parent::__construct();
             // cek jika login
             if($this->session->userdata('id_member')){
@@ -222,9 +223,36 @@
         public function post(){
 
             // ambil data post yang pernah dibuat
-            $post = $this->member_model->ambilpost($this->id_member);
+            $posts = $this->member_model->ambilpost($this->id_member);
 
-            $data['posts'] = $post;
+            
+            // rumus total point
+            foreach ($posts as $key => $post) {
+                $arrayPoint = $this->forum_model->ambilPoint($post['idpost']);
+
+                // jika blom pernah dpt point
+                $totalPoint = 0;
+                $totalVote = 0;
+
+                // jika ada point
+                if($arrayPoint){
+                    for($i=0; $i<count($arrayPoint); $i++){
+                        $totalPoint += $arrayPoint[$i]['nilairating'];
+
+                        $totalVote+=1;
+                    }
+                }
+
+                // insert total point ke array
+                $posts[$key]['totalpoint'] = $totalPoint;
+                $posts[$key]['totalvote'] = $totalVote;
+            } // end loop forech
+
+            // echo '<pre>';
+            // print_r($posts); 
+            // echo '</pre>';
+
+            $data['posts'] = $posts;
 
             $this->load->view('member/header');
             $this->load->view('member/sidebar', $this->datasidebar());

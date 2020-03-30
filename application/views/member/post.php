@@ -47,8 +47,8 @@
                         <td><?php echo $counter ?></td>
                         <td><?php echo $post['judul'] ?></td>
                         <td><?php echo $post['namakategori'] ?></td>
-                        <td>100 view</td>
-                        <td>50</td>
+                        <td><?php echo $post['view'] ?></td>
+                        <td><?php echo $post['totalpoint'] ?></td>
                         <td>
                             <a href="<?php echo base_url() ?>member/lihatpost/<?php echo $post['idpost'] ?>" class="btn btn-success">
                                 <i class="fas fa-fw fa-eye"></i>
