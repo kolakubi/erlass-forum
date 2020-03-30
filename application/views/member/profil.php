@@ -94,6 +94,7 @@
                     </span>
                     <span class="text">Edit Profil</span>
                   </a>
+                </div>
 
 
 

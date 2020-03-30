@@ -258,6 +258,77 @@
 
 
 
+        public function hitungpoint($idkategori){
+
+            $point=0;
+            // ambil data pelatihan sesuai kategori
+            $arraypoint = $this->member_model->ambildatanilai($this->id_member, $idkategori); 
+            for($i=0; $i<count($arraypoint); $i++){
+                $point = $point += $arraypoint[$i]['nilairating'];
+            }
+
+            return $point;
+
+        } // end of function hitungpoint
+        //==================================================
+        // ||
+        // ||
+        // ||
+
+        public function pelatihan(){
+
+            // ambil data pelatihan yang sudah diikuti
+            $pelatihan = $this->member_model->ambilpelatihan($this->id_member);
+            $data['pelatihan'] = $pelatihan;
+
+            // jika ada pelatihan tertentu
+            $menulispemula = false;
+            $pointmenulispemula = 0;
+
+            $menulisbuku = false;
+            $pointmenulisbuku = 0;
+
+            $menuliscerpen = false;
+            $pointmenuliscerpen = 0;
+
+            // cek semua id pelatihan
+            foreach($pelatihan as $latih){
+                if($latih['idpelatihan']== 'mp'){
+                    $menulispemula = true;
+                    $pointmenulispemula = $this->hitungpoint('mp');
+                }
+                if($latih['idpelatihan'] == 'mb'){
+                    $menulisbuku = true;
+                    $pointmenulispemula = $this->hitungpoint('mb');
+                }
+                if($latih['idpelatihan'] == 'mc'){
+                    $menuliscerpet = true;
+                    $pointmenulispemula = $this->hitungpoint('mc');
+                }
+            } // end of foreach
+
+            $data['pelatihan'] = array(
+                'menulispemula' => $menulispemula,
+                'pointmenulispemula' => $pointmenulispemula,
+                'menulisbuku' => $menulisbuku,
+                'pointmenulisbuku' => $pointmenulisbuku,
+                'menuliscerpen' => $menuliscerpen,
+                'pointmenuliscerpen' => $pointmenuliscerpen
+            );
+
+            $this->load->view('member/header');
+            $this->load->view('member/sidebar', $this->datasidebar());
+            $this->load->view('member/topbar');
+            $this->load->view('member/pelatihan',$data);
+            $this->load->view('member/footer');
+
+        } // end of function pelatihan
+        // ================================================
+
+
+
+
+
         public function level(){
 
             $this->load->view('member/header');

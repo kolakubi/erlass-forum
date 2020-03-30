@@ -72,6 +72,12 @@
 
 <!-- Nav Item - Artikel -->
 <li class="nav-item">
+  <a class="nav-link" href="<?php echo base_url() ?>member/pelatihan">
+    <i class="fas fa-fw fa-brain"></i>
+    <span>Pelatihan</span></a>
+</li>
+<!-- Nav Item - Artikel -->
+<li class="nav-item">
   <a class="nav-link" href="<?php echo base_url() ?>member/post">
     <i class="fas fa-fw fa-edit"></i>
     <span>Artikel</span></a>

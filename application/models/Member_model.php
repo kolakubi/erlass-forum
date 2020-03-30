@@ -91,11 +91,47 @@
             else{
                 $result = $this->db->get()->result_array();
             }
+            return $result;
+        } // end of function ambilpost
+        // =======================================================
+
+
+
+
+
+        public function ambilpelatihan($idmember){
+
+            $result = $this->db->get_where('pelatihandiikuti', array('idmember' => $idmember))->result_array();
 
             return $result;
 
-        } // end of function ambilpost
+        } // end of function ambilpelatihan
         // =======================================================
+
+
+
+
+        public function ambildatanilai($idmember, $idkategori=null){
+
+            $this->db->select('*');
+            $this->db->from('post');
+            $this->db->join('member', 'post.idauthor = member.id_member');
+            $this->db->join('kategori', 'post.idkategori = kategori.idkategori');
+            $this->db->join('postrating', 'postrating.idpost = post.idpost');
+            $this->db->where('post.idauthor', $idmember);
+
+            // jika ada idkategori
+            if($idkategori){
+                $this->db->like('post.idkategori', $idkategori, 'after');
+            }
+
+            $result = $this->db->get()->result_array();
+
+            return $result;
+
+        } // end of function ambildatanilai
+        // =======================================================
+
 
 
 
