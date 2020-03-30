@@ -12,6 +12,15 @@
 
 
 
+        public function ambilkategori($idkategori){
+            $result = $this->db->get_where('kategori', array('idkategori' => $idkategori))->row_array();
+            return $result;
+        } // end of function ambilkategori
+        // ========================================
+
+
+
+
         
         // simpan data post
         public function simpanpost($dataposting){

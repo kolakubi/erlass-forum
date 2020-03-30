@@ -6,64 +6,75 @@
   <!-- Blog Entries Column -->
   <div class="col-md-8">
 
-    <h1 class="my-4"><?php echo $posts[0]['namakategori'] ?>
-      <small>Kategori pemula</small>
-    </h1>
 
-    <p>
-      <a class="btn btn-danger" href="<?php echo base_url() ?>posting">Mulai menulis &#9998;</a>
-    </p>
+    <!-- jika ada post -->
+    <?php if($posts) : ?>
 
-    <!-- Blog Post -->
-    <?php foreach($posts as $post) : ?>
+      <h1 class="my-4"><?php echo $posts[0]['namakategori'] ?>
+        <small>Kategori pemula</small>
+      </h1>
 
-    <a href="<?php echo base_url() ?>postdetail/post/<?php echo $post['idpost'] ?>">
-    <div class="card mb-4 shadow">
-     
-      <div class="card-body">
+      <p>
+        <a class="btn btn-danger" href="<?php echo base_url() ?>posting">Mulai menulis &#9998;</a>
+      </p>
 
-        <div class="row">
-          <!-- image -->
-          <div class="col-md-2">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/70x70" alt="">
-          </div>
+      <!-- Blog Post -->
+      <?php foreach($posts as $post) : ?>
 
-          <div class="col-md-10">
-            <!-- judul -->
-            <h4 class="card-title" style="color: black"><?php echo $post['judul'] ?></h4>
-            
-            <!-- isi post -->
-            <p class="card-text" style="color: gray"><?php echo $post['isipost'] ?></p>
-            
-            <!-- tombol baca -->
-            <!-- <a href="<?php echo base_url() ?>postdetail/post/<?php echo $post['idpost'] ?>" class="btn btn-primary">Baca &rarr;</a> -->
-          </div>
+      <a href="<?php echo base_url() ?>postdetail/post/<?php echo $post['idpost'] ?>">
+      <div class="card mb-4 shadow">
+      
+        <div class="card-body">
+
+          <div class="row">
+            <!-- image -->
+            <div class="col-md-2">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/70x70" alt="">
+            </div>
+
+            <div class="col-md-10">
+              <!-- judul -->
+              <h4 class="card-title" style="color: black"><?php echo $post['judul'] ?></h4>
+              
+              <!-- isi post -->
+              <p class="card-text" style="color: gray"><?php echo $post['isipost'] ?></p>
+              
+              <!-- tombol baca -->
+              <!-- <a href="<?php echo base_url() ?>postdetail/post/<?php echo $post['idpost'] ?>" class="btn btn-primary">Baca &rarr;</a> -->
+            </div>
 
 
-        </div> <!-- end of row -->
-      </div> <!-- end of card-body -->
-      </a> <!-- end of anchor wrap -->
+          </div> <!-- end of row -->
+        </div> <!-- end of card-body -->
+        </a> <!-- end of anchor wrap -->
 
 
-      <div class="card-footer text-muted">
+        <div class="card-footer text-muted">
 
-        <!-- penulis -->
-        <?php echo $post['waktupublish'] ?> | <i class="fas fa-user"></i>
-        <a href="#"><?php echo $post['nama'] ?></a> |
+          <!-- penulis -->
+          <?php echo $post['waktupublish'] ?> | <i class="fas fa-user"></i>
+          <a href="#"><?php echo $post['nama'] ?></a> |
 
-        <!-- kategori -->
-        Kategori: 
-        <a href="#"><?php echo $post['namakategori'] ?></a> |
+          <!-- kategori -->
+          Kategori: 
+          <a href="#"><?php echo $post['namakategori'] ?></a> |
 
-         <!-- point & vote -->
-         <span class="text-warning font-weight-bold">
-          <?php echo $post['totalpoint'] ?>
-        </span> <i class="fas fa-star" style="color: orange"></i> | <i class="fas fa-eye"></i> <?php echo $post['view'] ?>
-      </div>
+          <!-- point & vote -->
+          <span class="text-warning font-weight-bold">
+            <?php echo $post['totalpoint'] ?>
+          </span> <i class="fas fa-star" style="color: orange"></i> | <i class="fas fa-eye"></i> <?php echo $post['view'] ?>
+        </div>
 
-    </div> <!-- end of card -->
-
-    <?php endforeach ?>
+      </div> <!-- end of card -->
+    <?php endforeach ?> <!-- end loop -->
+    
+    <!-- jika tidak ada post -->
+    <?php else : ?>
+      <p>
+        <a class="btn btn-danger" href="<?php echo base_url() ?>posting">Mulai menulis &#9998;</a>
+      </p>
+      <p class="text-center">tidak ada post</p>
+    <?php endif ?>
 
     <!-- Pagination -->
     <div class="row">

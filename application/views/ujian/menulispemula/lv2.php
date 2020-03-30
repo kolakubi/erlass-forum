@@ -2,7 +2,7 @@
 
     <div class="well text-center">
     
-        <h1><?php echo $kategori['namakategori'] ?></h1>
+        <h1>Test Membuka Penulis Pemula LV 2</h1>
         <h3>Syarat dan Ketentuan</h3>
         <ul>
             - Tulisan harus asli karya sendiri<br>
@@ -13,7 +13,7 @@
         </ul>
         <br>
         <h3>Tema</h3>
-        <p>Budaya dan Masyarakat Bineka Tunggal Ika</p>
+        <p>Utarkan pendapat anda tentang Virus Corona</p>
     </div>
 
     <?php echo form_open('posting/simpanpost') ?>

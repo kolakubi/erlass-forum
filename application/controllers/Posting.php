@@ -11,8 +11,19 @@
 
         public function index(){
 
+            // ambil data kategori
+            // berdasarkan idkategori di session
+            $idkategori = $this->session->userdata('pelatihan');
+            $kategori = $this->posting_model->ambilkategori($idkategori);
+
+            $data['kategori'] = $kategori;
+
+            echo '<pre>';
+            print_r($kategori);
+            echo '</pre>';
+
             $this->load->view('front/header');
-            $this->load->view('front/posting');
+            $this->load->view('front/posting', $data);
             $this->load->view('front/footer');
 
         }

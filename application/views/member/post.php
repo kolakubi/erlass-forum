@@ -19,10 +19,6 @@
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
-
-                    <?php $counter = 0; ?>
-                    <?php foreach($posts as $post) : ?>
-                    <?php $counter++ ?>
                     <tr>
                       <th>No</th>
                       <th>Judul</th>
@@ -42,7 +38,11 @@
                       <th>Action</th>
                     </tr>
                   </tfoot>
-                  <tbody>
+                    <tbody>
+
+                    <?php $counter = 0; ?>
+                    <?php foreach($posts as $post) : ?>
+                    <?php $counter++ ?>
                     <tr>
                         <td><?php echo $counter ?></td>
                         <td><?php echo $post['judul'] ?></td>

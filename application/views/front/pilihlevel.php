@@ -89,7 +89,7 @@
 
                         <?php else : ?>
                         <!-- jika belum terbuka -->
-                        <a href="<?php echo base_url() ?>pelatihan/ikut/mp" class="btn btn-<?php echo $warna ?>">Buka Level <i class="fa fa-lock"></i></a>
+                        <a href="<?php echo base_url() ?>pelatihan/menulispemula/2" class="btn btn-<?php echo $warna ?>">Buka Level <i class="fa fa-lock"></i></a>
 
                         <?php endif ?>
 
@@ -130,7 +130,7 @@
                     <p class="card-text">Tingkat kesulitan rendah</p>
 
                     <!-- jika point cukup -->
-                    <?php if($pointcukup['level2']) : ?>
+                    <?php if($pointcukup['level3']) : ?>
 
                         <!-- jika sudah terbuka -->
                         <?php if($statuspelatihan['openlv3']) : ?>

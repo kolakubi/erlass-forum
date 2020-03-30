@@ -86,8 +86,8 @@
             // set point untuk bisa akses
             $pointLv1 = 0;
             $pointLv2 = 10;
-            $pointLv3 = 20;
-            $pointLv4 = 40;
+            $pointLv3 = 80;
+            $pointLv4 = 100;
 
             // ambil point dari data session
             $idmember = $this->session->userdata('id_member');

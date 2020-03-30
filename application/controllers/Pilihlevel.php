@@ -26,10 +26,6 @@
             $kategori = substr($pelatihan, 0, 2);
             $datastatuspelatihan = $this->pelatihan_model->ambilstatuspelatihan($idmember, $kategori);
             
-            // echo '<pre>';
-            // echo 'data status pelatihan <br>';
-            // print_r($datastatuspelatihan);
-            // echo '</pre>';
 
             $data['statuspelatihan'] = $datastatuspelatihan;
 
@@ -39,8 +35,8 @@
              // set point untuk bisa akses
              $pointLv1 = 0;
              $pointLv2 = 10;
-             $pointLv3 = 20;
-             $pointLv4 = 40;
+             $pointLv3 = 80;
+             $pointLv4 = 100;
  
              // ambil point
              $totalPoint = $this->ambilpoint();
@@ -70,11 +66,9 @@
 
             $data['pointcukup'] = $pointcukup;
 
-            // echo '<pre>';
-            // print_r($data);
-            // echo '</pre>';
-
-            // die();
+            echo '<pre>';
+            print_r($data);
+            echo '</pre>';
 
             // cek status ujian
             $this->load->view('front/header');
