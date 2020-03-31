@@ -29,8 +29,6 @@
 
             //ambil post data
             $postdetail = $this->postdetail_model->ambilPostDetail($idpost);
-
-            
             $arrayPoint = $this->forum_model->ambilPoint($idpost);
 
             // jika blom pernah dpt point
@@ -48,11 +46,9 @@
 
                     $totalVote+=1;
                 }
-            
                 // insert total point ke array
                 $postdetail['totalpoint'] = $totalPoint;
                 $postdetail['totalvote'] = $totalVote;
-
             }
 
             /////////////////////////////////////////////
@@ -61,7 +57,6 @@
 
             // ambil komentar
             $komentar = $this->postdetail_model->ambilkomentar($idpost);
-
             $postdetail['komentar'] = $komentar;
 
             /////////////////////////////////////////////
@@ -72,9 +67,11 @@
 
             $this->load->view('front/header');
             $this->load->view('front/post-detail', $data);
+            $this->load->view('front/sidebar');
             $this->load->view('front/footer');
 
         } // end of function post
+        // ================================================================
 
 
 
@@ -98,12 +95,9 @@
             $this->form_validation->set_message('required', 'wajib diisi');
 
             if(!$this->form_validation->run()){
-
                 redirect('postdetail/post/'.$idpost);
-                
 			}
 			else{
-
                 // ambil value dr field
                 $datakomentar = array(
                     'komentar' => html_escape($this->input->post('komentar')),
@@ -116,10 +110,9 @@
                 $result = $this->postdetail_model->simpankomentar($datakomentar);
 
                 redirect('postdetail/post/'.$idpost);
-
             }
-
         } // end of fungction komentar
+        // ================================================================
 
 
     }

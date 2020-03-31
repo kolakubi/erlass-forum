@@ -107,6 +107,14 @@ if ( ! function_exists('current_url'))
 	}
 }
 
+if ( ! function_exists('website_name'))
+{
+    function website_name($name = '', $protocol = NULL)
+    {
+        return get_instance()->config->website_name($name, $protocol);
+    }
+}
+
 // ------------------------------------------------------------------------
 
 if ( ! function_exists('uri_string'))

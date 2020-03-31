@@ -11,12 +11,15 @@
         <link rel="stylesheet" href="<?php echo base_url() ?>asset/vendor/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>asset/vendor/bootstrap/css/bootstrap-modif-min.css">
 
+        <!-- Font Awesome-->
+        <link href="<?php echo base_url() ?>asset/sbadmin2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
         <!-- CSS Mal -->
         <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/mal.css">
 
     </head>
 
-    <body class="bg-gradient-primary">
+    <body class="">
 
   <div class="container">
 
@@ -84,18 +87,24 @@
                     
                     <!-- btn submit -->
                     <div class="form-group">
-                      <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
+                      <button type="submit" class="btn btn-primary btn-user btn-block"><i class="fas fa-lock"></i> Login</button>
+                    </div>
+                    <div class="form-group">
+                      <a href="<?php echo base_url() ?>" class="btn btn-danger btn-user btn-block" style="color: white"><i class="fas fa-home"></i> Home</a>
                     </div>
                   <?php echo form_close() ?>
                   <!-- end of form -->
 
                   <hr>
+
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Lupa Password?</a>
                   </div>
                   <div class="text-center">
                     <a class="small" href="<?php echo base_url() ?>daftar">Buat Akun</a>
                   </div>
+
+
                 </div>
               </div>
             </div>

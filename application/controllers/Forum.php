@@ -104,6 +104,7 @@
             // panggil view
             $this->load->view('front/header');
             $this->load->view('front/forum', $data);
+            $this->load->view('front/sidebar');
             $this->load->view('front/footer');
 
 

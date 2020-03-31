@@ -66,9 +66,9 @@
 
             $data['pointcukup'] = $pointcukup;
 
-            echo '<pre>';
-            print_r($data);
-            echo '</pre>';
+            // echo '<pre>';
+            // print_r($data);
+            // echo '</pre>';
 
             // cek status ujian
             $this->load->view('front/header');

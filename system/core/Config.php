@@ -322,6 +322,13 @@ class CI_Config {
 		return $base_url.$this->_uri_string($uri);
 	}
 
+
+	public function website_name($name, $protocol = NULL){
+		$website_name = $this->slash_item('website_name');
+
+		return substr($website_name, 0, -1);
+	}
+
 	// -------------------------------------------------------------
 
 	/**

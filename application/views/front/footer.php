@@ -8,8 +8,8 @@
         <div class="row">
 
           <div class="col-lg-4 col-md-6">
-            <div class="footer-info" data-aos="fade-up" data-aos-delay="50">
-              <h3>Squadfree</h3>
+            <div class="footer-info">
+              <h3><?php echo website_name() ?></h3>
               <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
               <p>
                 A108 Adam Street <br>
@@ -27,7 +27,7 @@
             </div>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="150">
+          <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -38,7 +38,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="250">
+          <div class="col-lg-2 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
@@ -49,7 +49,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter" data-aos="fade-up" data-aos-delay="350">
+          <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             <form action="" method="post">
@@ -64,7 +64,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Squadfree</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span><?php echo website_name() ?></span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
