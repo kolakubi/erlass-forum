@@ -18,9 +18,9 @@
 
             $data['kategori'] = $kategori;
 
-            echo '<pre>';
-            print_r($kategori);
-            echo '</pre>';
+            // echo '<pre>';
+            // print_r($kategori);
+            // echo '</pre>';
 
             $this->load->view('front/header');
             $this->load->view('front/posting', $data);

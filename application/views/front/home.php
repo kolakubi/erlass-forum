@@ -1,8 +1,10 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero">
     <div class="hero-container">
-      <h1>Welcome to Erlass</h1>
+      <p style="color: white">Kami menyediakan pelatihan online untuk para guru</p>
+      <h1>Jadilah Guru Berkualitas</h1>
       <h2>Website Edukatif Untuk Para Guru di Indonesia</h2>
+      <a href="#" class="btn btn-lg btn-primary">Selengkapnya <i class="fas fa-arrow-down"></i></a>
       <!-- <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a> -->
     </div>
   </section><!-- End Hero -->
@@ -16,11 +18,11 @@
         <div class="row no-gutters">
           <div class="content col-xl-5 d-flex align-items-stretch">
             <div class="content">
-              <h3>Voluptatem dignissimos provident quasi</h3>
+              <h3>Pelatihan Untuk Meningkatkan Skill Dasar</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
               </p>
-              <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
+              <a href="#" class="about-btn">Tentang Erlass <i class="bx bx-chevron-right"></i></a>
             </div>
           </div>
           <div class="col-xl-7 d-flex align-items-stretch">
@@ -59,40 +61,49 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Pelatihan</h2>
+          <p>Pelatihan ini kami susun berdasarkan kurikulum tahun 2020, meliputi latihan menulis, latihan microsoft office<br>
+          pelatihan coding, dan video mengajar</p>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <h4 class="title"><a href="">Menulis</a></h4>
               <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <br>
+              <p class="text-center"><a href="<?php echo base_url() ?>pelatihan" class="btn btn-primary">Ikut pelatihan</a></p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+              <h4 class="title"><a href="">Microsoft office</a></h4>
               <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <br>
+              <p class="text-center"><a href="<?php echo base_url() ?>pelatihan" class="btn btn-primary">Ikut pelatihan</a></p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
+              <h4 class="title"><a href="">Coding</a></h4>
               <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <br>
+              <p class="text-center"><a href="<?php echo base_url() ?>pelatihan" class="btn btn-primary">Ikut pelatihan</a></p>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
+              <h4 class="title"><a href="">Video Mengajar</a></h4>
               <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <br>
+              <p class="text-center"><a href="<?php echo base_url() ?>pelatihan" class="btn btn-primary">Ikut pelatihan</a></p>
             </div>
           </div>
 
@@ -111,7 +122,7 @@
             <div class="count-box">
               <i class="icofont-simple-smile"></i>
               <span data-toggle="counter-up">232</span>
-              <p><strong>Happy Clients</strong> consequuntur quae</p>
+              <p><strong>Member Pelatihan</strong> consequuntur quae</p>
             </div>
           </div>
 
@@ -119,7 +130,7 @@
             <div class="count-box">
               <i class="icofont-document-folder"></i>
               <span data-toggle="counter-up">521</span>
-              <p><strong>Projects</strong> adipisci atque cum quia aut</p>
+              <p><strong>Postingan</strong> adipisci atque cum quia aut</p>
             </div>
           </div>
 
@@ -127,7 +138,7 @@
             <div class="count-box">
               <i class="icofont-live-support"></i>
               <span data-toggle="counter-up">1,463</span>
-              <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
+              <p><strong>Penilaian</strong> aut commodi quaerat</p>
             </div>
           </div>
 
@@ -135,7 +146,7 @@
             <div class="count-box">
               <i class="icofont-users-alt-5"></i>
               <span data-toggle="counter-up">15</span>
-              <p><strong>Hard Workers</strong> rerum asperiores dolor</p>
+              <p><strong>Pelatihan</strong> rerum asperiores dolor</p>
             </div>
           </div>
 
@@ -162,7 +173,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Portfolio</h2>
+          <h2>Gallery Pelatihan</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 

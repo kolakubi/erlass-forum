@@ -41,7 +41,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
+  <header id="header" class="fixed-top header-scrolled">
     <div class="container d-flex">
 
       <div class="logo mr-auto">
@@ -83,5 +83,3 @@
 
     </div>
   </header><!-- End Header -->
-
-  <div style="padding-top: 100px">

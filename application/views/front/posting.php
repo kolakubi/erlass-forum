@@ -2,7 +2,7 @@
 
     <div class="well text-center">
     
-        <h1><?php echo $kategori['namakategori'] ?></h1>
+        <h1>Pelatihan <?php echo $kategori['namakategori'] ?></h1>
         <h3>Syarat dan Ketentuan</h3>
         <ul>
             - Tulisan harus asli karya sendiri<br>
@@ -12,8 +12,12 @@
             - ...<br>
         </ul>
         <br>
-        <h3>Tema</h3>
-        <p>Budaya dan Masyarakat Bineka Tunggal Ika</p>
+
+        <div class="card card-body bg-light mb-4">
+            <h3>Tema</h3>
+            <p>Budaya dan Masyarakat Bineka Tunggal Ika</p>
+        </div>
+        
     </div>
 
     <?php echo form_open('posting/simpanpost') ?>
@@ -24,17 +28,17 @@
         </div>
 
         <div class="form-group">
-            Judul
+            <strong>Judul</strong>
             <input type="text" class="form-control" rows="3" name="judul">
         </div>
 
-        <!-- isi post -->
+        <!-- Konten -->
         <div class="pesan-error-form user">
             <span><?php echo form_error('isipost') ?></span>
         </div>
 
         <div class="form-group">
-            isi post
+            <strong>Konten</strong>
             <textarea class="form-control" rows="3" name="isipost" id="isipost"></textarea>
         </div>
 

@@ -12,8 +12,8 @@
               <!-- jika ada surat -->
               <?php if($datasurat) : ?>
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="thead-dark">
                     <tr>
                       <th>Dari</th>
                       <th>Judul</th>
@@ -22,7 +22,7 @@
                       <th>Action</th>
                     </tr>
                   </thead>
-                  <tfoot>
+                  <tfoot class="thead-dark">
                     <tr>
                       <th>Dari</th>
                       <th>Judul</th>

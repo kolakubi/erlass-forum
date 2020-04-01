@@ -23,7 +23,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -458,8 +458,8 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  background: url("../img/about-bg.jpg") center center no-repeat;
-  background-size: cover;
+  /* background: url("../img/about-bg.jpg") center center no-repeat;
+  background-size: cover; */
   padding: 60px 0;
   position: relative;
 }

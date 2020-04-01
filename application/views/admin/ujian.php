@@ -1,9 +1,5 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
-        
-        <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Artikel</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -12,8 +8,8 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+                <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="thead-dark">
                     <tr>
                       <th>No</th>
                       <th>Judul</th>
@@ -22,7 +18,7 @@
                       <th>Action</th>
                     </tr>
                   </thead>
-                  <tfoot>
+                  <tfoot class="thead-dark">
                     <tr>
                       <th>No</th>
                       <th>Judul</th>
