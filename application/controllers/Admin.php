@@ -198,6 +198,15 @@
 
         public function lihatujian($idpost){
 
+            // update view count
+            $ambilviewcount = $this->postdetail_model->ambiljumlahview($idpost);
+
+            // tambah view +1
+            // simpan viwe
+            $updateview = $ambilviewcount['view']+1;
+            $this->postdetail_model->updatepostview($idpost, $updateview);
+            ///////////////////////////////////////////////////
+
             // ambil data ujian spesifik
             $datapost = $this->admin_model->ambildataujian($idpost);
 
@@ -215,9 +224,9 @@
             $datapelatihandiikuti = $this->admin_model->ambildatapelatihandiikuti($datapost['idauthor'], $kategori);
             $datapost['idpelatihandiikuti'] = $datapelatihandiikuti['idpelatihandiikuti'];
 
-            echo '<pre>';
-            print_r($datapost);
-            echo '</pre>';
+            // echo '<pre>';
+            // print_r($datapost);
+            // echo '</pre>';
 
             $data['post'] = $datapost;
 
