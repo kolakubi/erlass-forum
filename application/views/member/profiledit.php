@@ -80,6 +80,18 @@
                 </div>
             </div>
 
+            <div class="form-group row">
+                <label for="fileToUpload" class="col-sm-3 col-form-label">foto</label>
+                <div class="col-sm-9">
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                </div>
+                <div class="pesan-error-form user">
+                    <span><?php echo form_error('foto') ?></span>
+                </div>
+            </div>
+
+            
+
             <!-- submit -->
             <button type="submit" class="btn btn-primary">Simpan</button>
 

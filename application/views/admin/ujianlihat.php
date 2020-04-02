@@ -24,7 +24,7 @@
             <div class="card-footer text-muted">
 
                 <a href="<?php echo base_url() ?>admin/lulustes/<?php echo $post['idpelatihandiikuti'] ?>/<?php echo $post['levelujian'] ?>/<?php echo $post['id_member'] ?>" 
-                    class="btn btn-primary">Lulus</a>
+                    class="btn btn-primary btn-lulus">Lulus</a>
 
                 <a href="#" class="btn btn-danger">Belum Lulus</a>
 

@@ -19,6 +19,15 @@
 
             <div class="card-body">
 
+                <!-- Foto -->
+                <div class="row mb-2 bg-light">
+                    <div class="col text-center">
+                        <img src="<?php echo base_url() ?>upload/<?php echo $member['foto'] ?>" alt="" class="img rounded-circle" style="max-width: 300px;">
+                    </div>
+                </div>
+                <hr>
+                <!-- end of Foto -->
+
                  <!-- No Induk -->
                  <div class="row">
                     <div class="col-md-3">

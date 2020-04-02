@@ -92,7 +92,7 @@
             </div>
 
             <!-- submit -->
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-primary btnedit">Simpan</button>
 
             <!-- cancel -->
             <a href="<?php echo base_url() ?>admin/member" class="btn btn-danger">Batal</a>

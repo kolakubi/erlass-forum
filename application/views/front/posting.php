@@ -1,4 +1,4 @@
-<div class="container" style="padding-bottom: 60px">
+<div class="container" style="padding: 60px 5px">
 
     <div class="well text-center">
     

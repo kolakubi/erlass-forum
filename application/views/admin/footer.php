@@ -42,11 +42,11 @@
   <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
+  <!-- Core plugin jquery-->
   <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url() ?>asset/sbadmin2/js/sb-admin-2.min.js"></script>
+  <!-- <script src="<?php echo base_url() ?>asset/sbadmin2/js/sb-admin-2.min.js"></script> -->
 
   <!-- Page level plugins -->
   <!-- <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/chart.js/Chart.min.js"></script> -->
@@ -61,6 +61,9 @@
 
   <!-- datatable setting -->
   <script src="<?php echo base_url() ?>asset/sbadmin2/js/demo/datatables-demo.js"></script>
+
+  <!-- mal js -->
+  <script src="<?php echo base_url() ?>asset/js/mal.js"></script>
 
 
 </body>

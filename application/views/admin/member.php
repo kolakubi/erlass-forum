@@ -43,7 +43,7 @@
                             <a href="<?php echo base_url() ?>admin/lihatmember/<?php echo $member['id_member'] ?>" class="btn btn-success">
                                 <i class="fas fa-fw fa-eye"></i>
                             </a>
-                            <a href="" class="btn btn-primary">
+                            <a href="<?php echo base_url() ?>admin/editmember/<?php echo $member['id_member'] ?>" class="btn btn-primary">
                                 <i class="fas fa-fw fa-edit"></i>
                             </a>
                         </td>

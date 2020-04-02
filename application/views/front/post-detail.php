@@ -142,10 +142,9 @@
         <?php foreach($posts['komentar'] as $komen) : ?>
         <!-- Single Comment -->
         <div class="card shadow mb-4">
-          
-          
-          <div class="card-header">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+
+          <div class="card-header text-center">
+            <img class="mr-3 rounded-circle" style="max-width: 70px" src="<?php echo base_url() ?>upload/<?php echo $komen['foto'] ?>" alt="">
             <h5 class="mt-0"><?php echo $komen['nama'] ?></h5>
           </div> <!-- end of card-header -->
           
