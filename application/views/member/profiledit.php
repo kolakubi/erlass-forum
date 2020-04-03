@@ -11,7 +11,7 @@
 
     <div class="col-md-6 offset-md-3">
         
-        <?php echo form_open('member/simpaneditmember') ?>
+        <?php echo form_open_multipart('member/simpaneditmember') ?>
 
             <!-- Nama -->
             <div class="form-group row">
@@ -60,7 +60,7 @@
 
             <!-- hp -->
             <div class="form-group row">
-                <label for="hp" class="col-sm-3 col-form-label">hp</label>
+                <label for="hp" class="col-sm-3 col-form-label">HP</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" name="hp" id="hp" value="<?php echo $member['hp'] ?>">
                 </div>
@@ -71,7 +71,7 @@
 
             <!-- email -->
             <div class="form-group row" hidden>
-                <label for="email" class="col-sm-3 col-form-label">email</label>
+                <label for="email" class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-9">
                     <input type="email" class="form-control" name="email" id="email" value="<?php echo $member['email'] ?>">
                 </div>
@@ -80,14 +80,22 @@
                 </div>
             </div>
 
+            <!-- image -->
             <div class="form-group row">
-                <label for="fileToUpload" class="col-sm-3 col-form-label">foto</label>
+                <label for="image" class="col-sm-3 col-form-label">Foto</label>
                 <div class="col-sm-9">
-                <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="file" name="image" id="image">
                 </div>
-                <div class="pesan-error-form user">
-                    <span><?php echo form_error('foto') ?></span>
+                <?php if($error['image']) : ?>
+                <div class="pesan-error-form user col-md-12">
+                    <span><?php echo $error['image'] ?></span>
                 </div>
+                <?php endif ?>
+                <div class="col-md-12">
+                    <span>File yang diperbolehkan: jpg|jpeg|png</span><br>
+                    <span>Maksimum file size: 1MB</span>
+                </div>
+                
             </div>
 
             

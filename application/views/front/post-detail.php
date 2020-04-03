@@ -142,15 +142,24 @@
         <?php foreach($posts['komentar'] as $komen) : ?>
         <!-- Single Comment -->
         <div class="card shadow mb-4">
-
-          <div class="card-header text-center">
-            <img class="mr-3 rounded-circle" style="max-width: 70px" src="<?php echo base_url() ?>upload/<?php echo $komen['foto'] ?>" alt="">
-            <h5 class="mt-0"><?php echo $komen['nama'] ?></h5>
-          </div> <!-- end of card-header -->
           
           
           <div class="card-body">
-              <p><?php echo $komen['isikomentar'] ?></p>
+              <div class="row">
+                <div class="col-md-3">
+                    
+                  <p class="text-center">
+                    <img class="mr-3 rounded-circle" style="max-width: 70px" src="<?php echo base_url() ?>upload/memberpic/<?php echo $komen['foto'] ?>" alt="">
+                    <br>
+                    <span><?php echo $komen['nama'] ?></span>
+                    <br>
+                    <span><?php echo $komen['sekolah'] ?></span>
+                  </p>
+                </div>
+                <div class="col">
+                  <p><?php echo $komen['isikomentar'] ?></p>
+                </div>
+              </div> <!-- end of row -->
           </div> <!-- end of card-body -->
 
           <div class="card-footer">
@@ -160,6 +169,8 @@
             <i class="fas fa-star" style="color: orange"></i>
             <i class="fas fa-star" style="color: orange"></i>
             <i class="fas fa-star" style="color: orange"></i>
+
+            | <?php echo $komen['waktukomentar'] ?>
           </div>
 
         </div> <!-- end of card -->

@@ -129,13 +129,14 @@
 
 
 
-        public function editprofil(){
+        public function editprofil($imagerror = null){
 
             // ambil data member dari Admin_model
             // ambil data spesifik member
             $result = $this->admin_model->ambildatamember($this->id_member);
 
             $data['member'] = $result;
+            $data['error']['image'] = $imagerror;
 
             $this->load->view('member/header');
             $this->load->view('member/sidebar', $this->datasidebar());
@@ -203,14 +204,45 @@
                 'hp' => $this->input->post('hp'),
             );
 
-            // simpan data
-            $result = $this->admin_model->simpandataeditmember($idmember, $datamember);
+            // jika ada image
+            if(@$_FILES['image']['name'] != null){
 
-            if($result){
-                redirect('member/profil');
+                $config['upload_path']          = './upload/memberpic/';
+                $config['allowed_types']        = 'jpg|png|jpeg';
+                $config['file_name']            = 'image-'.date('ymd').'-'.substr(md5(rand()), 0, 10);
+                $config['max_size']             = 1024; // 1MB
+                $this->load->library('upload', $config);
+
+                // jika berhasil upload
+                if($this->upload->do_upload('image')){
+                    $datamember['foto'] = $this->upload->data('file_name');
+
+                    // simpan data
+                    $result = $this->admin_model->simpandataeditmember($idmember, $datamember); 
+                    if($result){
+                        redirect('member/profil');
+                    }
+                    else{
+                        echo 'error';
+                    }
+                }
+                // jika gagal
+                else{
+                    // $this->upload->display_errors()
+                    $this->editprofil($imagerror = 'file tidak sesuai kriteria');
+                }
             }
+            // jika ga ada image 
+            // simpan data seadanya
             else{
-                echo 'error';
+                // simpan data
+                $result = $this->admin_model->simpandataeditmember($idmember, $datamember);
+                if($result){
+                    redirect('member/profil');
+                }
+                else{
+                    echo 'error';
+                }
             }
         } // end of function simpaneditmember
         // =======================================================

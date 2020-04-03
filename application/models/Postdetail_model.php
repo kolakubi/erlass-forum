@@ -72,7 +72,7 @@
 
         public function ambilkomentar($idpost){
 
-            $this->db->select('komentar.isikomentar, komentar.waktukomentar, komentar.idkomentator, member.nama, member.foto');
+            $this->db->select('komentar.isikomentar, komentar.waktukomentar, komentar.idkomentator, member.nama, member.foto, member.sekolah');
             $this->db->from('komentar');
             $this->db->join('post', 'komentar.idpost = post.idpost');
             $this->db->join('member', 'komentar.idkomentator = member.id_member');

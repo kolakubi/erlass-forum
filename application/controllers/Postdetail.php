@@ -65,6 +65,10 @@
 
             $data['posts'] = $postdetail;
 
+            // echo '<pre>';
+            // print_r($data);
+            // echo '</pre>';
+
             $this->load->view('front/header');
             $this->load->view('front/post-detail', $data);
             $this->load->view('front/sidebar');

@@ -22,7 +22,7 @@
                 <!-- Foto -->
                 <div class="row mb-2 bg-light">
                     <div class="col text-center">
-                        <img src="<?php echo base_url() ?>upload/<?php echo $member['foto'] ?>" alt="" class="img rounded-circle" style="max-width: 300px;">
+                        <img src="<?php echo base_url() ?>upload/memberpic/<?php echo $member['foto'] ?>" alt="" class="img rounded-circle" style="max-width: 300px;">
                     </div>
                 </div>
                 <hr>
@@ -97,7 +97,7 @@
                 
                 <!-- button edit -->
                 <div class="my-2"></div>
-                  <a href="<?php echo base_url() ?>member/editprofil/<?php echo $member['id_member'] ?>" class="btn btn-primary btn-icon-split">
+                  <a href="<?php echo base_url() ?>member/editprofil" class="btn btn-primary btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fa fa-edit"></i>
                     </span>

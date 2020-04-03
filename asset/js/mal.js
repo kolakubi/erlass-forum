@@ -1,5 +1,5 @@
 // panggil ck editor
-
+// cek jika ada element textarea
 const textareaIsiPost = $('textarea[name=isipost]');
 if(textareaIsiPost.length){
     CKEDITOR.replace( 'isipost' , {

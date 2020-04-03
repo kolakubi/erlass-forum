@@ -21,6 +21,9 @@
   <!-- Custom styles for datatables -->
   <link href="<?php echo base_url() ?>asset/sbadmin2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+  <!-- CSS Mal -->
+  <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/mal.css">
+
 </head>
 
 <body id="page-top">

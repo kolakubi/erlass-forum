@@ -29,7 +29,7 @@
           <div class="row">
             <!-- image -->
             <div class="col-md-2 text-center">
-              <img class="d-flex mr-3 rounded-circle img-fluid" src="<?php echo base_url() ?>upload/<?php echo $post['foto'] ?>" alt="">
+              <img class="d-flex mr-3 rounded-circle img-fluid" src="<?php echo base_url() ?>upload/memberpic/<?php echo $post['foto'] ?>" alt="">
               <p><?php echo $post['nama'] ?></p>
             </div>
 
