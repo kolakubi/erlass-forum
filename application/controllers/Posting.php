@@ -18,10 +18,6 @@
 
             $data['kategori'] = $kategori;
 
-            // echo '<pre>';
-            // print_r($kategori);
-            // echo '</pre>';
-
             $this->load->view('front/header');
             $this->load->view('front/posting', $data);
             $this->load->view('front/footer');
@@ -42,11 +38,11 @@
 					'label' => 'Judul',
 					'rules' => 'required'
 				),
-				array(
-					'field' => 'isipost',
-					'label' => 'Isi Post',
-					'rules' => 'required'
-                )
+				// array(
+				// 	'field' => 'isipost',
+				// 	'label' => 'Isi Post',
+				// 	'rules' => 'required'
+                // )
             ));
 
             $this->form_validation->set_message('required', 'wajib diisi');
@@ -78,24 +74,26 @@
 
                 // die();
 
-                // die();
-
                 // jika kategori adalah ujian
                 if($ujian){
-                    $idpelatihan = substr($pelatihan, -3, 2); // mp
+                    $jumlahstring = strlen($pelatihan);
+                    $idpelatihan = substr($pelatihan, 5, ($jumlahstring-5-1)); // hasilnya apapun setelah ujian dan kurangi 1 char
                     $level = substr($pelatihan, -1, 1); // 1 || 2 || 3;
                     // echo "level =".$level;
 
-                    // echo '<pre>';
-                    // print_r($_SESSION);
-                    // echo '</pre>';
-                    // die();
+                    
                     $dataupdatestatusujian = array(
                         'idmember' => $this->session->userdata('id_member'),
                         'idpelatihan' => $idpelatihan,
                         'level' => $level
     
                     );
+
+                    // echo '<pre>';
+                    // print_r($dataupdatestatusujian);
+                    // echo '</pre>';
+                    // die();
+
                     // update status pelatihan
                     $this->posting_model->updatestatuspelatihan($dataupdatestatusujian);
 

@@ -2,10 +2,13 @@
 
     class Pelatihan extends CI_Controller{
 
+
+        // inisiasi variable idmember
+        public $idmember = null;
+
+
         public function __construct(){
-
             parent::__construct();
-
         }
         // =====================================================
 
@@ -22,10 +25,21 @@
                 $datapelatihandiikuti = $this->pelatihan_model->ambildatapelatihan($idmember);
                 $listPelatihan = array();
 
+
+                // cek list pelatihan
+                // jika data pelatihan ada di list array
+                // buat data pelatihan yg ditemukan menjadi true
+                // cek data mengukuti menulis pemula
                 if(in_array(['idmember' => $idmember, 'idpelatihan' => 'mp'], $datapelatihandiikuti)){
                     // buat variable pelatihan terikait
                     $data['menulispemula'] = true; 
                 }
+                // cek data mengukuti menulis pemula
+                if(in_array(['idmember' => $idmember, 'idpelatihan' => 'yt1'], $datapelatihandiikuti)){
+                    // buat variable pelatihan terikait
+                    $data['youtubepart1'] = true; 
+                }
+
                 $data['point'] = false;
                 // jika sdh login, beri akses
                 $this->load->view('front/header');
@@ -53,24 +67,27 @@
             // insert pendaftaran ke DB
             $pendaftaran = $this->pelatihan_model->daftar($datapendaftaran);
 
-            // echo '<pre>';
-            // print_r($_SESSION);
-            // echo '</pre>';
-
-            // die();
-
             if($pendaftaran){
 
+                // jika mendaftar pelatihan menulis pemula
                 if($idpelatihan == 'mp'){
-
                     $this->session->set_userdata(['pelatihan' => 'ujian'.$idpelatihan.'1']);
 
                     // redirect ke halaman ujian
                     $this->load->view('front/header');
                     $this->load->view('ujian/menulispemula/lv1');
                     $this->load->view('front/footer');
-                }else{
+                }
+                // jika mendaftar pelatihan video youtube
+                elseif($idpelatihan == 'yt1'){
+                    $this->session->set_userdata(['pelatihan' => 'ujian'.$idpelatihan.'1']);
 
+                    // redirect ke halaman ujian
+                    $this->load->view('front/header');
+                    $this->load->view('ujian/youtubepart1/lv1');
+                    $this->load->view('front/footer');
+                }
+                else{
                     echo 'sedang dikembangkan';
                 }
             }
@@ -129,23 +146,10 @@
                 $kategori = substr($pelatihan, 0, 2);
                 $datastatuspelatihan = $this->pelatihan_model->ambilstatuspelatihan($idmember, $kategori, $level);
 
-                // echo "id member = $idmember<br>";
-                // echo "kategori = $kategori<br>";
-                // echo "level = $level<br>";
-
                 // set session pelatihan
                 // buat di Controller Forum
                 // di halaman forum akan di cek ketersediaan session pelatihan
                 $this->session->set_userdata(['pelatihan' => $pelatihan]);
-
-                // echo '<pre>';
-                // echo 'data status pelatihan <br>';
-                // print_r($datastatuspelatihan);
-                // echo 'data session <br>';
-                // print_r($this->session->userdata());
-                // echo '</pre>';
-
-                // die();
 
                 // jika data status ada brati udah daftar
                 if($datastatuspelatihan){ 
