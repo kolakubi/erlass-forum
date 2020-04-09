@@ -105,7 +105,7 @@
                 
                 <!-- jika sudah mengikuti -->
                 <?php if(isset($youtubepart1)) : ?>
-                  <a href="<?php echo base_url() ?>pelatihan/youtube1/1" class="btn btn-primary">Ikut Pelatihan</a>
+                  <a href="<?php echo base_url() ?>pelatihan/yt1/1" class="btn btn-primary">Ikut Pelatihan</a>
                 <?php else : ?>
                 <!-- jika belum mengikuti -->
                   <a href="<?php echo base_url() ?>pelatihan/ikut/yt1" class="btn btn-secondary">Buka Pelatihan <i class="fa fa-lock"></i></a>

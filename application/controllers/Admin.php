@@ -213,7 +213,9 @@
             // potong kategori
             // tadinya = ujianmp1
             // jadi kategori = mp
-            $kategori = substr($datapost['idkategori'], -3, 2);
+            $jumlahstring = strlen($datapost['idkategori']);
+            $kategori = substr($datapost['idkategori'], 5, ($jumlahstring-5-1)); // hasilnya apapun setelah ujian dan kurangi 1 char
+            // $kategori = substr($datapost['idkategori'], -3, 2);
             $datapost['kategoriujian'] = $kategori;
 
             // potong level ujian

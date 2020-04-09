@@ -26,9 +26,30 @@
             return $result;
 
             // result nya array nilai rating
-
         } // end of ambilPoint function
         // =====================================================
+
+
+
+
+
+        // ambil point dari post rating
+        public function ambilPointYoutube1($idmember){
+
+            $this->db->select('postrating.nilairating');
+            $this->db->from('postrating');
+            $this->db->join('post', 'postrating.idpost = post.idpost');
+            $this->db->join('kategori', 'post.idkategori = kategori.idkategori');
+            $this->db->where('post.idauthor', $idmember);
+            $this->db->like('post.idkategori', 'yt1', 'after');
+            $result = $this->db->get()->result_array();
+            return $result;
+
+            // result nya array nilai rating
+        } // end of ambilPoint function
+        // =====================================================
+
+
 
 
 
@@ -109,12 +130,9 @@
 
                 // insert data ke status pelatihan
                 $result = $this->simpanstatuspelatihan($idpelatihandiikuti);
-                
                     return true;
-
                 }
             }
-
             return true;
 
         } // end of function daftar

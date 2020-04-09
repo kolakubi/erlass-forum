@@ -143,7 +143,7 @@
             if($akses){
 
                 // cek apakah sudah mengikuti ujian?
-                $kategori = substr($pelatihan, 0, 2);
+                $kategori = substr($pelatihan, 0, -1);
                 $datastatuspelatihan = $this->pelatihan_model->ambilstatuspelatihan($idmember, $kategori, $level);
 
                 // set session pelatihan
@@ -176,15 +176,8 @@
                     }
                     // jika belum ujian
                     else{
-                        // echo 'dari belum ujian';
                         // set session ujian + kode pelatihan
                         $this->session->set_userdata(['pelatihan' => 'ujian'.$pelatihan]);
-
-                        echo '<pre>';
-                        print_r($this->session->userdata());
-                        echo '</pre>';
-
-                        // die();
 
                         // redirect ke halaman ujian
                         $this->load->view('front/header');
@@ -195,34 +188,15 @@
                 // jika data status belum ada brati belum daftar
                 // redirect ke halaman daftar
                 else{
-                    // echo 'dari daftar';
 
-                    // echo '<pre>';
-                    // print_r($this->session->userdata());
-                    // echo '</pre>';
-
+                    $data['point'] = true;
                     // redirect ke halaman ujian
                     $this->load->view('front/header');
-                    $this->load->view('front/pelatihan');
+                    $this->load->view('front/pelatihan', $data);
                     $this->load->view('front/footer');
                 }
 
-                // [idpelatihandiikuti] => 3
-                // [idmember] => 7
-                // [idpelatihan] => mp
-                // [idstatuspelatihandiikuti] => 2
-                // [ujianlv1] => 0
-                // [statusujianlv1] => 
-                // [openlv1] => 0
-                // [ujianlv2] => 0
-                // [statusujianlv2] => 
-                // [openlv2] => 0
-                // [ujianlv3] => 0
-                // [statusujianlv3] => 
-                // [openlv3] => 0
-
-                // simpan category di session
-
+            // simpan category di session
             }else{
                 $data['point'] = true;
                 // level poitn belum cukup tampilkan notif
@@ -230,8 +204,129 @@
                 $this->load->view('front/pelatihan', $data);
                 $this->load->view('front/footer');
             }
-        } // end of function level
+        } // end of function menulis pemula
         // =====================================================
 
+
+
+
+        public function yt1($level){
+
+            // set point untuk bisa akses
+            $pointLv1 = 0;
+            $pointLv2 = 10;
+            $pointLv3 = 80;
+            $pointLv4 = 100;
+
+            // ambil point dari data session
+            $idmember = $this->session->userdata('id_member');
+            $arrayPoint = $this->pelatihan_model->ambilPointYoutube1($idmember);
+
+            // jumlahkan point
+            // loop buat jumlahin total nilai
+            $totalPoint = 0;
+            if($arrayPoint){
+                for($i=0; $i<count($arrayPoint); $i++){
+                    $totalPoint += $arrayPoint[$i]['nilairating'];
+                }
+            }
+
+            // jika point tidak sesuai, tampilkan notif
+            $akses = false;
+            $pelatihan = '';
+
+            if($level == 1 && $totalPoint >= $pointLv1){
+                $akses = true;
+                $pelatihan = 'yt11';
+            }
+            if($level == 2 && $totalPoint >= $pointLv2){
+                $akses = true;
+                $pelatihan = 'yt12';
+            }
+            if($level == 3 && $totalPoint >= $pointLv3){
+                $akses = true;
+                $pelatihan = 'yt13';
+            }
+            if($level == 4 && $totalPoint >= $pointLv4){
+                $akses = true;
+                $pelatihan = 'yt14';
+            }
+
+            // jika akses true
+            if($akses){
+                // cek apakah sudah mengikuti ujian?
+                $kategori = substr($pelatihan, 0, -1);
+                $datastatuspelatihan = $this->pelatihan_model->ambilstatuspelatihan($idmember, $kategori, $level);
+
+                // set session pelatihan
+                // buat di Controller Forum
+                // di halaman forum akan di cek ketersediaan session pelatihan
+                $this->session->set_userdata(['pelatihan' => $pelatihan]);
+
+                // echo "id = $idmember";
+                // echo "kat = $kategori";
+                // echo "level = $level";
+
+                // echo '<pre>';
+                // print_r($datastatuspelatihan);
+                // echo '</pre>';
+                // die();
+
+                // jika data status ada brati udah daftar
+                if($datastatuspelatihan){ 
+
+                    $sudahujian = $datastatuspelatihan['ujianlv'.$level];
+                    // jika sdh ujian
+                    if($sudahujian){
+
+                        // cek apakah level sdh terbuka
+                        $lvterbuka = $datastatuspelatihan['openlv'.$level];
+
+                        // jika lv terbuka
+                        if($lvterbuka){
+                            redirect('/pilihlevel');
+                        }
+                        // jika lv belum terbuka
+                        else{
+
+                            // tampilkan halaman konfirmasi
+                            $this->load->view('front/header');
+                            $this->load->view('ujian/menunggukonfirmasi');
+                            $this->load->view('front/footer');
+                        }
+                    }
+                    // jika belum ujian
+                    else{
+                        // set session ujian + kode pelatihan
+                        $this->session->set_userdata(['pelatihan' => 'ujian'.$pelatihan]);
+
+                        // redirect ke halaman ujian
+                        $this->load->view('front/header');
+                        $this->load->view('ujian/menulispemula/lv'.$level);
+                        $this->load->view('front/footer');
+                    }
+                }
+                // jika data status belum ada brati belum daftar
+                // redirect ke halaman daftar
+                else{
+
+                    $data['point'] = true;
+                    // redirect ke halaman ujian
+                    $this->load->view('front/header');
+                    $this->load->view('front/pelatihan', $data);
+                    $this->load->view('front/footer');
+                }
+            
+            }
+            // jika akses false
+            else{
+                $data['point'] = true;
+                // level poitn belum cukup tampilkan notif
+                $this->load->view('front/header');
+                $this->load->view('front/pelatihan', $data);
+                $this->load->view('front/footer');
+            }
+        } // end of function youtube
+        // =====================================================
 
     } // end of class
