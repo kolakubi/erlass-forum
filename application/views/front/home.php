@@ -2,7 +2,7 @@
 <section id="hero">
     <div class="hero-container">
       <p style="color: white">Kami menyediakan pelatihan online untuk para guru</p>
-      <h1>Jadilah Guru Berkualitas</h1>
+      <h1>Pelatihan Guru Online</h1>
       <h2>Website Edukatif Untuk Para Guru di Indonesia</h2>
       <a href="#" class="btn btn-lg btn-primary">Selengkapnya <i class="fas fa-arrow-down"></i></a>
       <!-- <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a> -->

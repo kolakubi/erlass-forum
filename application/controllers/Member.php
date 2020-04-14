@@ -53,11 +53,13 @@
 
         public function index(){
 
-            $this->load->view('member/header');
-            $this->load->view('member/sidebar', $this->datasidebar());
-            $this->load->view('member/topbar');
-            $this->load->view('member/dashboard');
-            $this->load->view('member/footer');
+            // $this->load->view('member/header');
+            // $this->load->view('member/sidebar', $this->datasidebar());
+            // $this->load->view('member/topbar');
+            // $this->load->view('member/dashboard');
+            // $this->load->view('member/footer');
+
+            $this->profil();
 
         } // end of function index
         //==================================================

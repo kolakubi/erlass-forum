@@ -30,15 +30,19 @@
             <!-- image -->
             <div class="col-md-2 text-center">
               <img class="d-flex mr-3 rounded-circle img-fluid" src="<?php echo base_url() ?>upload/memberpic/<?php echo $post['foto'] ?>" alt="">
-              <p><?php echo $post['nama'] ?></p>
             </div>
 
-            <div class="col-md-10">
+            <!-- nama -->
+            <div class="col-md-2">
+              <p>Oleh:<br><?php echo $post['nama'] ?></p>
+            </div>
+
+            <div class="col">
               <!-- judul -->
               <h4 class="card-title" style="color: black"><?php echo $post['judul'] ?></h4>
               
               <!-- isi post -->
-              <p class="card-text" style="color: gray"><?php echo $post['isipost'] ?></p>
+              <!-- <p class="card-text" style="color: gray"><?php echo $post['isipost'] ?></p> -->
               
               <!-- tombol baca -->
               <!-- <a href="<?php echo base_url() ?>postdetail/post/<?php echo $post['idpost'] ?>" class="btn btn-primary">Baca &rarr;</a> -->

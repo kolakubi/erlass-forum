@@ -42,7 +42,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-scrolled">
-    <div class="container d-flex">
+    <div class="container-fluid d-flex">
 
       <div class="logo mr-auto">
         <h1 class="text-light"><a href="<?php echo base_url() ?>"><span style="color: black">Erlass</span></a></h1>
@@ -69,10 +69,16 @@
             <a class="nav-link js-scroll-trigger">Halo, <?php echo $this->session->userdata('nama') ?></a>
             <ul>
               <li>
-                <a href="<?php echo base_url() ?>member">Dashboard</a>
+                <a href="<?php echo base_url() ?>member">
+                  <i class="fas fa-fw fa-user mr-2"></i>
+                  <span>Dashboard</span>
+                </a>
               </li>
               <li>
-                <a href="<?php echo base_url() ?>logout">Logout</a>
+                <a href="<?php echo base_url() ?>logout">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i>
+                  <span>Logout</span>
+                </a>
               </li>
             </ul>
           </li>
