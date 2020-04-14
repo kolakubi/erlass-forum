@@ -80,7 +80,7 @@
                     $idpelatihan = substr($pelatihan, 5, ($jumlahstring-5-1)); // hasilnya apapun setelah ujian dan kurangi 1 char
                     $level = substr($pelatihan, -1, 1); // 1 || 2 || 3;
                     // echo "level =".$level;
-
+                    // 1017560898
                     
                     $dataupdatestatusujian = array(
                         'idmember' => $this->session->userdata('id_member'),

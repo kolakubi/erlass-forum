@@ -5,6 +5,7 @@
     <div class="container text-center" style="padding: 50px 5px">
       <h1>Pilih Lv Pelatihan</h1>
       <p class="lead">Pilih pelatihan yang anda inginkan</p>
+      <p>Total Point Anda: <?php echo $totalpoint ?></p>
     </div>
   </header>
 

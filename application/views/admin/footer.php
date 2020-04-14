@@ -48,12 +48,10 @@
   <!-- Custom scripts for all pages-->
   <!-- <script src="<?php echo base_url() ?>asset/sbadmin2/js/sb-admin-2.min.js"></script> -->
 
-  <!-- Page level plugins -->
-  <!-- <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/chart.js/Chart.min.js"></script> -->
-
-  <!-- Page level custom scripts -->
-  <!-- <script src="<?php echo base_url() ?>asset/sbadmin2/js/demo/chart-area-demo.js"></script>
-  <script src="<?php echo base_url() ?>asset/sbadmin2/js/demo/chart-pie-demo.js"></script> -->
+  <!-- Chart JS -->
+  <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/chart.js/Chart.min.js"></script>
+  <script src="<?php echo base_url() ?>asset/sbadmin2/js/demo/chart-area-demo.js"></script>
+  <!-- <script src="<?php echo base_url() ?>asset/sbadmin2/js/demo/chart-pie-demo.js"></script> -->
 
   <!-- datatable -->
   <script src="<?php echo base_url() ?>asset/sbadmin2/vendor/datatables/jquery.dataTables.min.js"></script>

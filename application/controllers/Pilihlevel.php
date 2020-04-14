@@ -129,6 +129,11 @@
                 // di halaman forum akan di cek ketersediaan session pelatihan
                 $this->session->set_userdata(['pelatihan' => $pelatihan]);
 
+                // echo '<pre>';
+                // print_r($this->session->userdata());
+                // echo '</pre>';
+                // die();
+
                 // redirect ke forum
                 redirect('forum');
 
